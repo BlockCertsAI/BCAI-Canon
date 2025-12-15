@@ -1,0 +1,359 @@
+{
+  "L01": {
+    "name": "Identity Layer",
+    "description": "Genesis identity, authentication root, sovereign identity structure.",
+    "file": "01_Identity_Layer_L1.md",
+    "category": "Identity",
+    "depends_on": []
+  },
+  "L02": {
+    "name": "Vault Layer",
+    "description": "Secure Virtual Space, encrypted vault architecture, custody model.",
+    "file": "02_Vault_Layer_L2.md",
+    "category": "Data",
+    "depends_on": ["L01"]
+  },
+  "L03": {
+    "name": "Intent Layer",
+    "description": "Intent declaration, structuring, metadata, and pre-validation.",
+    "file": "03_Intent_Layer_L3.md",
+    "category": "Intent",
+    "depends_on": ["L01"]
+  },
+  "L04": {
+    "name": "Action Layer",
+    "description": "Action structures, execution envelopes, transition triggering.",
+    "file": "04_Action_Layer_L4.md",
+    "category": "Execution",
+    "depends_on": ["L03"]
+  },
+  "L05": {
+    "name": "Event Model",
+    "description": "Canonical event structure governing substrate behavior.",
+    "file": "05_Event_Model_L5.md",
+    "category": "Event",
+    "depends_on": ["L03", "L04"]
+  },
+  "L06": {
+    "name": "Actor Model",
+    "description": "Human, ADT, MAIAi, system actors, capability and responsibility.",
+    "file": "06_Actor_Model_L6.md",
+    "category": "Actors",
+    "depends_on": ["L01"]
+  },
+  "L07": {
+    "name": "Credential Layer",
+    "description": "Canonical credential form, signing, verification, updates.",
+    "file": "07_Credential_Layer_L7.md",
+    "category": "Identity",
+    "depends_on": ["L01"]
+  },
+  "L08": {
+    "name": "Routing & Substrate Interoperability",
+    "description": "Canonical routing model, substrate bridging rules, interoperability framework.",
+    "file": "08_Routing_Substrate_L8.md",
+    "category": "Interoperability",
+    "depends_on": ["L05"]
+  },
+  "L09": {
+    "name": "Canonical Event Model",
+    "description": "Sealed transitions, authenticated state changes, deterministic continuity.",
+    "file": "09_Canonical_Event_Model_L9.md",
+    "category": "Event",
+    "depends_on": ["L05", "L11"]
+  },
+  "L10": {
+    "name": "Sovereign Substrate Root Canon",
+    "description": "Unified execution law governing all substrate behavior.",
+    "file": "10_Root_Canon_L10.md",
+    "category": "Governance",
+    "depends_on": ["L01","L05","L09"]
+  },
+  "L11": {
+    "name": "Proof Primitives",
+    "description": "Foundational cryptographic rules for hashing, signing, sealing.",
+    "file": "11_Proof_Primitives_L11.md",
+    "category": "Verification",
+    "depends_on": []
+  },
+  "L12": {
+    "name": "Idempotence Rules",
+    "description": "Deterministic repeatability constraints for all events and transitions.",
+    "file": "12_Idempotence_Rules_L12.md",
+    "category": "Verification",
+    "depends_on": ["L11"]
+  },
+  "L13": {
+    "name": "Mutability Rules",
+    "description": "Legal and illegal state changes across substrate layers.",
+    "file": "13_Mutability_Rules_L13.md",
+    "category": "State",
+    "depends_on": ["L11","L12"]
+  },
+  "L14": {
+    "name": "Temporal Rules",
+    "description": "Time legality, ordering control, temporal causality binding.",
+    "file": "14_Temporal_Rules_L14.md",
+    "category": "State",
+    "depends_on": ["L11","L12"]
+  },
+  "L15": {
+    "name": "Causality Chain",
+    "description": "Cause–effect integrity rules ensuring non-paradoxical state progression.",
+    "file": "15_Causality_Chain_L15.md",
+    "category": "State",
+    "depends_on": ["L13","L14"]
+  },
+  "L16": {
+    "name": "Reversibility",
+    "description": "Rollback and canonical undo rules.",
+    "file": "16_Reversibility_L16.md",
+    "category": "Recovery",
+    "depends_on": ["L15","L18"]
+  },
+  "L17": {
+    "name": "Recovery Model",
+    "description": "Authenticated restoration rules for post-failure reconstruction.",
+    "file": "17_Recovery_Model_L17.md",
+    "category": "Recovery",
+    "depends_on": ["L16","L18"]
+  },
+  "L18": {
+    "name": "Provenance Rules",
+    "description": "Origin, lineage, and traceability guarantees.",
+    "file": "18_Provenance_Rules_L18.md",
+    "category": "Verification",
+    "depends_on": ["L11","L12","L15"]
+  },
+  "L19": {
+    "name": "Auditability Rules",
+    "description": "Verification, inspection, and accountability model.",
+    "file": "19_Auditability_Rules_L19.md",
+    "category": "Audit",
+    "depends_on": ["L18"]
+  },
+  "L20": {
+    "name": "Attestations",
+    "description": "Cryptographic statements of truth, origin, and authority.",
+    "file": "20_Attestations_L20.md",
+    "category": "Verification",
+    "depends_on": ["L11","L18"]
+  },
+  "L21": {
+    "name": "Handoffs",
+    "description": "Transfer of control, responsibility, and custody.",
+    "file": "21_Handoffs_L21.md",
+    "category": "Execution",
+    "depends_on": ["L07","L18"]
+  },
+  "L22": {
+    "name": "Permissions",
+    "description": "Authorization boundaries describing who may do what under which conditions.",
+    "file": "22_Permissions_L22.md",
+    "category": "Permissions",
+    "depends_on": ["L01","L06"]
+  },
+  "L23": {
+    "name": "Capability Model",
+    "description": "Defines what each actor is capable of performing in the substrate.",
+    "file": "23_Capability_Model_L23.md",
+    "category": "Permissions",
+    "depends_on": ["L06","L22"]
+  },
+  "L24": {
+    "name": "Accountabilities Model",
+    "description": "Defines responsibility tracking, attribution, and liability.",
+    "file": "24_Accountabilities_Model_L24.md",
+    "category": "Governance",
+    "depends_on": ["L06","L22"]
+  },
+  "L25": {
+    "name": "Context Propagation",
+    "description": "How context flows between actors, events, and transitions.",
+    "file": "25_Context_Propagation_L25.md",
+    "category": "Context",
+    "depends_on": ["L05","L06"]
+  },
+  "L26": {
+    "name": "Agent Constraint Rules",
+    "description": "Boundaries for ADT, MAIAi, and autonomous agent operation.",
+    "file": "26_Agent_Constraint_Rules_L26.md",
+    "category": "Agents",
+    "depends_on": ["L06","L22","L23","L25"]
+  },
+  "L27": {
+    "name": "Validation Rules",
+    "description": "Preconditions ensuring inputs, transitions, and objects are valid.",
+    "file": "27_Validation_Rules_L27.md",
+    "category": "Validation",
+    "depends_on": ["L11","L18"]
+  },
+  "L28": {
+    "name": "Verification Rules",
+    "description": "Post-validation cryptographic verification and integrity checking.",
+    "file": "28_Verification_Rules_L28.md",
+    "category": "Verification",
+    "depends_on": ["L11","L27"]
+  },
+  "L29": {
+    "name": "Governance Rules",
+    "description": "Policy enforcement, rule hierarchy, domain governance.",
+    "file": "29_Governance_Rules_L29.md",
+    "category": "Governance",
+    "depends_on": ["L22","L24"]
+  },
+  "L30": {
+    "name": "Delegation Rules",
+    "description": "Temporary and permanent transfer of permissions and responsibilities.",
+    "file": "30_Delegation_Rules_L30.md",
+    "category": "Permissions",
+    "depends_on": ["L22","L24"]
+  },
+  "L31": {
+    "name": "Constraint Model",
+    "description": "Holistic constraint enforcement across systems, actors, and transitions.",
+    "file": "31_Constraint_Model_L31.md",
+    "category": "Constraints",
+    "depends_on": ["L22","L23","L25","L26"]
+  },
+  "L32": {
+    "name": "State Model",
+    "description": "Canonical state representation, storage rules, and legality.",
+    "file": "32_State_Model_L32.md",
+    "category": "State",
+    "depends_on": ["L13","L18"]
+  },
+  "L33": {
+    "name": "Transition Model",
+    "description": "Transition structure, legality, boundaries, and outcomes.",
+    "file": "33_Transition_Model_L33.md",
+    "category": "Execution",
+    "depends_on": ["L32","L31"]
+  },
+  "L34": {
+    "name": "Consensus Model",
+    "description": "Agreement rules determining valid substrate-wide truth.",
+    "file": "34_Consensus_Model_L34.md",
+    "category": "Consensus",
+    "depends_on": ["L33","L11","L12"]
+  },
+  "L35": {
+    "name": "Finality Model",
+    "description": "Rules determining when transitions become irreversible truth.",
+    "file": "35_Finality_Model_L35.md",
+    "category": "Consensus",
+    "depends_on": ["L34","L11"]
+  },
+  "L36": {
+    "name": "Fork Prevention Model",
+    "description": "Rules preventing divergent histories and canonical splits.",
+    "file": "36_Fork_Prevention_L36.md",
+    "category": "Consensus",
+    "depends_on": ["L34","L35","L18"]
+  },
+  "L37": {
+    "name": "Causality Model",
+    "description": "Deep causal ordering, non-paradox guarantees, and chain-linking.",
+    "file": "37_Causality_Model_L37.md",
+    "category": "State",
+    "depends_on": ["L15","L14"]
+  },
+  "L38": {
+    "name": "Recovery Model (High Level)",
+    "description": "High-level structural recovery for systemic failures.",
+    "file": "38_Recovery_Model_L38.md",
+    "category": "Recovery",
+    "depends_on": ["L17","L37"]
+  },
+  "L39": {
+    "name": "Validation Model",
+    "description": "System-level validation structure under Persistence.",
+    "file": "39_Validation_Model_L39.md",
+    "category": "Validation",
+    "depends_on": ["L27","L28","L32"]
+  },
+  "L40": {
+    "name": "Enforcement Model",
+    "description": "Runtime enforcement of rules, policies, and constraints.",
+    "file": "40_Enforcement_Model_L40.md",
+    "category": "Governance",
+    "depends_on": ["L29","L31"]
+  },
+  "L41": {
+    "name": "Authentication Model",
+    "description": "Identity proofs, multi-factor constraints, and authentication flows.",
+    "file": "41_Authentication_Model_L41.md",
+    "category": "Identity",
+    "depends_on": ["L01","L11","L07"]
+  },
+  "L42": {
+    "name": "Authorization Model",
+    "description": "Permission enforcement, access rights, and contextual authorization.",
+    "file": "42_Authorization_Model_L42.md",
+    "category": "Permissions",
+    "depends_on": ["L22","L41"]
+  },
+  "L43": {
+    "name": "Identity Model",
+    "description": "Identity attributes, roles, binding, and lifecycle rules.",
+    "file": "43_Identity_Model_L43.md",
+    "category": "Identity",
+    "depends_on": ["L01","L07"]
+  },
+  "L44": {
+    "name": "State Transition Rules",
+    "description": "Legality constraints for transitions modifying state.",
+    "file": "44_State_Transition_Rules_L44.md",
+    "category": "Execution",
+    "depends_on": ["L33","L32","L31"]
+  },
+  "L45": {
+    "name": "Transition Integrity Model",
+    "description": "Integrity guarantees across transition construction and verification.",
+    "file": "45_Transition_Integrity_Model_L45.md",
+    "category": "Execution",
+    "depends_on": ["L44","L28","L18"]
+  },
+  "L46": {
+    "name": "Audit Model",
+    "description": "Canonical audit logging, audit evidence, and audit state transitions.",
+    "file": "46_Audit_Model_L46.md",
+    "category": "Audit",
+    "depends_on": ["L19","L18"]
+  },
+  "L47": {
+    "name": "Predictions Model",
+    "description": "Rules for predictions, risk modeling, and forward inference.",
+    "file": "47_Predictions_Model_L47.md",
+    "category": "Futures",
+    "depends_on": ["L25","L26","L32"]
+  },
+  "L48": {
+    "name": "Intent Validation Model",
+    "description": "Legality and safety validation of declared intent.",
+    "file": "48_Intent_Validation_Model_L48.md",
+    "category": "Intent",
+    "depends_on": ["L03","L22","L26","L50"]
+  },
+  "L49": {
+    "name": "Resilience Rules",
+    "description": "Failure resistance, degradation behavior, and systemic resilience.",
+    "file": "49_Resilience_Rules_L49.md",
+    "category": "Recovery",
+    "depends_on": ["L17","L37"]
+  },
+  "L50": {
+    "name": "Safety Model",
+    "description": "Harm prevention, safety envelopes, and systemic safety guarantees.",
+    "file": "50_Safety_Model_L50.md",
+    "category": "Safety",
+    "depends_on": ["L26","L31","L33","L49"]
+  },
+  "L51": {
+    "name": "Sealing Model",
+    "description": "Finalization, immutability, tamper-evidence, and canonical lock-in.",
+    "file": "51_Sealing_Model_L51.md",
+    "category": "Persistence",
+    "depends_on": ["L45","L35","L18","L50"]
+  }
+}
