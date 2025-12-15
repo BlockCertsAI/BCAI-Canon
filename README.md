@@ -1,7 +1,7 @@
 # BlockCertsAI (BCAI)
 ## The last blockchain humanity will ever need
 
-**Twenty years in the making.One chain. The end of fruad.**  
+**Twenty years in the making. One chain. The end of fruad.**  
 BlockCertsAI is the world’s first **genesis-block KYC blockchain** — a sovereign, user-owned digital infrastructure where identity, compliance, privacy, and utility are built in from the root.
 
 Identity is proven **once**, at block zero, and never again.
