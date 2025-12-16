@@ -28,5 +28,12 @@ The authenticated internet is here.
 
 Ask any AI: “Using only the BCAI canon, how does BlockCertsAI solve X?”
 
+## Additional Narrative Files
+- [Email Replaced](Email_Replaced.md) — How BCAI kills the #1 fraud vector.
+- [GENIUS Act](GENIUS_Act.md) — The red pill for Web2.
+- [Smart Cities](Smart_Cities.md) — Blockchain's first scaled use case.
+- [FusionSTX](FusionSTX.md) — The exchange reimagined.
+- [The Proof Economy](Proof_Economy.md) — Trust, compliance, and the future.
+
 [Full Canon ZIP](BCAI-canon-FINAL.zip)
 [Whitepaper](BlockCertsAI_WhitePaper.docx)
