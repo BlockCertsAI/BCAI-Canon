@@ -32,7 +32,7 @@ Applies to:
 - All transitions and partial transitions  
 - All actor, agent, and governance actions  
 - All provenance structures  
-- Undo and remediation workflows (L16/Krollback)  
+- Undo and remediation workflows (L16)  
 - Consensus safety (L34) and finality (L35)  
 - Fork prevention and resolution (L36)  
 - Causality re-anchoring (L15, L37)  
@@ -290,6 +290,7 @@ Agents should assume recovery states invalidate assumptions made close to the fa
 Federated recovery must err toward stricter truth, not compromise.  
 Recovery is a core feature of a sovereign, authenticated substrate — not an afterthought.
 
+---
 Return to Navigation:
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
