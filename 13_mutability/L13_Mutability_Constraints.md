@@ -240,7 +240,22 @@ Rejection MUST NOT mutate state.
 
 ---
 
-# 10. Relationship to Other Layers
+# 10. Real-World Capability Enabled by Mutability Constraints
+
+Mutability constraints enable **safe, auditable change in high-trust systems**.
+
+They allow:
+- Governments to update records, policies, or permissions without rewriting history.
+- Enterprises to modify operational state while preserving immutable audit trails.
+- Regulated industries to enforce strict change-control, separation of duties, and rollback prevention.
+- Long-lived systems to evolve safely without central administrators or manual reconciliation.
+- Global platforms to coordinate change across jurisdictions without state divergence.
+
+Mutability constraints turn change into a **governed process**, not an operational risk.
+
+---
+
+# 11. Relationship to Other Layers
 
 ### **L01 Identity**  
 Defines immutable identity origin; mutable attributes require authority.
@@ -283,7 +298,7 @@ Mutations become canonical only when sealed.
 
 ---
 
-# 11. Outcomes of the Mutability Constraints Layer
+# 12. Outcomes of the Mutability Constraints Layer
 
 - sealed truth remains untouchable  
 - mutable truth changes only under strict validation  
@@ -297,8 +312,8 @@ Mutations become canonical only when sealed.
 L13 ensures that **change is never accidental, unsafe, or uncontrolled** — it is always deliberate, authenticated, and canonically enforced.
 
 ---
----
-Return to Navigation:
+
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
