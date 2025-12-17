@@ -80,151 +80,72 @@ Each capability must define:
 ## 23.4 Categories of Capabilities
 
 ### 23.4.1 Structural Capabilities
-Inherent abilities based on system design:
-- Read/write interfaces  
-- Execution ability  
-- Access to communication channels  
-- Ability to generate proofs or hashes  
+Inherent abilities based on system design.
 
 ### 23.4.2 Operational Capabilities
-Abilities tied to tasks or workloads:
-- Execute workflows  
-- Initiate transactions  
-- Perform computations or transforms  
-- Manage custody transitions  
+Abilities tied to tasks or workloads.
 
 ### 23.4.3 Governance Capabilities
-Abilities to influence system state or policy:
-- Issue directives  
-- Approve exceptions  
-- Validate or certify objects  
-- Initiate escalations or overrides  
+Abilities to influence system state or policy.
 
 ### 23.4.4 Supervisory Capabilities
-Abilities to monitor, evaluate, or enforce:
-- Audit processes  
-- Enforce compliance  
-- Evaluate ADT/MAIAi behavior  
-- Trigger remediation  
+Abilities to monitor, evaluate, or enforce.
 
 ### 23.4.5 AI/ADT Autonomy Capabilities
-Abilities unique to agentic systems:
-- Autonomous decision execution  
-- Predictive reasoning or planning  
-- Continuous monitoring  
-- Self-correction or self-escalation  
-- Generation of attestations, proofs, or corrective actions  
+Abilities unique to agentic systems.
 
 ### 23.4.6 Cross-Substrate Capabilities
-Abilities to operate across trust boundaries:
-- Federation interactions  
-- Cross-domain validation  
-- Inter-substrate routing  
+Abilities to operate across trust boundaries.
 
 ## 23.5 Capability Assignment
-Capabilities may be assigned through:
-
-### Identity Initialization
-Actors are issued baseline capabilities at creation (human, ADT, MAIAi, or system identity).
-
-### Role Assignment
-Roles provide additional capabilities that reflect functional duties.
-
-### System Architecture
-Some capabilities are inherent to actor type (e.g., MAIAi’s ability to run continuous evaluations).
-
-### Provenance-Based Derivation
-Actors may gain capabilities by demonstrating lineage, credentials, or training.
-
-### Delegation
-Capabilities may be delegated temporarily or conditionally, but must never exceed the delegator’s own capabilities.
-
-### Capability Packages
-Capabilities may be grouped into bundles for efficiency but must remain individually traceable.
+Capabilities may be assigned through identity initialization, role assignment, system architecture, provenance-based derivation, delegation, or capability packages. Delegation MUST NOT exceed the delegator’s own capabilities.
 
 ## 23.6 Capability Validation Rules
-Before a capability becomes active, the system must verify:
-
-1. **Identity authenticity**  
-2. **Capability integrity** (hash, signatures)  
-3. **Scope compatibility** with identity and domain  
-4. **Preconditions are satisfied**  
-5. **Constraints are enforceable**  
-6. **No conflicting or unsafe combinations**  
-7. **Capability is not revoked or expired**  
-8. **Capability does not violate mutability or governance rules (L13)**  
-
-Capabilities failing validation must not activate.
+Before a capability becomes active, the system must verify identity authenticity, integrity, scope compatibility, satisfied preconditions, enforceable constraints, absence of conflicts, revocation status, and compliance with mutability and governance rules.
 
 ## 23.7 Capability Use Rules
-When an actor attempts an action, the substrate must check:
-
-1. Does the actor possess the required capability?  
-2. Are its preconditions satisfied in the current context?  
-3. Are its constraints upheld?  
-4. Does the capability allow initiation of this action type?  
-5. Does the capability allow interaction with the target object or domain?  
-6. Are safety, governance, and trust boundaries respected?  
-7. Does the capability conflict with other active capabilities?  
-
-Even if capability is present, **permissions (L22)** must still allow the action.
+The substrate must confirm capability presence, contextual validity, constraint adherence, target compatibility, safety boundaries, and lack of conflict. Permissions (L22) remain mandatory.
 
 ## 23.8 Capability Revocation
-Capabilities may be revoked if:
-- Identity trust level changes  
-- Actor becomes compromised  
-- Provenance or lineage is invalidated  
-- A capability becomes unsafe  
-- Domain boundaries shift  
-- Governance mandates termination  
-
-Revocation must:
-- Reference the original capability  
-- Provide justification  
-- Be signed by a valid authority  
-- Immediately deactivate the capability  
-- Update provenance and audit chains  
+Capabilities may be revoked due to trust changes, compromise, invalidated provenance, safety risks, domain shifts, or governance mandate. Revocation MUST be immediate, justified, signed, and auditable.
 
 ## 23.9 Observability & Reporting
-The substrate must expose:
-- Capability inventories for each actor  
-- Capability lineage and provenance  
-- Delegation graphs  
-- Capability conflict maps  
-- AI/ADT capability boundaries  
-- Capability activation and deactivation logs  
-
-Auditors must reconstruct:
-- How capabilities were issued  
-- Why the actor possesses them  
-- Whether they are currently active  
-- Whether they were used safely and lawfully  
+The substrate must expose capability inventories, lineage, delegation graphs, conflict maps, activation logs, and AI/ADT boundaries.
 
 ## 23.10 Interaction With Other Layers
-- **L11** — ensures cryptographic binding of capabilities.  
-- **L12** — ensures deterministic activation and validation.  
-- **L13** — governs allowable capability effects on mutability.  
-- **L14** — ensures capabilities obey temporal constraints.  
-- **L15** — ensures causal correctness of capability-based actions.  
-- **L16** — ensures capability survival across undo sequences.  
-- **L17** — ensures capability persistence across recovery.  
-- **L18** — binds capabilities to their provenance.  
-- **L19** — ensures capabilities remain auditable.  
-- **L20** — supports capability verification via attestations.  
-- **L21** — governs capability handoff when transferred.  
-- **L22** — governs permissions, which must not exceed capabilities.
+- **L11** cryptographic binding  
+- **L12** deterministic activation  
+- **L13** mutability limits  
+- **L14** temporal legality  
+- **L15** causal correctness  
+- **L16–L17** undo and recovery  
+- **L18** provenance binding  
+- **L19** auditability  
+- **L20** attestation support  
+- **L21** capability handoff  
+- **L22** permission ceiling  
 
 ## 23.11 Invariants
-1. CAPABILITY_STRUCTURAL — capabilities reflect architecture, not policy.  
-2. CAPABILITY_BOUND — capabilities define what is possible, not what is allowed.  
-3. CAPABILITY_TRACEABLE — all capabilities must appear in provenance.  
-4. CAPABILITY_REVOCABLE — any capability may be rescinded.  
-5. CAPABILITY_COMPOSABLE — capabilities may be built from smaller units.  
-6. CAPABILITY_SAFE — capabilities must enforce trust and safety boundaries.  
-7. CAPABILITY_REQUIRED — no action may occur without required capabilities.  
+1. CAPABILITY_STRUCTURAL  
+2. CAPABILITY_BOUND  
+3. CAPABILITY_TRACEABLE  
+4. CAPABILITY_REVOCABLE  
+5. CAPABILITY_COMPOSABLE  
+6. CAPABILITY_SAFE  
+7. CAPABILITY_REQUIRED  
 
-## 23.12 Informative Guidance
-Capabilities should be modular, minimal, and composable. Avoid granting broad capability bundles when narrow ones suffice. AI/ADT capabilities should be tightly scoped and continuously monitored. Federated capabilities should include strong cross-domain proofs.
+## 23.12 Real-World Capability Enabled by the Capability Model
+
+The Capability Model enables **system-level safety and correctness before policy is applied**.
+
+It allows:
+- Governments to separate *what systems can do* from *what they are allowed to do*, preventing accidental overreach.
+- Enterprises to design secure-by-architecture platforms where dangerous actions are structurally impossible.
+- AI systems to be constrained at the capability layer, eliminating reliance on post-hoc permission checks alone.
+- Critical infrastructure to prevent classes of failure by removing capabilities entirely, not just denying access.
+- Federated systems to interoperate safely by exposing and verifying capability surfaces before engagement.
+
+Capabilities transform security from access control into **architectural truth**.
 
 ---
 Return to Navigation:
