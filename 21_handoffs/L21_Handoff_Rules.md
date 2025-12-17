@@ -87,147 +87,91 @@ A canonical handoff event must include:
 ## 21.4 Types of Handoffs
 
 ### 21.4.1 Custody Handoffs
-Transfer of physical or digital custody of:
-- Data  
-- Vault objects  
-- Credentials or keys  
-- Tokens or assets  
-- Domain certificates  
-Custody handoffs must update provenance (L18).
+Transfer of custody of data, vault objects, credentials, tokens, assets, or domain certificates.  
+Custody handoffs MUST update provenance (L18).
 
 ### 21.4.2 Control Handoffs
-Transfer of execution control over:
-- Processes  
-- Workflows  
-- ADT or MAIAi operational scopes  
-- BAINCA workloads  
-- Governance routines  
+Transfer of execution control over processes, workflows, ADT/MAIAi scopes, BAINCA workloads, or governance routines.
 
 ### 21.4.3 Responsibility Handoffs
-Transfer of duty, obligation, or accountability:
-- Regulatory compliance responsibilities  
-- Operational oversight  
-- Decision-making authority  
+Transfer of duty or accountability, including regulatory, operational, or decision authority.
 
 ### 21.4.4 Domain Handoffs
-Transfer of authority over:
-- Verified domains  
-- Substrate partitions  
-- Organizational boundaries  
-- Cross-jurisdictional or federated trusts  
+Transfer of authority over verified domains, substrate partitions, organizational boundaries, or federated trusts.
 
-### 21.4.5 AI/ADT Handoffs
-Transfer between humans and ADT/MAIAi:
-- Control  
-- Custody  
-- Execution authority  
-- Decision space  
-Each must include traceable justification and scope limits.
+### 21.4.5 AI / ADT Handoffs
+Transfers between humans and ADT/MAIAi of control, custody, execution authority, or decision space, with explicit scope limits and justification.
 
 ## 21.5 Handoff Validation Rules
-A handoff must be rejected unless ALL conditions below are met:
+A handoff MUST be rejected unless all conditions below are met:
 
-1. **Sender Authorization**  
-   Sender must be cryptographically verified and authorized for the asset or role.
-
-2. **Receiver Authorization**  
-   Receiver must be eligible and authorized to accept the handoff.
-
-3. **Object Integrity**  
-   Object or responsibility must have complete provenance (L18).
-
-4. **Causal Correctness**  
-   Handoff must follow valid event ordering (L15).
-
-5. **Temporal Validity**  
-   Timestamp must align with L14 constraints.
-
-6. **Non-Repudiation**  
-   Both sender and receiver signatures must validate under L11.
-
-7. **Scope Matching**  
-   Handoff scope must not exceed either party’s domain authority.
-
-8. **Conflict-Free Transfer**  
-   No conflicting active custodians or controllers may remain.
+1. **Sender Authorization** — sender is verified and authorized.  
+2. **Receiver Authorization** — receiver is eligible and authorized.  
+3. **Object Integrity** — complete provenance exists (L18).  
+4. **Causal Correctness** — valid ordering (L15).  
+5. **Temporal Validity** — conforms to L14.  
+6. **Non-Repudiation** — both signatures validate (L11).  
+7. **Scope Matching** — scope does not exceed authority.  
+8. **Conflict-Free Transfer** — no parallel custodians remain.
 
 ## 21.6 Handoff Lifecycle
 
 ### Initiation
-Sender constructs the handoff event with all required fields.
+Sender constructs the canonical handoff event.
 
 ### Acceptance
-Receiver signs acceptance, closing the cryptographic loop.
+Receiver signs acceptance.
 
 ### Activation
-System updates:
-- Custody  
-- Authority  
-- Provenance  
-- State ownership  
+Custody, authority, provenance, and state ownership are updated.
 
 ### Optional Conditions
-Handoffs may include:
-- Timed validity  
-- Conditional responsibilities  
-- Revocation windows  
-- Post-transfer reporting requirements  
+Timed validity, conditional scope, revocation windows, or reporting duties may apply.
 
 ### Revocation
-Handoffs may be revoked if:
-- Sender authority was invalid  
-- Receiver became ineligible  
-- Policy change mandates revocation  
-- Handoff contradicts canonical state  
-
-Revocation must itself be a canonical event referencing the original handoff.
+Revocation requires a canonical event referencing the original handoff and valid authority justification.
 
 ## 21.7 Observability & Reporting
-The substrate must provide:
+The substrate MUST expose:
 - Handoff history viewers  
 - Custody-chain visualization  
-- Control flow lineage  
-- Authority maps  
+- Control and authority maps  
 - AI/ADT responsibility transfer logs  
-- Cross-substrate handoff trace maps  
+- Cross-substrate handoff traces  
 
-Auditors must be able to reconstruct:
-- Who transferred what  
-- When it occurred  
-- Why it occurred  
-- What state changed as a result  
-- Whether all validation rules were satisfied  
+Auditors MUST be able to reconstruct full handoff context and outcomes.
 
 ## 21.8 Interaction With Other Layers
-- L11 provides signature and hash integrity.  
-- L12 ensures deterministic replay of handoff sequences.  
-- L13 ensures transfer legality relative to mutability rules.  
-- L14 ensures temporal validation.  
-- L15 ensures causal validity.  
-- L16 ensures handoffs survive rollback.  
-- L17 ensures handoffs persist through recovery.  
-- L18 ensures provenance reflects handoff transitions.  
-- L19 ensures handoffs remain fully auditable.  
-- L20 asserts truth and authority behind each handoff.
+- **L11** signatures and hashes  
+- **L12** deterministic replay  
+- **L13** mutability legality  
+- **L14** temporal validation  
+- **L15** causal correctness  
+- **L16–L17** rollback and recovery  
+- **L18** provenance updates  
+- **L19** auditability  
+- **L20** authority and truth attestations  
 
 ## 21.9 Invariants
-1. HANDOFF_EXPLICIT — no implicit or hidden transfers.  
-2. HANDOFF_AUTHENTIC — sender and receiver identities must be cryptographically validated.  
-3. HANDOFF_TRACEABLE — all handoffs must appear in provenance and audit chains.  
-4. HANDOFF_ATOMIC — either the handoff fully completes or it does not occur.  
-5. HANDOFF_NONREPUDIABLE — both parties must sign.  
-6. HANDOFF_CASCADE_SAFE — downstream effects must remain causally consistent.
+1. **HANDOFF_EXPLICIT**  
+2. **HANDOFF_AUTHENTIC**  
+3. **HANDOFF_TRACEABLE**  
+4. **HANDOFF_ATOMIC**  
+5. **HANDOFF_NONREPUDIABLE**  
+6. **HANDOFF_CASCADE_SAFE**
 
-## 21.10 Informative Guidance
-Handoffs should be used to formalize:
-- Role transitions  
-- Operational coverage shifts  
-- Human-to-AI supervisory cycles  
-- Multi-party workflow continuity  
-- Compliance responsibility changes  
-- Cross-domain hierarchical or lateral transfers  
+## 21.10 Real-World Capability Enabled by Handoffs
 
-Clear, authenticated handoffs strengthen accountability and resilience across federated environments.
+Handoffs enable **formal transfer of responsibility without institutional intermediaries**.
+
+They allow:
+- Governments to transfer regulatory authority or case ownership with provable continuity.
+- Enterprises to rotate operational control, keys, or compliance duties without gaps or ambiguity.
+- Supply chains to maintain uninterrupted custody across jurisdictions and organizations.
+- AI systems to assume and relinquish authority under explicit human governance.
+- Incident response teams to transfer control during crises without losing accountability.
+
+Handoffs convert transitions of power and responsibility into **cryptographically provable events**.
 
 ---
 Return to Navigation:
