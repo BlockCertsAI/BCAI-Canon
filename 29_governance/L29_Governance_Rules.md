@@ -85,7 +85,7 @@ CSR is the highest governance identity responsible for:
 - Mandating corrective actions  
 - Managing federated trust and governance boundaries  
 
-CSR decisions override all other domain rules.
+CSR decisions override all internal domain rules **within the Sovereign Substrate**.
 
 ### 29.4.2 Architect
 The Architect executes governance decisions and enforces system rules:
@@ -126,7 +126,10 @@ Override:
 - Capabilities (L23)  
 - Context windows (L25)  
 - Constraints (L26)  
-- Validation or verification decisions (L27–L28)  
+- Validation or verification *outcomes* (L27–L28)  
+
+Governance MAY override the **result** of validation or verification in exceptional cases,  
+but MUST NOT alter, bypass, or weaken the underlying validation or verification rules themselves.
 
 Overrides must be:
 - Exception-only  
