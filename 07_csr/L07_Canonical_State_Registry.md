@@ -1,12 +1,15 @@
 <!--
 CANONICAL: TRUE
-LAYER: L7
+LAYER: L07
 AUTO-TOC: ENABLED
 VERSION: 1.0
-PURPOSE: Canon rule file for the Sovereign Substrate CSR (Credential, State & Responsibility) layer.
+PURPOSE: Canon rule file for the Sovereign Substrate Canonical State (CSR) layer.
+NOTES:
+  - Do not remove this header.
+  - This file defines canonical state representation and evolution rules.
 -->
 
-## L07 Canonical State
+## L07 — Canonical State (CSR)
 
 The Canonical State is the **authoritative representation of truth** within the Sovereign Substrate.  
 It expresses the complete, consistent, and sealed condition of all domains at a given moment.
@@ -23,7 +26,7 @@ It is *the* truth — globally consistent, provable, and immutable in its histor
 
 ### **1. Singular Truth**
 At any time, the substrate has exactly **one canonical state** across all nodes.  
-If a node diverges, it is corrected through recovery (L38) until it matches the canonical truth.
+If a node diverges, it is corrected through recovery (L38) until it matches canonical truth.
 
 ### **2. Forward-Only Evolution**
 State evolves strictly forward through validated, verified, constrained, and sealed transitions.  
@@ -46,8 +49,6 @@ No nondeterministic representation of state is allowed.
 
 ## Components of Canonical State
 
-Canonical State consists of:
-
 ### **1. Global Root State**
 A sealed representation of:
 - domain states  
@@ -55,7 +56,7 @@ A sealed representation of:
 - global invariants  
 - substrate metadata  
 
-This is the “system snapshot” of truth.
+This is the system-wide snapshot of truth.
 
 ---
 
@@ -68,9 +69,9 @@ Each domain maintains:
 - zone-level rules  
 
 Domain state must obey:
-- L28 invariants  
-- L31 constraints  
-- L50 safety rules  
+- L28 Invariants  
+- L31 Constraints  
+- L50 Safety Rules  
 
 ---
 
@@ -98,13 +99,13 @@ Authority state must align with L21–L22.
 ---
 
 ### **5. Constraint State**
-All constraints (L31) are part of canonical state:
+All constraints (L31) are part of Canonical State:
 - system-wide invariants  
 - domain-specific constraints  
 - safety thresholds  
 - semantic boundaries  
 
-Constraints are immutable except via governance processes.
+Constraints are immutable except through governance-defined transitions.
 
 ---
 
@@ -132,10 +133,10 @@ State is not canonical until sealed (L51).
 
 ## How Canonical State Evolves
 
-Canonical State evolves only through:
+Canonical State evolves only through the following ordered process:
 
-### **1. Transition Intake (via ADT)**
-A transition arrives from L06.
+### **1. Transition Intake (via ADT, L06)**
+A transition is submitted by an authenticated ADT.
 
 ### **2. Semantic Validation (MAIAi, L03)**
 Ensures meaning is correct and domain-compatible.
@@ -143,11 +144,11 @@ Ensures meaning is correct and domain-compatible.
 ### **3. Constraint Enforcement (L31)**
 Ensures safety, invariants, and domain rules.
 
-### **4. Deterministic Execution (Architect, L04)**
-Architect applies the mutation consistently across all nodes.
+### **4. Deterministic Execution (L05)**
+Approved transitions are applied deterministically and identically across all nodes.
 
 ### **5. Sealing (L51)**
-Once sealed, the new state becomes official truth.
+Once sealed, the new state becomes official canonical truth.
 
 ---
 
@@ -164,7 +165,7 @@ Canonical State must **never** include:
 - speculative predictions  
 - temporary caches or logs  
 
-State contains only **verified truth**.
+State contains only **verified, sealed truth**.
 
 ---
 
@@ -174,74 +175,73 @@ State contains only **verified truth**.
 No unauthorized state mutation is possible.
 
 ### **2. Immutability of History**
-Once sealed, the historical state is never modified.
+Once sealed, historical state is never modified.
 
 ### **3. Causality**
 Every state follows correctly from the prior sealed state (L37).
 
 ### **4. Safety**
-State must always satisfy L50 Safety Model.
+State must always satisfy the L50 Safety Model.
 
 ### **5. Global Agreement**
-Every node that claims to be part of the substrate must maintain identical canonical state.
+Every node that participates in the substrate maintains identical canonical state.
 
 ### **6. Non-Leakage**
 State may reference private data via proofs but never exposes or stores raw SVS content.
 
 ---
 
+## Real-World Capability Enabled by Canonical State
+
+Canonical State enables **institution-grade shared truth** without trusted intermediaries.
+
+Specifically, it allows:
+- Governments, enterprises, and regulated industries to rely on a single, provable source of truth  
+  without reconciliation, manual audits, or third-party attestation.
+- Cross-organizational coordination  
+  (identity, compliance, payments, governance, healthcare, supply chains)  
+  with guaranteed consistency across all participants.
+- Legal, regulatory, and forensic verification  
+  where historical state can be replayed and proven without reliance on institutional trust.
+- Elimination of forks, disputes, and data divergence  
+  that plague traditional distributed and federated systems.
+
+Canonical State turns distributed systems into **verifiable public infrastructure**,  
+where truth is enforced by protocol rather than authority.
+
+---
+
 ## Relationship to Other Layers
 
-### **L01 Genesis Identity**
-Identity forms part of state’s root structure.
-
-### **L02 SVS**
-State stores references and proofs, not contents of SVS.
-
-### **L03 MAIAi**
-State includes semantic structures determined and validated by MAIAi.
-
-### **L04 Architect**
-Architect executes state transitions.
-
-### **L06 ADT**
-ADT submits state-changing transitions.
-
-### **L28 Invariants**
-State enforces invariants at domain boundaries.
-
-### **L31 Constraints**
-State cannot violate constraints.
-
-### **L37 Lineage**
-Every state has a clear and unbroken lineage reference.
-
-### **L38 Recovery**
-Recovery restores nodes to the canonical state.
-
-### **L50 Safety**
-State evolution must respect strict safety rules.
-
-### **L51 Sealing**
-State becomes canonical only when sealed.
+- **L01 — Genesis Identity:** Identity forms part of the state root.
+- **L02 — SVS:** State stores references and proofs, never private data.
+- **L03 — MAIAi:** State includes validated semantic structures.
+- **L04 — Architect:** Architect plans lawful transitions.
+- **L05 — Execution:** Execution applies transitions deterministically.
+- **L06 — ADT:** ADT submits state-changing transitions.
+- **L28 — Invariants:** State enforces invariant boundaries.
+- **L31 — Constraints:** State cannot violate constraints.
+- **L37 — Lineage:** Every state has an unbroken causal reference.
+- **L38 — Recovery:** Nodes are restored to canonical state.
+- **L50 — Safety:** State evolution must satisfy safety rules.
+- **L51 — Sealing:** State becomes canonical only when sealed.
 
 ---
 
 ## Outcomes of the Canonical State Layer
 
-- all nodes converge to a single authoritative truth  
-- users interact with a consistent substrate regardless of domain  
-- privacy is preserved while still enabling global verification  
-- ambiguity, drift, or forks are impossible by design  
-- the system becomes self-consistent and self-validating  
-- governance and compliance are enforced at the state level  
+- all nodes converge on a single authoritative truth  
+- users experience consistent behavior across domains  
+- privacy is preserved alongside global verifiability  
+- ambiguity, drift, and forks are structurally impossible  
+- governance and compliance are enforced at the state layer  
 
 Canonical State is the **center of gravity** of the Sovereign Substrate —  
 the point from which truth flows and to which all computation returns.
 
 ---
 
-Return to Navigation:
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
