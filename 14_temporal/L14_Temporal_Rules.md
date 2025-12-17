@@ -272,7 +272,22 @@ Temporal Safety integrates with the L50 Safety Layer.
 
 ---
 
-## 10. Relationship to Other Layers
+## 10. Real-World Capability Enabled by Temporal Rules
+
+Temporal Rules enable **legally defensible, globally synchronized execution**.
+
+They allow:
+- Financial systems to enforce settlement windows, expirations, and sequencing without relying on wall-clock trust.
+- Governments to guarantee the order of filings, votes, or authorizations across jurisdictions.
+- Healthcare and compliance systems to prove *when* consent, access, or revocation occurred with canonical certainty.
+- Distributed infrastructure to eliminate race conditions, double-spend timing exploits, and clock-based attacks.
+- Auditors and courts to rely on a single authoritative timeline immune to manipulation.
+
+Temporal rules turn time from a **source of dispute** into a **provable property of truth**.
+
+---
+
+## 11. Relationship to Other Layers
 
 ### **L01 Identity** — identity origin cannot be time-shifted  
 ### **L02 SVS** — proofs reference time but reveal no content  
@@ -292,7 +307,7 @@ Temporal Safety integrates with the L50 Safety Layer.
 
 ---
 
-## 11. Outcomes of Temporal Rules
+## 12. Outcomes of Temporal Rules
 
 - one universal timeline  
 - no replay-based mutation  
@@ -310,8 +325,8 @@ L14 ensures that **the substrate cannot be desynchronized, reversed, spoofed, or
 It forms the backbone of canonical truth.
 
 ---
----
-Return to Navigation:
+
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
