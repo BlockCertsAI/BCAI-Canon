@@ -32,7 +32,7 @@ The Transition Model applies to:
 - Identity transitions  
 - Object and data transitions  
 - State transitions (L32)  
-- Permission/capability/accountability transitions (L22–L24)  
+- Permission, capability, and accountability transitions (L22–L24)  
 - Context transitions (L25)  
 - Custody transitions (L21)  
 - Delegation transitions (L30)  
@@ -44,21 +44,21 @@ No actor or domain may bypass transition rules.
 
 ## 33.2 Core Principles
 1. **Transitions must be intentional** — no implicit or silent changes.  
-2. **Transitions must be deterministic** — same inputs → same new canonical state (L12).  
+2. **Transitions must be deterministic** — same inputs produce the same canonical state (L12).  
 3. **Transitions must be authenticated** — identity and signatures are mandatory.  
 4. **Transitions must be legal** — allowed by mutability rules (L13).  
-5. **Transitions must be ordered** — time-first (L14), cause-first (L15).  
+5. **Transitions must be ordered** — temporal first (L14), causal first (L15).  
 6. **Transitions must be safe** — evaluated against constraints (L26, L31).  
-7. **Transitions must be provable** — with evidence bundles (L28).  
-8. **Transitions must be final when canonical** — cannot be rewritten retroactively.  
+7. **Transitions must be provable** — via cryptographic evidence (L28).  
+8. **Transitions are final when canonical** — no retroactive revision.  
 
 ## 33.3 Transition Object Model
 Each transition must include:
 
 ### Actor
 - Initiator identity  
-- Delegation rights (if applicable, L30)  
-- Required permissions/capabilities (L22–L23)  
+- Delegation authority if applicable (L30)  
+- Required permissions and capabilities (L22–L23)  
 
 ### Transition Intent
 - Operation type  
@@ -68,7 +68,7 @@ Each transition must include:
 - Preconditions  
 
 ### Transition Mechanics
-- Input state  
+- Input (prior) state  
 - Proposed state delta  
 - Required proofs  
 - Constraint evaluation results  
@@ -76,129 +76,127 @@ Each transition must include:
 ### Cryptographic Binding
 - Transition hash  
 - Actor signature  
-- Optional multisig for Critical transitions  
+- Optional multi-signature for Critical transitions  
 
 ### Anchoring
 - Timestamp and temporal ordering  
-- Causal parent  
+- Causal parent reference  
 - Provenance insertion (L18)  
-- Governance references (if triggered)  
+- Governance references when applicable  
 
 ## 33.4 Types of Transitions
 
 ### 33.4.1 Creation Transitions
-Establish new objects, identities, or agents:  
+Establish new objects, identities, or agents:
 - Bind origin data  
 - Generate initial lineage  
-- Create canonical “first state”  
+- Create first canonical state  
 
 ### 33.4.2 Mutation Transitions
-Modify existing state:  
-- Apply legal state transformations  
-- Preserve prior state immutability  
+Modify existing state:
+- Apply lawful transformations  
+- Preserve historical immutability  
 - Update lineage and hashes  
 
 ### 33.4.3 Activation / Deactivation
-Toggle state, capabilities, permissions, or systems:  
-- Activate contexts  
-- Suspend roles or domains  
-- Enable or disable agents  
+Toggle state or authority:
+- Activate contexts or domains  
+- Suspend roles, permissions, or agents  
 
 ### 33.4.4 Custody Transitions (L21)
-Transfer control, ownership, or operational authority:  
-- Require full chain-of-custody tracking  
-- Require explicit authenticated handoffs  
+Transfer control or ownership:
+- Require authenticated handoff  
+- Preserve full chain-of-custody  
 
 ### 33.4.5 Delegation Transitions (L30)
-Grant or revoke delegated authority:  
-- Update responsibility and capability chains  
+Grant or revoke delegated authority:
+- Update capability and responsibility chains  
 - Bind delegation provenance  
 
 ### 33.4.6 Governance Transitions (L29)
-Apply governance-induced changes:  
-- Override or impose rules  
-- Modify policy or system-level parameters  
+Apply governance-directed changes:
+- Override rules  
+- Enforce policy or system parameters  
 
 ### 33.4.7 Agent Transitions (ADT/MAIAi)
-Adjust agent internal state or autonomy:  
+Adjust agent state or autonomy:
 - Capability ceilings  
 - Constraint layers  
-- Mode switching  
+- Execution modes  
 
 ### 33.4.8 Federated Transitions
-Synchronize or translate transitions across substrate boundaries:  
-- Require cross-domain proofs  
-- Record federated provenance markers  
+Cross-substrate synchronization:
+- Require federated proofs  
+- Record cross-domain provenance markers  
 
 ## 33.5 Transition Lifecycle
 
 ### 33.5.1 Initiation
-Actor forms transition intent and attaches required proofs.
+Actor declares intent and attaches required proofs.
 
-### 33.5.2 Pre-Validation (Safety Check)
-System checks:
+### 33.5.2 Pre-Validation (Safety Gate)
+System evaluates:
 - Constraints (L26, L31)  
-- Permissions/capabilities (L22, L23)  
+- Permissions and capabilities (L22–L23)  
 - Context windows (L25)  
 - Governance boundaries (L29)  
 
-If failed → transition is blocked.
+Failure blocks the transition.
 
 ### 33.5.3 Validation (L27)
-Logical, structural, legal correctness.
+Structural, logical, and legal correctness.
 
 ### 33.5.4 Verification (L28)
-Cryptographic and truth-checking:
+Cryptographic truth checks:
 - Signatures  
-- Hashes  
-- Causal and temporal consistency  
+- Hash integrity  
+- Temporal and causal alignment  
 - Provenance continuity  
 
 ### 33.5.5 Execution
-Apply the state delta to produce new provisional state.
+Apply the state delta to produce a provisional new state.
 
 ### 33.5.6 Canonicalization
 Transition becomes canonical only if:
 - All validations succeed  
 - All verifications succeed  
-- Governance boundaries permit  
+- Governance permits  
 - Provenance insertion succeeds  
 - No higher-order constraints are violated  
 
 ### 33.5.7 Finalization
-Transition is now permanent and non-rewriteable.
+Canonical transition becomes permanent and non-rewriteable.
 
 ## 33.6 Forbidden Transitions
-The system must reject:
-- Any transition without identity or signatures  
-- Any transition violating mutability (L13)  
+The substrate must reject:
+- Unsigned or unauthenticated transitions  
+- Mutability violations (L13)  
 - Retroactive or backdated transitions  
-- Causal impossibilities or loops  
-- Temporal order violations (L14)  
-- Missing or broken provenance  
+- Causal loops or impossibilities  
+- Temporal violations (L14)  
+- Broken provenance chains  
 - Authority impersonation  
-- ADT/MAIAi transitions exceeding autonomy  
-- Delegations that violate governance  
+- Agent actions exceeding autonomy  
+- Governance-violating delegations  
 
 ## 33.7 Transition Ordering Rules
 
-### 33.7.1 Temporal Order (L14)
-All transitions must obey:
-- Time windows  
-- Expiration conditions  
-- Clock monotonicity  
+### 33.7.1 Temporal Ordering (L14)
+Transitions must respect:
+- Validity windows  
+- Expiration rules  
+- Monotonic clocks  
 
-### 33.7.2 Causal Order (L15)
-Transition must:
+### 33.7.2 Causal Ordering (L15)
+Transitions must:
 - Reference valid parents  
-- Maintain DAG structure  
+- Preserve DAG structure  
 - Avoid cycles  
 
 ### 33.7.3 Cross-Domain Ordering
 Federated transitions must:
 - Provide synchronization proofs  
-- Map causality across boundaries  
-- Preserve ordering semantics  
+- Preserve ordering semantics across domains  
 
 ## 33.8 Agent (ADT/MAIAi) Transition Rules
 
@@ -206,39 +204,39 @@ Federated transitions must:
 Agents may propose transitions only when:
 - Within capability bounds (L23)  
 - Within permission ceilings (L22)  
-- Constraints allow (L26)  
-- Governance permits  
+- Constraints permit (L26)  
+- Governance allows  
 
 ### 33.8.2 Execution Limits
 Agents may execute transitions only when:
-- Supervision conditions are satisfied  
+- Supervision conditions are met  
 - Risk thresholds are not exceeded  
 - Required attestations are produced  
 
 ### 33.8.3 Escalation
-Agents must escalate instead of guessing when:
-- Preconditions unclear  
+Agents must escalate rather than guess when:
+- Preconditions are unclear  
 - Constraint ambiguity exists  
-- High-risk transition detected  
+- High-risk transitions are detected  
 
 ## 33.9 Transition Behavior in Undo (L16) & Recovery (L17)
 
 ### Undo
-- Reverts to prior canonical state  
-- Must maintain lineage  
-- Must verify cryptographic continuity  
+- Reverts to the prior canonical state  
+- Preserves lineage  
+- Verifies cryptographic continuity  
 
 ### Recovery
-- Reconstructs the canonical transition sequence  
+- Reconstructs verified transition sequences  
 - Eliminates noncanonical forks  
-- Replays only verified transitions  
+- Replays only validated transitions  
 
 ## 33.10 Observability & Reporting
 The substrate must expose:
 - Transition logs  
 - Transition lineage graphs  
-- Diff tools (before/after state)  
-- Governance-induced transitions  
+- Before/after state diffs  
+- Governance-induced transition views  
 - AI/ADT transition traces  
 - Anomaly and violation reports  
 
@@ -246,47 +244,47 @@ Auditors must reconstruct:
 - Why transitions occurred  
 - How they were validated  
 - Whether governance was followed  
-- Whether actors behaved within constraints  
+- Whether actors remained within constraints  
 
 ## 33.11 Interaction With Other Layers
-- **L11** — provides cryptographic primitives for transitions.  
-- **L12** — ensures deterministic transition evaluation.  
-- **L13** — governs legality of state changes.  
-- **L14** — provides temporal ordering rules.  
-- **L15** — provides causal ordering rules.  
-- **L16** — defines undo behavior.  
-- **L17** — defines recovery behavior.  
-- **L18** — ties transitions into provenance.  
-- **L19** — audits transitions.  
-- **L20** — provides attestations for transitions.  
-- **L21** — governs custody transitions.  
-- **L22** — permissions required for transitions.  
-- **L23** — capabilities required.  
-- **L24** — accountability for transition outcomes.  
-- **L25** — context propagation into transitions.  
-- **L26** — agent constraint compliance.  
-- **L27** — transition validation.  
-- **L28** — transition verification.  
-- **L29** — governance influence on transitions.  
-- **L30** — delegation transitions.  
-- **L31** — constraints governing transitions.  
-- **L32** — how transitions create new state.  
+- **L11** — cryptographic primitives  
+- **L12** — deterministic evaluation  
+- **L13** — mutability legality  
+- **L14** — temporal ordering  
+- **L15** — causal ordering  
+- **L16** — undo handling  
+- **L17** — recovery handling  
+- **L18** — provenance anchoring  
+- **L19** — auditing  
+- **L20** — attestations  
+- **L21** — custody transitions  
+- **L22** — permissions  
+- **L23** — capabilities  
+- **L24** — accountability  
+- **L25** — context propagation  
+- **L26** — agent constraints  
+- **L27** — validation  
+- **L28** — verification  
+- **L29** — governance  
+- **L30** — delegation  
+- **L31** — constraints  
+- **L32** — state creation  
 
 ## 33.12 Invariants
-1. TRANSITION_AUTHENTIC — must be signed, verified, and traceable.  
-2. TRANSITION_ORDERED — must follow temporal and causal rules.  
-3. TRANSITION_SAFE — must satisfy all constraints.  
-4. TRANSITION_PROVENANCED — must enter canonical lineage.  
-5. TRANSITION_NONREVISION — cannot be rewritten once canonical.  
-6. TRANSITION_CONTEXTUAL — context must be applied at evaluation time.  
-7. TRANSITION_DETERMINISTIC — must produce deterministic results.  
+1. TRANSITION_AUTHENTIC — signed, verified, traceable.  
+2. TRANSITION_ORDERED — temporal and causal compliance.  
+3. TRANSITION_SAFE — all constraints satisfied.  
+4. TRANSITION_PROVENANCED — enters canonical lineage.  
+5. TRANSITION_FINAL — non-rewriteable once canonical.  
+6. TRANSITION_CONTEXTUAL — evaluated within context.  
+7. TRANSITION_DETERMINISTIC — identical input yields identical outcome.  
 
 ## 33.13 Informative Guidance
 Treat transitions as atomic, verifiable units of change.  
 AI/ADT transitions require heightened scrutiny.  
 Federated transitions must avoid state drift.  
-Transition storms (rapid bursts) should trigger risk checks.  
-Canonicalization should remain conservative and safety-focused.  
+Transition storms should trigger risk analysis.  
+Canonicalization should remain conservative and safety-first.
 
 ---
 Return to Navigation:
