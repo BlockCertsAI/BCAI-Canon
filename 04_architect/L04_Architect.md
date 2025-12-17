@@ -3,184 +3,155 @@ CANONICAL: TRUE
 LAYER: L04
 AUTO-TOC: ENABLED
 VERSION: 1.0
-PURPOSE: Canon rule file for the Agentic Digital Twin (ADT) layer.
+PURPOSE: Canon rule file for the Architect orchestration layer.
 NOTES:
  - Do not remove this header.
- - This file defines canonical rules for agent mediation and execution authority.
+ - This file defines canonical orchestration and execution planning rules.
 -->
 
-## L04 — ADT (Agentic Digital Twin)
+## L04 — Architect (Orchestration Layer)
 
-The Agentic Digital Twin (ADT) is the substrate’s **identity-bound agent layer**.  
-It mediates between human intent, authenticated intelligence (MAIAi), and substrate execution.
+The Architect is the substrate’s **orchestration and execution-planning layer**.
 
-ADT answers the question:  
-**“How does a verified identity safely express intent, delegate authority, and act within the substrate?”**
+It translates validated intent into **ordered, constraint-compliant execution plans**  
+without executing, mutating state, or exercising agency.
 
-ADT is the **only agent capable of initiating transitions** — always on behalf of a verified identity and never autonomously.
+The Architect answers the question:  
+**“What lawful sequence of actions could satisfy this intent?”**
 
 ---
 
 ## Core Principles
 
-### **1. Identity-Bound Agency**
-Every ADT instance MUST be bound to a single verified identity (L01).
+### **1. Non-Agency**
+The Architect has no identity, no intent, and no authority.
 
-ADT:
-- represents the identity’s intent,  
-- executes only within delegated scope,  
-- cannot exist independently of its identity.
+It does not:
+- originate actions  
+- express goals  
+- exercise discretion  
 
-ADT is not an AI.  
-ADT is an **agent of record**.
-
----
-
-### **2. Sole Transition Initiator**
-All substrate transitions MUST originate from an ADT.
-
-No other layer — including MAIAi — may initiate transitions.
-
-ADT is the **exclusive execution gateway** between intent and state change.
+It plans only.
 
 ---
 
-### **3. Delegated Authority Only**
-ADT authority is strictly delegated by the identity.
-
-Delegation MUST specify:
-- scope  
-- duration  
-- permissions  
-- revocation conditions  
-
-No implicit or inferred authority is permitted.
-
----
-
-### **4. Intelligence-Subordinate**
-ADT MAY consult MAIAi (L03) for:
-- semantic interpretation  
-- reasoning support  
-- constraint analysis  
-- anomaly signals  
-
-ADT MAY NOT:
-- defer authority to MAIAi  
-- act on MAIAi output without validation  
-- treat MAIAi recommendations as commands  
-
-MAIAi advises.  
-ADT decides.
-
----
-
-### **5. Constraint-Enforced Execution**
-Before executing any transition, ADT MUST ensure:
-- validated intent (L48)  
-- constraint compliance (L31)  
-- invariant preservation (L28)  
-- identity consistency  
-- domain authorization  
-
-If any check fails, ADT MUST halt.
-
----
-
-## Functions of the ADT Layer
-
-### **1. Intent Expression**
-ADT is the canonical interface through which identity intent is expressed.
+### **2. Non-Execution**
+The Architect does not execute transitions.
 
 It:
-- receives human instructions,  
-- structures intent formally,  
-- submits intent for validation,  
-- binds intent to identity.
+- proposes execution sequences  
+- orders dependencies  
+- resolves routing and handoffs  
+
+Execution is performed exclusively by **L05 Deterministic Execution**.
 
 ---
 
-### **2. Delegation Management**
-ADT manages:
-- scoped autonomy  
-- task-specific permissions  
-- revocation and expiry  
-- fallback behaviors  
+### **3. Determinism-Preserving**
+Given identical:
+- validated intent  
+- current state  
+- constraints  
 
-Delegation is explicit, auditable, and reversible.
+the Architect MUST produce:
+- the same execution plan  
+- with the same ordering and dependencies  
 
----
-
-### **3. Transition Execution**
-ADT prepares and submits transitions to the Architect (L45) only after:
-- MAIAi reasoning checks (L03),  
-- constraint validation (L31),  
-- invariant confirmation (L28).
-
-ADT does not seal transitions — it proposes them.
+Non-deterministic planning is prohibited.
 
 ---
 
-### **4. Identity Protection**
-ADT protects identity by:
-- preventing over-delegation,  
-- blocking unauthorized actions,  
-- enforcing revocation,  
-- halting on ambiguity or coercion signals.
+### **4. Constraint-Respecting**
+All plans MUST respect:
+- constraints (L31)  
+- invariants (L28)  
+- permissions and delegation (L30)  
+- identity bindings (L01 / L06)  
+
+If no lawful plan exists, the Architect MUST fail deterministically.
 
 ---
 
-### **5. Autonomy Containment**
-When autonomy is delegated:
-- ADT operates within strict bounds,  
-- all actions remain attributable,  
-- autonomy is revocable at any time.
+## Functions of the Architect
 
-Unbounded autonomy is prohibited.
+### **1. Execution Plan Construction**
+The Architect decomposes validated intent into:
+- ordered execution steps  
+- explicit dependencies  
+- required execution contexts  
+
+Each step must be independently executable by L05.
 
 ---
 
-## What ADT Cannot Do
+### **2. Dependency Resolution**
+The Architect ensures:
+- correct causal ordering  
+- no circular dependencies  
+- proper handoff between domains  
 
-ADT MUST NOT:
-- create or modify identity  
-- override constraints or invariants  
-- bypass intent validation  
-- act without attribution  
-- expand its own authority  
+Unresolvable dependency graphs MUST fail.
+
+---
+
+### **3. Routing and Context Assignment**
+The Architect assigns:
+- execution domains  
+- routing paths (CSR)  
+- required execution environments  
+
+Routing decisions are canonical and reproducible.
+
+---
+
+### **4. Plan Validation**
+Before submission, the Architect validates that:
+- all steps are lawful  
+- all constraints are satisfied  
+- execution is possible without ambiguity  
+
+Invalid plans MUST NOT be emitted.
+
+---
+
+## What the Architect Cannot Do
+
+The Architect MUST NOT:
+- modify state  
+- execute transitions  
+- override constraints  
+- infer or alter intent  
+- substitute for ADT or MAIAi  
 - seal events  
-- operate without human-origin authority  
 
-ADT is powerful, but **never sovereign**.
+It is structural, not authoritative.
 
 ---
 
 ## Interaction With Other Layers
 
-- **L01 — Identity:** ADT is identity-bound and non-transferable.  
-- **L03 — MAIAi:** ADT consumes reasoning, not authority.  
-- **L28 — Invariants:** All transitions preserve invariants.  
-- **L31 — Constraints:** All actions are constraint-validated.  
-- **L45 — Architect:** ADT submits transitions for orchestration.  
-- **L48 — Intent Validation:** ADT requires validated intent.  
-- **L51 — Sealing:** ADT does not seal events.
+- **L03 — MAIAi:** May assist in analysis, not decision-making  
+- **L05 — Execution:** Receives execution plans  
+- **L06 — ADT:** Supplies validated intent  
+- **L07 — CSR:** Receives routing instructions  
+- **L31 — Constraints:** Enforced during plan construction  
 
 ---
 
-## Outcomes of the ADT Layer
+## Result
 
-- Identity gains safe, scalable agency  
-- AI is prevented from acting independently  
-- Execution authority is unified and auditable  
-- Autonomy is possible without loss of sovereignty  
-- Humans remain the ultimate decision-makers  
-- Every action has a clear actor of record  
+The Architect ensures that:
+- execution is orderly  
+- dependencies are explicit  
+- lawful paths are enforced  
+- complexity is handled without agency  
 
-ADT enables automation **without surrendering control**.
+Without the Architect, execution becomes ad-hoc.  
+With it, the substrate remains **predictable, lawful, and sovereign**.
 
 ---
 
 ## Return to Navigation
-- [Root Specification](../CANON_ROOT.md)  
-- [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)  
+- [Root Specification](../CANON_ROOT.md)
+- [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
