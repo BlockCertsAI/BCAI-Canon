@@ -224,7 +224,7 @@ Auditors must reconstruct:
 
 ## 28.10 Invariants
 1. VERIFICATION_REQUIRED — nothing becomes canonical without verification.  
-2. VERIFICATION_COMPETE — all required proofs must be present.  
+2. VERIFICATION_COMPLETE — all required proofs must be present.  
 3. VERIFICATION_TRUTHFUL — verification must be cryptographically sound.  
 4. VERIFICATION_TRACEABLE — all verification events must appear in provenance.  
 5. VERIFICATION_NONREPUDIABLE — results must be signed and permanent.  
