@@ -1,231 +1,186 @@
 <!--
 CANONICAL: TRUE
-LAYER: L4
+LAYER: L04
 AUTO-TOC: ENABLED
 VERSION: 1.0
-PURPOSE: Canon rule file for this Sovereign Substrate layer.
+PURPOSE: Canon rule file for the Agentic Digital Twin (ADT) layer.
 NOTES:
  - Do not remove this header.
- - This file defines canonical rules for this substrate layer.
+ - This file defines canonical rules for agent mediation and execution authority.
 -->
 
-## L04 Architect
+## L04 — ADT (Agentic Digital Twin)
 
-The Architect is the substrate’s **deterministic execution and enforcement engine**.  
-It is not an AI, not an agent, and not a decision-maker.  
-It is the *mechanical executor* of truth — the component that determines whether transitions are valid, safe, consistent, and permitted before they are admitted into state.
+The Agentic Digital Twin (ADT) is the substrate’s **identity-bound agent layer**.  
+It mediates between human intent, authenticated intelligence (MAIAi), and substrate execution.
 
-The Architect answers the question:  
-**“What enforces the rules, guarantees determinism, and ensures the substrate evolves correctly?”**
+ADT answers the question:  
+**“How does a verified identity safely express intent, delegate authority, and act within the substrate?”**
 
-Everything in the substrate must ultimately pass through the Architect.
+ADT is the **only agent capable of initiating transitions** — always on behalf of a verified identity and never autonomously.
 
 ---
 
 ## Core Principles
 
-### **1. Deterministic Execution**
-Given identical inputs, every Architect instance must produce the same output on any node, in any domain, at any time.
+### **1. Identity-Bound Agency**
+Every ADT instance MUST be bound to a single verified identity (L01).
 
-No randomness.  
-No probability.  
-No variance.
+ADT:
+- represents the identity’s intent,  
+- executes only within delegated scope,  
+- cannot exist independently of its identity.
 
----
-
-### **2. Rule Supremacy**
-The Architect does not interpret preferences or intentions.  
-It enforces:
-- constraints (L31),  
-- identity validity (L01),  
-- authority limits (L21),  
-- delegation rules (L30),  
-- semantic correctness (via L03 MAIAi),  
-- domain invariants (L28),  
-- safety guarantees (L50),  
-- finality and sealing (L51).
-
-If any rule fails, the transition fails — automatically and globally.
+ADT is not an AI.  
+ADT is an **agent of record**.
 
 ---
 
-### **3. No Autonomous Behavior**
-The Architect:
-- cannot create transitions  
-- cannot modify transitions  
-- cannot alter state without a valid transition  
-- cannot execute on its own initiative  
-- cannot override human or domain rules  
+### **2. Sole Transition Initiator**
+All substrate transitions MUST originate from an ADT.
 
-The Architect is *pure enforcement*, not agency.
+No other layer — including MAIAi — may initiate transitions.
+
+ADT is the **exclusive execution gateway** between intent and state change.
 
 ---
 
-### **4. Immutable Discipline**
-The Architect preserves:
-- causal order  
-- lineage integrity  
-- state consistency  
-- sealing correctness  
-- invariants across domains  
+### **3. Delegated Authority Only**
+ADT authority is strictly delegated by the identity.
 
-It cannot be bypassed, ignored, or overridden.
+Delegation MUST specify:
+- scope  
+- duration  
+- permissions  
+- revocation conditions  
 
----
-
-## Functions of the Architect
-
-### **1. Transition Intake**
-The Architect receives transitions from ADT (L05) and performs the full lifecycle:
-
-- identity check  
-- authority validation  
-- delegation check  
-- constraint scoring  
-- semantic verification via MAIAi  
-- domain invariants  
-- safety check  
-- lineage & causal ordering  
-- sealing readiness  
-
-Only after passing *all* steps can a transition proceed.
+No implicit or inferred authority is permitted.
 
 ---
 
-### **2. Deterministic State Mutation**
-When a transition is valid, the Architect applies the state mutation:
+### **4. Intelligence-Subordinate**
+ADT MAY consult MAIAi (L03) for:
+- semantic interpretation  
+- reasoning support  
+- constraint analysis  
+- anomaly signals  
 
-- updates domain state  
-- updates global lineage index  
-- records causal chain extension  
-- prepares sealing metadata  
-- distributes results across nodes  
+ADT MAY NOT:
+- defer authority to MAIAi  
+- act on MAIAi output without validation  
+- treat MAIAi recommendations as commands  
 
-All nodes must compute the same mutation.
-
----
-
-### **3. Failure Handling**
-If a transition violates any rule:
-
-- Architect rejects it  
-- generates a structured diagnostic  
-- emits an anomaly beacon to MAIAi  
-- does **not** mutate state  
-- preserves system safety  
-
-Invalid transitions leave no trace in state.
+MAIAi advises.  
+ADT decides.
 
 ---
 
-### **4. Enforcement of Safety (L50)**
-If an operation is hazardous or ambiguous:
+### **5. Constraint-Enforced Execution**
+Before executing any transition, ADT MUST ensure:
+- validated intent (L48)  
+- constraint compliance (L31)  
+- invariant preservation (L28)  
+- identity consistency  
+- domain authorization  
 
-- Architect halts execution  
-- quarantines the transition  
-- triggers MAIAi explanation  
-- awaits human validation  
-
-The Architect defaults to *safety-first*, not execution-first.
-
----
-
-### **5. Sealing Preparation (L51)**
-The Architect prepares transitions for sealing by:
-
-- assembling proof bundles  
-- verifying lineage continuity  
-- confirming determinism  
-- providing sealing metadata  
-- ensuring global agreement  
-
-The Architect does not seal —  
-it ensures *only sealable transitions reach sealing.*
+If any check fails, ADT MUST halt.
 
 ---
 
-### **6. Cross-Domain Harmonization**
-For multi-domain actions, the Architect:
+## Functions of the ADT Layer
 
-- validates each domain’s invariants  
-- synchronizes state expectations  
-- ensures governance rules match  
-- prevents semantic drift  
-- coordinates multi-domain sealing requests  
+### **1. Intent Expression**
+ADT is the canonical interface through which identity intent is expressed.
 
-Unresolved conflicts cause immediate rejection.
-
----
-
-### **7. No SVS Access**
-The Architect cannot access, inspect, decrypt, or traverse SVS (L02).  
-It evaluates proofs, not data.
+It:
+- receives human instructions,  
+- structures intent formally,  
+- submits intent for validation,  
+- binds intent to identity.
 
 ---
 
-## What the Architect Cannot Do
+### **2. Delegation Management**
+ADT manages:
+- scoped autonomy  
+- task-specific permissions  
+- revocation and expiry  
+- fallback behaviors  
 
-The Architect is powerful, but limited by design:
+Delegation is explicit, auditable, and reversible.
 
-- cannot infer user intent  
-- cannot change semantics  
-- cannot bypass constraints  
-- cannot read SVS contents  
-- cannot act without a transition  
-- cannot rewrite history  
-- cannot accept transitions lacking identity  
-- cannot modify sealed states  
-- cannot self-modify or evolve  
+---
 
-The Architect is the substrate’s **unchangeable rule enforcer**.
+### **3. Transition Execution**
+ADT prepares and submits transitions to the Architect (L45) only after:
+- MAIAi reasoning checks (L03),  
+- constraint validation (L31),  
+- invariant confirmation (L28).
+
+ADT does not seal transitions — it proposes them.
+
+---
+
+### **4. Identity Protection**
+ADT protects identity by:
+- preventing over-delegation,  
+- blocking unauthorized actions,  
+- enforcing revocation,  
+- halting on ambiguity or coercion signals.
+
+---
+
+### **5. Autonomy Containment**
+When autonomy is delegated:
+- ADT operates within strict bounds,  
+- all actions remain attributable,  
+- autonomy is revocable at any time.
+
+Unbounded autonomy is prohibited.
+
+---
+
+## What ADT Cannot Do
+
+ADT MUST NOT:
+- create or modify identity  
+- override constraints or invariants  
+- bypass intent validation  
+- act without attribution  
+- expand its own authority  
+- seal events  
+- operate without human-origin authority  
+
+ADT is powerful, but **never sovereign**.
 
 ---
 
 ## Interaction With Other Layers
 
-### **L01 Identity**
-Architect verifies identity grounding for every transition.
-
-### **L02 SVS**
-Architect never sees private data — only verifiable proofs.
-
-### **L03 MAIAi**
- MAIAi supplies semantic analysis; Architect enforces what MAIAi asserts.
-
-### **L05 ADT**
-ADT submits transitions; Architect validates them.
-
-### **L31 Constraints**
-Architect enforces constraints without exception.
-
-### **L37 Lineage**
-Architect ensures causal ordering.
-
-### **L50 Safety**
-Architect halts unsafe transitions.
-
-### **L51 Sealing**
-Architect certifies transitions as seal-ready.
+- **L01 — Identity:** ADT is identity-bound and non-transferable.  
+- **L03 — MAIAi:** ADT consumes reasoning, not authority.  
+- **L28 — Invariants:** All transitions preserve invariants.  
+- **L31 — Constraints:** All actions are constraint-validated.  
+- **L45 — Architect:** ADT submits transitions for orchestration.  
+- **L48 — Intent Validation:** ADT requires validated intent.  
+- **L51 — Sealing:** ADT does not seal events.
 
 ---
 
-## Outcomes of the Architect Layer
+## Outcomes of the ADT Layer
 
-- transitions become predictable and safe  
-- determinism replaces uncertainty  
-- semantic drift is eliminated  
-- unauthorized actions cannot occur  
-- governance is enforced at the substrate level  
-- no node can diverge from global truth  
-- lineage integrity is preserved indefinitely  
-- sealing is always correct and conflict-free  
+- Identity gains safe, scalable agency  
+- AI is prevented from acting independently  
+- Execution authority is unified and auditable  
+- Autonomy is possible without loss of sovereignty  
+- Humans remain the ultimate decision-makers  
+- Every action has a clear actor of record  
 
-The Architect is the **mechanical heart** of the Sovereign Substrate —  
-the enforcer of truth, integrity, and safety across all time.
+ADT enables automation **without surrendering control**.
 
 ---
 
-## Return to Navigation:
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)  
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)  
 - [Human Navigation Map](../CANON_NAV.md)
