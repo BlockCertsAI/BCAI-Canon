@@ -274,6 +274,32 @@ foundation upon which all authenticated execution depends.
 
 ---
 
+## Real-World Capability Closure (Non-Normative)
+
+The Identity Layer enables real-world systems to eliminate fraud,
+impersonation, and ambiguity at the root of digital interaction.
+
+When enforced as defined in L01, this layer makes the following
+capabilities possible **by construction**, not by policy:
+
+- One-time, lifetime identity verification without repeated KYC cycles
+- Elimination of fake accounts, bots, and Sybil attacks at the substrate level
+- Cryptographically provable attribution for every action, message, or transaction
+- Delegated machine agents (AI, automation, devices) acting with bounded authority
+- Portable identity usable across governments, enterprises, healthcare, finance, and voting systems
+- Audit-grade identity trails suitable for regulators without exposing private data
+- Secure replacement of passwords, usernames, and centralized SSO systems
+- Identity-safe AI execution where every model action is attributable and reversible
+
+In real-world terms, L01 allows societies and institutions to
+**trust who is acting without trusting the platform they are acting on**.
+
+This layer transforms identity from a revocable service
+into a permanent, user-owned, cryptographically enforced foundation
+for the authenticated internet.
+
+---
+
 Return to Navigation:
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
