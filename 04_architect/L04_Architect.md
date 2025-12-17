@@ -114,6 +114,37 @@ Invalid plans MUST NOT be emitted.
 
 ---
 
+## Real-World Capability Enabled by the Architect
+
+The Architect enables **complex, regulated, multi-step real-world workflows**  
+without granting authority, autonomy, or discretion to AI or agents.
+
+Specifically, the Architect allows the substrate to:
+
+- Orchestrate multi-domain workflows  
+  (identity, vaults, permissions, governance, payments, compliance)  
+  without any domain surrendering sovereignty.
+
+- Translate human-scale intent into machine-scale execution  
+  by expanding intent into lawful, ordered steps  
+  without inventing goals or interpreting policy.
+
+- Provide regulatory-grade explainability of *how* outcomes occurred  
+  by producing explicit execution plans with ordered dependencies  
+  suitable for audit, review, and replay.
+
+- Prevent partial or inconsistent outcomes  
+  by ensuring that failure occurs at the planning stage,  
+  not mid-execution or after state mutation.
+
+- Enable enterprise-grade automation  
+  (onboarding, credential issuance, access provisioning, compliance enforcement)  
+  without embedding logic in applications or humans.
+
+The Architect increases **capability without increasing authority**.
+
+---
+
 ## What the Architect Cannot Do
 
 The Architect MUST NOT:
