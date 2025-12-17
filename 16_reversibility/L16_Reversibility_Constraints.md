@@ -73,6 +73,8 @@ A **Compensating Event** is a forward-applied canonical action that:
 
 Compensation MUST be used for all irreversible effects that cannot be directly rolled back.
 
+---
+
 ### 16.3.2 Reversal Event (Direct Rollback)
 
 A **Reversal Event**:
@@ -80,9 +82,11 @@ A **Reversal Event**:
 - Reverts a mutable state to a prior known-good state  
 - MUST reference a state snapshot or anchor  
 - MUST comply with idempotence guarantees (L12)  
-- MUST be allowed by the object’s mutability class (L13.3)  
+- MUST be allowed by the object’s mutability class (L13)  
 
 Reversal events may be restricted to specific object types or security classes.
+
+---
 
 ### 16.3.3 Revocation Event
 
@@ -106,13 +110,8 @@ A **Revocation Event** MUST:
 L16 defines three valid anchor types for rollback operations:
 
 1. **Canonical State Snapshot**  
-   A system-level baseline defined by Architect policy.
-
 2. **Pre-Event State Hash**  
-   A hash of the last known-valid version of the object.
-
-3. **Causal Root Reference**  
-   A valid ancestor event that represents a stable baseline.
+3. **Causal Root Reference**
 
 If an anchor cannot be validated under L11–L15, rollback MUST NOT proceed.
 
@@ -123,171 +122,131 @@ If an anchor cannot be validated under L11–L15, rollback MUST NOT proceed.
 Before any rollback or undo event is accepted, Canon MUST validate:
 
 ### 16.5.1 Authority Validation
-- The initiating agent MUST have a reversal/compensation role.  
-- Critical undo operations MUST include CSR authorization.
+- Initiator holds reversal authority  
+- CSR approval for Critical undo  
 
 ### 16.5.2 Causal Compatibility  
-- Undo MUST reference the event to be reversed.  
-- Undo MUST NOT introduce cycles (L15).  
-- Undo MUST define dependency type: `REVERSAL_OF`, `COMPENSATION_FOR`, or `REVOCATION_OF`.
+- Explicit reference to target event  
+- No cycle creation  
+- Valid dependency type  
 
 ### 16.5.3 Mutability Constraints  
-- Only mutable state may be reversed.  
-- Immutable effects require a Compensating Event.  
-- Attempts to reverse immutable state MUST be rejected.
+- Immutable state requires compensation  
+- Direct reversal only for mutable state  
 
 ### 16.5.4 Temporal Consistency  
-- Undo MUST occur after the event it reverses.  
-- Undo MUST declare a valid temporal anchor window (L14).
+- Undo occurs after target event  
+- Valid temporal window  
 
 ### 16.5.5 Integrity Validation  
-Undo MUST include:
-
 - Parent event hash  
-- Object hash before and after undo  
-- Required signatures (per L11)  
+- Before/after object hashes  
+- Required signatures  
 - Chain-of-custody metadata  
-
-Events failing these checks MUST be rejected or deferred.
 
 ---
 
 ## 16.6 Canonical Undo Algorithm (Normative)
 
-A rollback sequence is valid if and only if:
+A rollback is valid iff:
 
-1. The targeted event exists and is fully committed.  
-2. The targeted event is mutable OR compensable.  
-3. The initiating agent is authorized.  
-4. A valid anchor point is identified.  
-5. The undo event is constructed referencing the target.  
-6. The undo action is evaluated under L12–L15.  
-7. The undo passes integrity validation.  
+1. Target event exists and is committed  
+2. Target is mutable or compensable  
+3. Initiator is authorized  
+4. Anchor is valid  
+5. Undo event references target  
+6. Undo passes L12–L15  
+7. Integrity validation succeeds  
 
-If all conditions are satisfied:
-
-- The undo event becomes part of canonical history.  
-- The affected object returns to a stable canonical state.  
-- Downstream dependencies MAY require additional compensations.
+Undo becomes canonical history; dependencies may require compensation.
 
 ---
 
 ## 16.7 Cascading Undo & Chain Reconciliation
 
-When reversing a Critical event, Canon MUST:
+For Critical events, Canon MUST:
 
-- Walk the causal DAG (L15)  
-- Identify dependent events  
-- Classify them as:
-  - **REQUIRES_COMPENSATION**
-  - **REQUIRES_REEVALUATION**
-  - **REMAINS_VALID**
+- Traverse causal DAG  
+- Classify dependent events  
+- Apply compensations or revalidation  
 
-Architect MAY then:
-
-- Apply a chain-wide restorative sequence  
-- Invalidate compromised paths  
-- Generate new anchor baselines  
-
-Cascading rollback MUST preserve invariants.
+Invariants MUST hold.
 
 ---
 
-## 16.8 Idempotence Guarantees for Undo (L12 Interaction)
+## 16.8 Idempotence Guarantees for Undo
 
 Undo events MUST be idempotent:
 
-- Applying the same undo multiple times MUST NOT lead to divergence.  
-- Reversal actions MUST check current object state before executing.  
-- Compensation MUST NOT recursively re-trigger itself.
+- No duplicate effects  
+- State checked before execution  
+- No recursive compensation  
 
 ---
 
 ## 16.9 Observability & Auditing
 
-Canonical undo operations MUST expose:
+Undo operations MUST expose:
 
-- Complete rollback chain  
-- Before/after state hashes  
-- Integrity proofs  
-- Authority signatures  
-- CSR involvement where applicable  
+- Full rollback chain  
+- Before/after hashes  
+- Proofs and signatures  
+- CSR involvement  
 
-System logs MUST clearly mark:
-
-- Reversal events  
-- Compensation events  
-- Revocations  
-- Cascading adjustments  
-
-Auditors MUST be able to reconstruct the complete rollback path at any time.
+Rollback is always visible and auditable.
 
 ---
 
 ## 16.10 Prohibited Actions
 
-The following operations MUST NOT occur:
+MUST NOT:
 
-- Deleting historical events  
-- Mutating historical records  
-- Retroactively changing parent–child dependencies  
-- Time-reversing event sequences  
-- Silent rollbacks without exposure through Canon logs
+- Delete history  
+- Mutate historical records  
+- Rewrite dependencies  
+- Reverse time  
+- Perform silent rollback  
 
-Any attempt must be rejected and flagged as a violation.
+Violations MUST be flagged.
 
 ---
 
 ## 16.11 Invariants
 
-L16 MUST uphold:
-
 1. **HISTORY_IMMUTABLE**  
-   No historical record is altered or removed.
-
 2. **DETERMINISTIC_UNDO**  
-   Undo results are predictable and invariant.
-
 3. **CAUSAL_COMPATIBILITY**  
-   Undo does not break L15 causal chains.
-
 4. **ANCHOR_VALIDITY**  
-   Rollbacks only occur relative to validated anchors.
-
-5. **CRITICAL_CHAIN_PROTECTION**  
-   Critical undo forces downstream revalidation.
+5. **CRITICAL_CHAIN_PROTECTION**
 
 ---
 
 ## 16.12 Interaction With Other Layers
 
-- **L11 — Proof Primitives**  
-  Ensures all undo signatures and hashes are valid.
-
-- **L12 — Idempotence**  
-  Ensures undo events never create divergence.
-
-- **L13 — Mutability Constraints**  
-  Determines which events can be reversed vs. compensated.
-
-- **L14 — Temporal Rules**  
-  Ensures undo events occur after the event they reverse.
-
-- **L15 — Causality Chain**  
-  Ensures that undo actions reference prior events without breaking the DAG.
+- **L11 Proof Primitives**  
+- **L12 Idempotence**  
+- **L13 Mutability Constraints**  
+- **L14 Temporal Rules**  
+- **L15 Causality Chain**
 
 ---
 
-## 16.13 Informative Guidance
+## 16.13 Real-World Capability Enabled by Reversibility
 
-- Rollback SHOULD be rare; robust domain validation (L27+) SHOULD prevent most incorrect states.  
-- Architect MAY throttle or rate-limit reversals to prevent oscillation attacks.  
-- Systems SHOULD expose a diff tool for comparing pre- and post-undo states.
+Reversibility enables **legally defensible correction without erasing history**.
+
+It allows:
+- Financial systems to reverse erroneous transfers while preserving audit trails.
+- Governments to revoke credentials, access, or authority with provable cause and scope.
+- Enterprises to unwind contracts, permissions, or configurations safely after disputes or breaches.
+- Security teams to contain compromise by revoking effects without corrupting system truth.
+- Regulators and courts to see not just *what* was undone, but *why* and *by whom*.
+
+Reversibility turns error correction from a liability into a **governed, auditable process**.
 
 ---
 
----
-Return to Navigation:
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
