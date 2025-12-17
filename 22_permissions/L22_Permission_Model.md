@@ -78,136 +78,71 @@ Permission definitions must include:
 ## 22.4 Types of Permissions
 
 ### 22.4.1 Static Permissions
-Assigned at identity creation or organizational onboarding.  
-Examples: baseline read or inspection rights, non-critical queries.
+Assigned at identity creation or organizational onboarding.
 
 ### 22.4.2 Dynamic Permissions
-Condition-dependent permissions that may be granted:
-- Temporarily  
-- On-demand  
-- Based on context or risk level  
-
-Dynamic permissions must include activation and expiration events.
+Condition-dependent, time-bound permissions granted on demand.
 
 ### 22.4.3 Delegated Permissions
-Permissions granted to another actor by one holding authority.  
-Delegations must:
-- Reference the original permission  
-- Specify scope and expiration  
-- Be traceable in provenance (L18)  
+Permissions granted by an authorized actor to another, with explicit scope and expiration.
 
 ### 22.4.4 Derived Permissions
-Permissions inferred from role or domain-specific rules, but still explicit.  
-Derived permissions must not bypass identity or attestation requirements.
+Explicit permissions inferred from role or domain rules without bypassing proof requirements.
 
 ### 22.4.5 Emergency Permissions
-Temporary elevated permissions issued under exceptional conditions.  
-Emergency permissions must:
-- Be time-limited  
-- Be logged  
-- Require post-event audit (L19)  
+Temporary elevated permissions issued under exceptional conditions, always time-limited and audited.
 
 ### 22.4.6 AI/ADT Operational Permissions
-Define:
-- What an ADT or MAIAi may autonomously execute  
-- What human approvals are required  
-- Safe boundaries for automated action  
-These must be strict, traceable, and auditable.
+Strictly defined autonomous action boundaries for ADT and MAIAi agents.
 
 ## 22.5 Permission Granting Rules
-A permission may be granted only if:
-
-1. **Identity is authenticated** under Genesis-KYC.  
-2. **Authority to grant** is verified through attestations (L20).  
-3. **Scope is valid** for the granting actor.  
-4. **Action is legal** under mutability rules (L13).  
-5. **Temporal window is valid** (L14).  
-6. **Causal conditions are satisfied** (L15).  
-7. **Provenance chain is correct** (L18).  
-8. **Auditable records are generated** (L19).  
-
-Handoff rules (L21) apply when permission is transferred rather than granted.
+A permission may be granted only if identity, authority, scope, mutability, temporal validity, causality, provenance, and audit requirements are all satisfied.
 
 ## 22.6 Permission Use Rules
-Before executing an action, the substrate must verify:
-
-1. **Actor identity**  
-2. **Permission validity** (active, unexpired, not revoked)  
-3. **Scope compliance** (domain, object, level)  
-4. **Proof requirements** (attestations, custody, context) are met  
-5. **Temporal and causal alignment** with the action  
-6. **Absence of conflicts** (no mutually exclusive permissions)  
-7. **No superseding revocation**  
-
-If validation fails, the action must be rejected.
+Before execution, the substrate must validate identity, permission state, scope, required proofs, temporal and causal alignment, and absence of conflicts or revocations.
 
 ## 22.7 Permission Escalation
-Escalation occurs when:
-- Additional authority is needed  
-- Context changes (risk, urgency, jurisdiction)  
-- A higher-level actor approves elevation  
-
-Escalation must:
-- Be explicit  
-- Be recorded as a canonical event  
-- Have defined expiration  
-- Require proper attestations (L20)  
-- Trigger heightened auditing (L19)
+Escalation must be explicit, attested, time-limited, recorded as a canonical event, and subject to heightened audit.
 
 ## 22.8 Permission Revocation
-Permissions may be revoked if:
-- Keys or identities are compromised  
-- Actor becomes untrusted or suspended  
-- Policy or legal requirements change  
-- Misuse or anomaly is detected  
-- Governance orders revocation  
-
-Revocation must:
-- Reference the original permission  
-- Include authority justification  
-- Immediately deactivate the permission  
-- Trigger provenance updates  
-- Remain visible permanently  
+Revocation must reference the original permission, include authority justification, deactivate immediately, update provenance, and remain permanently visible.
 
 ## 22.9 Observability & Reporting
-The system must support:
-- Permission maps (who may do what)  
-- Delegation graphs  
-- Escalation histories  
-- Revocation timelines  
-- AI/ADT permission boundaries  
-- Contextual permission queries  
-
-Auditors must reconstruct:
-- Why permission existed  
-- When it was used  
-- Under what context  
-- Whether usage complied with canonical rules  
+The system must expose permission maps, delegation graphs, escalation histories, revocation timelines, AI/ADT boundaries, and contextual queries.
 
 ## 22.10 Interaction With Other Layers
-- L11 supplies cryptographic verification.  
-- L12 ensures deterministic replay of permission logic.  
-- L13 governs permissible mutations.  
-- L14 defines time windows.  
-- L15 enforces causal validity.  
-- L16 ensures permissions survive or adjust under undo logic.  
-- L17 ensures permissions remain valid after recovery.  
-- L18 binds permissions to provenance.  
-- L19 ensures permissions remain auditable.  
-- L20 supplies the attestations required for authorization.  
-- L21 governs handoff of permissions between actors.
+- **L11** cryptographic verification  
+- **L12** deterministic replay  
+- **L13** mutation legality  
+- **L14** temporal validation  
+- **L15** causal validity  
+- **L16–L17** undo and recovery  
+- **L18** provenance binding  
+- **L19** auditability  
+- **L20** authorization attestations  
+- **L21** permission handoffs  
 
 ## 22.11 Invariants
-1. PERMISSION_EXPLICIT — no implicit permissions.  
-2. PERMISSION_AUTHENTIC — identity and authority must be cryptographically proven.  
-3. PERMISSION_TRACEABLE — all permissions appear in provenance and audit chains.  
-4. PERMISSION_SCOPE_BOUND — cannot exceed its defined limits.  
-5. PERMISSION_REVOCABLE — any permission may be revoked.  
-6. PERMISSION_NONREPUDIABLE — usage and grant must be undeniable.  
-7. PERMISSION_CONTEXTUAL — permissions must match actor, environment, and object state.
+1. PERMISSION_EXPLICIT  
+2. PERMISSION_AUTHENTIC  
+3. PERMISSION_TRACEABLE  
+4. PERMISSION_SCOPE_BOUND  
+5. PERMISSION_REVOCABLE  
+6. PERMISSION_NONREPUDIABLE  
+7. PERMISSION_CONTEXTUAL  
 
-## 22.12 Informative Guidance
-Permissions should be defined narrowly and escalated only when required. Delegation should be explicit, short-lived, and traceable. AI/ADT permissions should be strict and enforceable. Periodic audits should reconcile permissions with actual usage and detect drift.
+## 22.12 Real-World Capability Enabled by Permissions
+
+Permissions enable **fine-grained, auditable access control without centralized administrators**.
+
+They allow:
+- Governments to enforce role-based authority with cryptographic proof instead of trust in institutions.
+- Enterprises to replace IAM systems with deterministic, cross-domain permission enforcement.
+- Healthcare and finance systems to grant time-bound, case-specific access without overexposure.
+- Supply chains to restrict who may modify records at each custody stage.
+- AI systems to act autonomously within provable, revocable boundaries defined by humans.
+
+Permissions transform access control from policy enforcement into **verifiable protocol truth**.
 
 ---
 Return to Navigation:
