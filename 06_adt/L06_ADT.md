@@ -1,15 +1,15 @@
 <!--
 CANONICAL: TRUE
-LAYER: L6
+LAYER: L06
 AUTO-TOC: ENABLED
 VERSION: 1.0
-PURPOSE: Canon rule file for this Sovereign Substrate layer.
+PURPOSE: Canon rule file for the Agentic Digital Twin (ADT) layer.
 NOTES:
   - Do not remove this header.
   - This file defines canonical rules for this substrate layer.
 -->
 
-## L06 Agentic Digital Twin (ADT)
+## L06 — Agentic Digital Twin (ADT)
 
 The Agentic Digital Twin (ADT) is the authenticated operational extension of a human’s genesis identity.  
 It acts as a **proxy agent** that performs permitted actions, manages domain interactions, submits transitions, and translates human intent into substrate-ready form — all under strict constraint and verification.
@@ -95,7 +95,7 @@ ADT attaches:
 - semantic metadata  
 - safety flags  
 
-MAIAi then evaluates meaning; the Architect validates correctness.
+MAIAi evaluates meaning; the Architect constructs execution plans.
 
 ---
 
@@ -187,6 +187,26 @@ ADT is a **mediator**, not a decision-maker.
 
 ---
 
+## Real-World Capability Enabled by ADT
+
+The ADT enables **human participation at scale** in complex, regulated digital systems without requiring technical expertise or direct key custody.
+
+Specifically, ADT allows:
+- Individuals and enterprises to interact with blockchain, AI, governance, and compliance systems  
+  without handling cryptographic primitives or protocol mechanics.
+- Secure delegation of authority to assistants, workflows, or organizations  
+  while retaining ultimate human control and revocation rights.
+- Safe cross-domain participation  
+  (identity, healthcare, finance, governance, enterprise operations)  
+  without data leakage or loss of sovereignty.
+- AI-assisted interaction  
+  where intelligence supports users but cannot act independently or override intent.
+
+ADT makes advanced digital infrastructure **usable by humans**,  
+without compromising security, privacy, or accountability.
+
+---
+
 ## Interaction With Other Layers
 
 ### **With L01 Identity**
@@ -199,7 +219,10 @@ ADT may request proofs but cannot access or interpret vault content.
 ADT supplies structured context; MAIAi ensures semantic correctness.
 
 ### **With L04 Architect**
-ADT submits transitions; Architect executes or rejects them.
+ADT submits transitions; the Architect plans lawful execution sequences.
+
+### **With L05 Execution**
+ADT-origin transitions are executed deterministically once approved.
 
 ### **With L28 Invariants**
 ADT must conform to domain-level invariants.
@@ -224,7 +247,7 @@ It inherits constraints and authority from the identity.
 ### **2. Operation**
 ADT acts only when triggered by:
 - human instruction  
-- domain workflow requiring user confirmation  
+- domain workflows requiring user confirmation  
 - delegated authorization  
 - verified system prompts requiring consent  
 
@@ -259,7 +282,7 @@ ensuring that participation in the substrate is safe, authenticated, and correct
 
 ---
 
-Return to Navigation:
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
