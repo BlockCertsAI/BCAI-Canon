@@ -147,7 +147,7 @@ Once final:
 - Transition becomes permanent record  
 - History cannot be rewritten  
 - Undo (L16) rewinds *from* finality but does not modify final truth  
-- Recovery (L17) reconstructs finality, not sidestep it  
+- Recovery (L17) reconstructs finality, not sidesteps it  
 
 ## 35.6 Forbidden Finality
 Finality cannot be granted if:
@@ -222,37 +222,37 @@ Auditors must reconstruct:
 - Whether system behaved deterministically  
 
 ## 35.11 Interaction With Other Layers
-- **L11** — finality relies on cryptographic binding.  
-- **L12** — ensures deterministic finality outcomes.  
-- **L13** — governs legality of finalized transformations.  
-- **L14** — enforces temporal finality constraints.  
-- **L15** — enforces causal finality constraints.  
-- **L16** — controls how finality behaves under undo.  
-- **L17** — controls recovery of final truth.  
-- **L18** — provenance captures finality commitment.  
-- **L19** — audits finality processes.  
-- **L20** — attestations required for some finalities.  
-- **L21** — custody finality rules.  
-- **L22** — permission implications.  
-- **L23** — capability implications.  
-- **L24** — accountability for finality outcomes.  
-- **L25** — context-dependent finality conditions.  
-- **L26** — constraint ceilings shaping finality.  
-- **L27** — finality requires valid objects.  
-- **L28** — finality requires verified objects.  
-- **L29** — governance can preempt or authorize finality.  
-- **L30** — delegation rules for finality authority.  
-- **L31** — global constraints on finality.  
-- **L32** — finality produces new canonical state.  
-- **L33** — transitions lead into finality.  
-- **L34** — consensus is the gatekeeper of finality.  
+- **L11** — cryptographic binding  
+- **L12** — deterministic outcomes  
+- **L13** — legality of finalized transformations  
+- **L14** — temporal constraints  
+- **L15** — causal constraints  
+- **L16** — undo behavior  
+- **L17** — recovery behavior  
+- **L18** — provenance commitments  
+- **L19** — auditing  
+- **L20** — attestations  
+- **L21** — custody finality  
+- **L22** — permission implications  
+- **L23** — capability implications  
+- **L24** — accountability  
+- **L25** — context-dependent finality  
+- **L26** — constraint ceilings  
+- **L27** — validation  
+- **L28** — verification  
+- **L29** — governance authority  
+- **L30** — delegation  
+- **L31** — global constraints  
+- **L32** — canonical state creation  
+- **L33** — transition inputs  
+- **L34** — consensus gating  
 
 ## 35.12 Invariants
 1. FINALITY_IMMUTABLE — final truths cannot be rewritten.  
-2. FINALITY_DETERMINISTIC — finality must yield the same result everywhere.  
+2. FINALITY_DETERMINISTIC — same evidence yields same result.  
 3. FINALITY_TRACEABLE — fully captured in provenance.  
 4. FINALITY_AUTHENTIC — based only on verified evidence.  
-5. FINALITY_SAFE — must preserve system stability.  
+5. FINALITY_SAFE — preserves system stability.  
 6. FINALITY_CONTEXTUAL — governed by context and policy windows.  
 7. FINALITY_ORDERED — bound to time, causality, and governance order.  
 
