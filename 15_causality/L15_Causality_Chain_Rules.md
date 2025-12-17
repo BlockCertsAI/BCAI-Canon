@@ -75,7 +75,7 @@ The resulting graph MUST remain acyclic under all valid operations.
 
 ## 15.4 Event Classification
 
-### 15.4.1 Root Events
+### **15.4.1 Root Events**
 
 A **Root Event** is an event that introduces new causal context.  
 Root Events MUST be limited to:
@@ -90,7 +90,9 @@ Root Events MUST include:
 - CSR authority reference where applicable.
 - Immutable rationale metadata.
 
-### 15.4.2 Derived Events
+---
+
+### **15.4.2 Derived Events**
 
 A **Derived Event** depends on one or more prior events.
 
@@ -100,7 +102,9 @@ Derived Events MUST:
 - Declare dependency types (e.g., READ_FROM, UPDATE_OF, COMPENSATION_FOR, REVOCATION_OF).
 - Comply with applicable mutability, temporal, and idempotence rules (L12–L14).
 
-### 15.4.3 Critical vs. Non-Critical Effects
+---
+
+### **15.4.3 Critical vs. Non-Critical Effects**
 
 Architect policy MAY classify effects as:
 
@@ -113,7 +117,7 @@ L15 MUST enforce stricter causality checks for Critical effects (§15.5.3).
 
 ## 15.5 Causality Validation Rules
 
-### 15.5.1 Basic Causality Checks
+### **15.5.1 Basic Causality Checks**
 
 For every event `E`, Canon MUST validate:
 
@@ -131,7 +135,9 @@ For every event `E`, Canon MUST validate:
 
 If any check fails, the event MUST be rejected or deferred (§15.6).
 
-### 15.5.2 Dependency Type Compatibility
+---
+
+### **15.5.2 Dependency Type Compatibility**
 
 For every `parent → child` relation, Canon MUST validate:
 
@@ -139,12 +145,9 @@ For every `parent → child` relation, Canon MUST validate:
 - Dependency does not violate mutability constraints (L13).
 - Dependency does not break idempotence expectations (L12).
 
-Examples:
+---
 
-- An event of type UPDATE_OF MUST reference a parent that is mutable and in a valid state for update.
-- An event of type COMPENSATION_FOR MUST reference a prior event that is compensable.
-
-### 15.5.3 Critical Effect Causality
+### **15.5.3 Critical Effect Causality**
 
 For Critical effects:
 
@@ -161,48 +164,43 @@ If any parent in a Critical chain becomes invalidated, Architect MUST:
 - Mark dependent Critical effects as **CAUSALLY_COMPROMISED**, and
 - Trigger compensating or rollback actions per policy.
 
-### 15.5.4 Multi-Parent Causality
+---
+
+### **15.5.4 Multi-Parent Causality**
 
 When events have multiple parents, Canon MUST:
 
 - Evaluate each parent independently against L12–L14.
-- Enforce any declared dependency mode:
-  - **ALL_OF**: All parents MUST be satisfied.
-  - **ANY_OF**: At least one parent MUST be satisfied.
-  - **QUORUM_OF(N, K)**: At least `K` of `N` parents MUST be satisfied.
+- Enforce declared dependency mode:
+  - **ALL_OF**
+  - **ANY_OF**
+  - **QUORUM_OF(N, K)**
 
-Dependency mode MUST be explicitly encoded in the event metadata.
+Dependency mode MUST be explicitly encoded in event metadata.
 
 ---
 
 ## 15.6 Failure Handling & Deferred Causality
 
-### 15.6.1 Immediate Rejection
+### **15.6.1 Immediate Rejection**
 
-Events MUST be **rejected** when:
+Events MUST be rejected when:
 
 - They introduce cycles.
-- They reference parents that are definitively invalid.
+- They reference definitively invalid parents.
 - They attempt forbidden dependency types.
 
-Rejected events MUST be:
+---
 
-- Logged with a cause code.
-- Exposed through observability channels as permanently invalid.
+### **15.6.2 Deferred Evaluation**
 
-### 15.6.2 Deferred Evaluation
-
-Events MAY be **deferred** when:
+Events MAY be deferred when:
 
 - Parents are unknown but may appear later.
 - Parents are pending CSR or Architect decisions.
 - Cross-substrate anchors are not yet synchronized.
 
-Deferred events MUST:
-
-- Be stored in a dedicated **Pending Causality Queue**.
-- Be re-evaluated when missing parents are resolved or timeout occurs.
-- Expire under a policy-defined TTL, after which they become rejected.
+Deferred events MUST expire under policy-defined TTL.
 
 ---
 
@@ -210,72 +208,56 @@ Deferred events MUST:
 
 L15 MUST expose:
 
-- Causal chain inspection APIs for:
-  - Single event ancestry.
-  - Impact analysis of event invalidation.
-- Metrics:
-  - Average causal depth.
-  - Deferred event counts and aging.
-  - Causality failure rates by reason code.
-- Traces:
-  - End-to-end chains from initiating Root Events to terminal effects.
-
-Implementations SHOULD provide visual tools for causal graph exploration.
+- Causal chain inspection APIs.
+- Impact analysis for event invalidation.
+- Metrics on causal depth, deferrals, and failures.
+- End-to-end causal traces.
 
 ---
 
 ## 15.8 Invariants
 
-L15 MUST maintain these invariants at all times:
-
 1. **CAUSAL_CHAIN_RECONSTRUCTIBLE**  
-   For any committed event, its complete causal ancestry is discoverable.
-
 2. **NO_CAUSAL_CYCLES**  
-   The Canon causal graph remains acyclic.
-
 3. **CRITICAL_CHAIN_COMPLETE**  
-   No committed Critical effect exists without a valid, validated chain to at least one Root or CSR anchor.
-
-4. **CONSISTENT_DEPENDENCY_TYPES**  
-   Declared dependency types do not contradict parent or child semantics.
+4. **CONSISTENT_DEPENDENCY_TYPES**
 
 ---
 
 ## 15.9 Interactions With Other Layers
 
-- **L11 — Proof Primitives**  
-  Provides cryptographic integrity for causal links and event authenticity.
-
-- **L12 — Idempotence Rules**  
-  Ensures repeated effects do not create divergent or contradictory chains.
-
-- **L13 — Mutability Constraints**  
-  Defines which state transitions are legal along a causal chain.
-
-- **L14 — Temporal Rules**  
-  Establishes valid temporal order and windows for cause–effect relations.
-
-- **L27+ — Higher-Level Validation Rules**  
-  MAY define domain-specific causal templates and patterns that refine L15.
-
-L15 is a structural foundation.  
-Higher layers MAY add semantics but MUST NOT weaken L15 guarantees.
+- **L11 Proof Primitives** — integrity of causal links  
+- **L12 Idempotence** — repeat safety  
+- **L13 Mutability** — legal transitions  
+- **L14 Temporal Rules** — valid ordering  
+- **L27+ Higher Layers** — may refine but not weaken L15  
 
 ---
 
 ## 15.10 Implementation Notes (Informative)
 
-- Implementations MAY choose different internal representations (graphs, logs with indices, etc.) as long as L15 invariants hold.
-- Causality MAY be approximated for non-Critical analytics events, but MUST remain exact for Critical effects.
-- For distributed deployments, L15 SHOULD leverage:
-  - Logical clocks or vector clocks (L14).
-  - Canonical reconciliation protocols to keep the causal graph consistent.
+- Internal representation is flexible if invariants hold.
+- Exact causality is mandatory for Critical effects.
+- Distributed deployments SHOULD leverage logical or vector clocks (L14).
 
 ---
 
+## 15.11 Real-World Capability Enabled by the Causality Chain
+
+The Causality Chain enables **provable accountability and legally defensible automation**.
+
+It allows:
+- Regulators and courts to trace any action to its originating authority, intent, and prior approvals.
+- Financial systems to prove why a transfer, issuance, or revocation occurred — not just that it occurred.
+- Governments to enforce policy, access, and governance changes with full causal justification.
+- Enterprises to perform impact analysis when revoking credentials, permissions, or contracts.
+- AI-assisted systems to operate safely without manufacturing effects or bypassing human causality.
+
+Causality transforms systems from *event logs* into **explainable chains of responsibility**.
+
 ---
-Return to Navigation:
+
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
