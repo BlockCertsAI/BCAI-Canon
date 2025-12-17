@@ -3,13 +3,14 @@ CANONICAL: TRUE
 LAYER: L12
 AUTO-TOC: ENABLED
 VERSION: 1.0
-PURPOSE: Canon rule file for this Sovereign Substrate layer.
+PURPOSE: Canon rule file for Idempotence rules governing deterministic repeatability.
 NOTES:
  - Do not remove this header.
- - This file defines canonical rules for this substrate layer.
+ - This file defines canonical idempotence constraints for the substrate.
 -->
 
-## L12 — Idempotence Rules (Deterministic Repeatability Constraints)
+## L12 — Idempotence Rules  
+### (Deterministic Repeatability Constraints)
 
 The Idempotence Layer defines the rules ensuring that **repeated execution of the same authenticated transition MUST produce the same deterministic outcome**, without duplicating effects, altering semantics, or violating state integrity.
 
@@ -20,7 +21,7 @@ Idempotence ensures stability, safety, and determinism across all substrate node
 
 ---
 
-# 1. Purpose of Idempotence
+## 1. Purpose of Idempotence
 
 Idempotence protects the substrate from:
 
@@ -31,11 +32,11 @@ Idempotence protects the substrate from:
 - multi-domain re-execution inconsistencies  
 - partial failures producing divergent outcomes  
 
-L12 provides the **repeatability guarantees** needed for deterministic global truth.
+L12 provides the **repeatability guarantees** required for global canonical truth.
 
 ---
 
-# 2. Core Idempotence Principles
+## 2. Core Idempotence Principles
 
 ### **2.1 Same Input → Same Output**
 If a transition is identical in:
@@ -47,70 +48,68 @@ If a transition is identical in:
 - authority  
 - payload  
 
-Then the outcome MUST be identical across:
+then the outcome MUST be identical across:
 - all nodes  
 - all domains  
 - all executions  
-- all time.
+- all time  
 
 ---
 
 ### **2.2 No Duplicate Effects**
 If a transition has already been accepted (provisionally or sealed):
-- re-submission MUST NOT apply its effects again  
+- re-submission MUST NOT apply effects again  
 - state MUST NOT double-mutate  
-- compensating actions MUST NOT be applied  
+- compensating or inverse actions MUST NOT occur  
 
 The Architect (L04) MUST detect and neutralize duplicates.
 
 ---
 
 ### **2.3 No Semantic Mutation on Re-Execution**
-Meaning MUST remain constant.  
-A transition’s semantics cannot evolve, drift, or reinterpret across repeated evaluations.
+A transition’s meaning MUST remain constant.
 
-MAIAi's semantic evaluation (L03) MUST remain stable.
+MAIAi semantic validation (L03) MUST produce identical interpretations under identical inputs.
+
+Semantic drift is forbidden.
 
 ---
 
 ### **2.4 Idempotent Failure Outcomes**
 If a transition fails:
-- repeated attempts MUST produce the same failure classification  
-- with the same reasoning  
-- unless underlying state has changed  
-- or new authority/constraints apply  
+- repeated evaluation MUST yield the same failure class  
+- the same reasoning trace  
+- the same rejection semantics  
 
-Failure cannot mutate unpredictably.
+unless underlying state, authority, or constraints have changed.
 
 ---
 
 ### **2.5 Deterministic Error Surfaces**
 Errors MUST NOT:
-- depend on node conditions  
-- arise due to ordering differences  
-- vary by timing  
-- differ between domains  
+- vary by node  
+- depend on timing  
+- depend on execution order  
+- differ across domains  
 
-Every node MUST classify the failure identically.
+Every node MUST classify failure identically.
 
 ---
 
 ### **2.6 Consistency Across Routing**
 If a transition or event is routed multiple times (L08):
-- nodes MUST detect prior acceptance  
-- MUST NOT create divergent provisional states  
-- MUST NOT produce duplicate sealing requests  
+- prior acceptance MUST be detected  
+- duplicate provisional states MUST NOT be created  
+- duplicate sealing MUST NOT occur  
 
-Routing MUST maintain canonical idempotence.
+Routing MUST preserve idempotence globally.
 
 ---
 
-# 3. Idempotence Requirements for All Transitions
-
-Every transition MUST include:
+## 3. Idempotence Requirements for All Transitions
 
 ### **3.1 Unique Transition Hash**
-Reflecting:
+Every transition MUST include a deterministic hash covering:
 - identity  
 - authority  
 - intent  
@@ -123,27 +122,26 @@ Replays MUST produce the same hash.
 ---
 
 ### **3.2 Causal Positioning**
-A transition MUST be evaluated in the same causal position every time.
+Transitions MUST be evaluated at the same causal position on every execution.
 
 ---
 
 ### **3.3 Deterministic Evaluation Logic**
-Architect MUST evaluate transitions through a **pure, side-effect-free deterministic function**.
+The Architect MUST evaluate transitions through a **pure, side-effect-free deterministic function**.
 
 ---
 
 ### **3.4 Sealed Outcome Anchoring**
-If already sealed (L51):
-- the sealed event MUST override new attempts  
-- nodes MUST return the sealed result  
-- re-execution MUST NOT change history  
+If a transition is already sealed (L51):
+- the sealed result MUST be returned  
+- re-execution MUST NOT alter history  
 
 Sealed truth is final.
 
 ---
 
 ### **3.5 Constraint Stability**
-L31 Constraints must give identical decisions under identical conditions.
+Constraint evaluation (L31) MUST produce identical results under identical conditions.
 
 ---
 
@@ -153,138 +151,145 @@ MAIAi MUST:
 - validate semantics identically  
 - reject ambiguity identically  
 
-Repeated semantic evaluation must be stable.
-
 ---
 
 ### **3.7 Safety Stability**
 Safety classification (L50) MUST:
 - match prior evaluations  
-- prevent unsafe repeated execution  
+- prevent unsafe repeat execution  
 - remain consistent across nodes  
 
-Safety cannot drift.
-
 ---
 
-# 4. Idempotence Interaction With Failure & Recovery
+## 4. Idempotence and Failure & Recovery
 
 ### **4.1 Partial Failures**
-If a transition partially executes due to node interruption:
-- recovery (L38) MUST restore the last sealed state  
-- MUST re-run the transition deterministically  
-- MUST NOT produce duplicate or conflicting mutations  
+If a node fails mid-execution:
+- recovery (L38) MUST restore last sealed state  
+- transition MUST re-evaluate deterministically  
+- no duplicate or conflicting mutations may occur  
+
+---
 
 ### **4.2 Replay Attacks**
-Repeated attempts to re-submit a previously executed or sealed transition MUST:
+Re-submission of previously executed or sealed transitions MUST:
 - be detected  
-- rejected  
-- logged  
-- included in anomaly signals to MAIAi  
-
-### **4.3 Retries Under Different State**
-If the underlying state has changed:
-- idempotence applies only to identical causal context  
-- Architect MUST re-evaluate based on the new state  
-- semantics, constraints, and authority may differ accordingly  
-
-Idempotence applies to identical pre-conditions, not different worlds.
+- be rejected  
+- be logged  
+- be surfaced as anomaly signals  
 
 ---
 
-# 5. Domain-Level Idempotence
+### **4.3 Retries Under Changed State**
+If underlying state has changed:
+- idempotence applies only to identical preconditions  
+- the transition MUST be re-evaluated  
+- outcomes may legitimately differ  
 
-Domains MUST guarantee:
+Idempotence applies to the **same world-state**, not different ones.
+
+---
+
+## 5. Domain-Level Idempotence
+
+Domains MUST ensure:
 
 - identical effects for identical transitions  
-- consistent cross-domain idempotence via L28 invariants  
-- stable domain logic under repeat evaluation  
-- no side effects that depend on timing or nondeterministic input  
-- alignment with canonical routing order (L08)
-
-Domain behavior MUST be deterministic.
+- deterministic domain logic  
+- no time-based or nondeterministic side effects  
+- invariant-aligned repeatability (L28)  
+- routing-order consistency (L08)  
 
 ---
 
-# 6. Cross-Domain Idempotence
+## 6. Cross-Domain Idempotence
 
-When a transition spans domains:
+For cross-domain transitions:
 
-- each domain MUST evaluate its portion deterministically  
-- invariant checks MUST give the same result on all nodes  
-- routing MUST enforce canonical order  
-- sealing MUST apply only once  
-- repeated multi-domain execution MUST NOT re-trigger domain side-effects  
+- each domain MUST evaluate deterministically  
+- invariant checks MUST be consistent  
+- sealing MUST occur only once  
+- repeated execution MUST NOT re-trigger domain effects  
 
-Cross-domain idempotence ensures global stability.
+Global idempotence is mandatory.
 
 ---
 
-# 7. Idempotence and AI
+## 7. Idempotence and AI
 
 MAIAi MUST:
 
 - produce identical reasoning for identical inputs  
-- generate stable semantic interpretations  
-- avoid probabilistic or nondeterministic behavior  
-- record deterministic reasoning traces  
+- avoid probabilistic behavior  
+- emit deterministic reasoning traces  
 
-MAIAi MUST NOT introduce randomness into the substrate.
-
----
-
-# 8. Event Idempotence (L09 Integration)
-
-For any canonical event:
-
-- re-processing MUST NOT apply a second mutation  
-- event references MUST match prior lineage  
-- sealing MUST not duplicate  
-- state evolution MUST remain consistent  
-- errors MUST be stable  
-
-Events become idempotent truth units.
+AI MUST NOT introduce randomness into substrate execution.
 
 ---
 
-# 9. Relationship to Other Layers
+## 8. Event Idempotence (L09 Integration)
 
-### **L01 Identity** — repeatability requires stable identity interpretation  
-### **L02 SVS** — proofs support idempotence; SVS remains untouched  
-### **L03 MAIAi** — semantic stability is essential  
-### **L04 Architect** — enforces deterministic execution  
-### **L06 ADT** — packages idempotent transitions  
-### **L07 Canonical State** — state changes must be unique  
-### **L08 Routing** — prevents duplicate propagation  
-### **L09 Event Model** — defines event-level idempotence  
-### **L31 Constraints** — deterministic constraint outcomes required  
-### **L37 Lineage** — idempotence depends on causal positioning  
-### **L38 Recovery** — replays must not cause drift  
-### **L50 Safety** — repeat operations cannot increase risk  
-### **L51 Sealing** — sealed events enforce idempotent finality  
+For canonical events:
+
+- re-processing MUST NOT apply duplicate mutations  
+- lineage references MUST remain stable  
+- sealing MUST NOT duplicate  
+- error states MUST be consistent  
+
+Events are idempotent units of truth.
 
 ---
 
-# 10. Outcomes of the Idempotence Layer
+## 9. Real-World Capability Enabled by Idempotence
+
+Idempotence enables **failure-tolerant, legally reliable automation**.
+
+It allows:
+- Financial, healthcare, and government systems to safely retry operations without risk of double-spend, double-issuance, or duplicated authority.
+- Distributed infrastructure to recover from crashes, partitions, or restarts without reconciliation or manual correction.
+- Regulators and auditors to rely on execution outcomes even under repeated processing.
+- Global systems to resist replay attacks, message duplication, and network instability by design.
+
+Idempotence turns retrying from a risk into a guarantee.
+
+---
+
+## 10. Relationship to Other Layers
+
+- **L01 Identity** — stable identity interpretation  
+- **L02 SVS** — proofs enable idempotence without data exposure  
+- **L03 MAIAi** — semantic stability  
+- **L04 Architect** — deterministic enforcement  
+- **L06 ADT** — idempotent transition packaging  
+- **L07 Canonical State** — unique state evolution  
+- **L08 Routing** — duplicate suppression  
+- **L09 Event Model** — event-level idempotence  
+- **L31 Constraints** — deterministic constraint outcomes  
+- **L37 Lineage** — causal positioning  
+- **L38 Recovery** — safe replay  
+- **L50 Safety** — repeat execution cannot increase risk  
+- **L51 Sealing** — idempotent finality  
+
+---
+
+## 11. Outcomes of the Idempotence Layer
 
 - deterministic system behavior  
-- protection against duplicate execution  
-- immunity to replay attacks  
+- immunity to duplicate execution  
+- resistance to replay attacks  
 - stable semantics and constraints  
 - predictable recovery under failure  
 - consistent cross-domain workflows  
-- unambiguous event interpretation  
-- elimination of nondeterministic state drift  
-- hard guarantees around uniqueness of state evolution  
+- elimination of nondeterministic drift  
+- guaranteed uniqueness of state evolution  
 
-L12 ensures that **nothing unpredictable or duplicative** can ever occur in the Sovereign Substrate.
+L12 ensures that **nothing unpredictable or duplicative** can occur in the Sovereign Substrate.
 
 Idempotence becomes the substrate’s **repeatability guarantee**, foundational to trust and correctness.
 
 ---
 
----
-Return to Navigation:
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
