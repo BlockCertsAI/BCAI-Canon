@@ -1,6 +1,6 @@
 <!--
 CANONICAL: TRUE
-LAYER: L36
+LAYER: L35
 AUTO-TOC: ENABLED
 VERSION: 1.0
 PURPOSE: Canon rule file for this Sovereign Substrate layer.
@@ -9,254 +9,259 @@ NOTES:
  - This file defines canonical rules for this substrate layer.
 -->
 
-# L36 — Fork Prevention Model (How the Substrate Avoids Divergent Truth & Ensures a Single Canonical Reality)
-Defines the mechanisms that prevent the Sovereign Substrate from diverging into inconsistent branches of truth. Fork prevention ensures that **one and only one canonical history** can exist, eliminating split-brain states, race conditions, ambiguous transitions, and competing versions of reality.
+# L35 — Finality Model (How Truth Becomes Permanent, Immutable & Canonical)
+Defines how transitions, events, states, and decisions reach **irrevocable canonical status** within the Sovereign Substrate. Finality represents the moment when truth is sealed — no longer provisional, no longer reversible, no longer challengeable except through recovery procedures governed by authenticated evidence.
 
-Fork Prevention answers the question:  
-**“How does the system guarantee that truth never diverges?”**
+Finality answers the question:  
+**“When does something become permanent truth?”**
 
-## 36.0 Purpose
-L36 establishes:
-- The architectural rules that make forks structurally impossible  
-- How ordering, validation, verification, and constraints eliminate divergence  
-- How governance ensures conflict resolution without forking  
-- How ADT/MAIAi must behave to avoid creating divergent state proposals  
-- How temporal, causal, and provenance rules maintain a single global truth  
-- How federated domains avoid incompatible truth branches  
+## 35.0 Purpose
+L35 establishes:
+- What it means for a transition to become final  
+- How finality is reached deterministically in a PoA substrate  
+- How finality interacts with consensus (L34), state (L32), and transitions (L33)  
+- How governance, provenance, and constraints guarantee immutable truth  
+- How ADT/MAIAi must treat final vs. provisional truth  
+- How finality persists across undo (L16), recovery (L17), and federation  
 
-Fork Prevention is the substrate’s shield against chaos, ambiguity, and split truth.
+Finality is the substrate’s **guarantee that truth cannot be altered retroactively**.
 
-## 36.1 Scope
-Applies to:
-- All transitions (L33)  
-- State evolution (L32)  
-- Consensus and finality formation (L34–L35)  
-- Provenance lineage (L18)  
-- Governance-induced updates (L29)  
-- Delegated authority (L30)  
-- AI/ADT proposals (L26)  
-- Cross-domain or federated truth mapping  
-- Undo/Recovery mechanisms (L16–L17)  
+## 35.1 Scope
+The Finality Model applies to:
+- All state transitions  
+- Identity and object states  
+- Governance directives  
+- Delegations, permissions, and capability changes  
+- Custody transitions  
+- Provenance commitments  
+- AI/ADT decisions incorporated into canonical truth  
+- Federated and cross-domain truth synchronization  
 
-Fork prevention is substrate-wide and cannot be overridden.
+Finality binds the substrate’s entire truth model.
 
-## 36.2 Core Principles
-1. **Single Canonical History** — only one global truth may exist at any time.  
-2. **Deterministic Ordering** — events ordered identically everywhere prevent divergence.  
-3. **Identity-Rooted Consensus** — PoA eliminates anonymous competition that causes forks.  
-4. **Constraint Enforcement** — unsafe or conflicting transitions cannot enter canonical flow.  
-5. **Governance Supremacy** — governance resolves conflicts, preventing parallel truths.  
-6. **Strict Provenance** — lineage must form a single DAG with no branching contadictions.  
-7. **No Competing Proposals** — transitions must obey ordering windows and constraints.  
-8. **No Probabilistic Finality** — deterministic rules eliminate the possibility of race forks.  
+## 35.2 Core Principles
+1. **Finality is deterministic** — same evidence → same final outcome everywhere (L12).  
+2. **Finality is authenticated** — only verified actors and transitions may become final.  
+3. **Finality is rule-governed** — driven by validation, verification, and constraints.  
+4. **Finality is irreversible** — once canonical, transitions cannot be rewritten.  
+5. **Finality is sequenced** — dependent on temporal and causal order (L14–L15).  
+6. **Finality is provenanced** — every final truth has an unbroken lineage (L18).  
+7. **Finality is safe** — unsafe transitions can never be finalized (L26, L31).  
+8. **Finality is visible** — auditors must be able to reconstruct how truth became final.  
 
-## 36.3 Fork Object Model
-A “fork risk” is tracked as a structured object containing:
+## 35.3 Finality Object Model
+Each finality event contains:
 
 ### Inputs
-- Conflicting transitions  
-- Conflicting provenance parents  
-- Conflicting temporal anchors  
-- Competing governance directives  
-- Agent-generated divergent proposals  
+- Validated transition (L27)  
+- Verified evidence (L28)  
+- Consensus outcome (L34)  
+- Constraints evaluation  
+- Governance implications  
 
 ### Outputs
-- Fork classification (TEMPORARY / INVALID / CRITICAL)  
-- Required remediation action  
-- Governance escalation flag  
-- Diagnostic evidence  
+- Finality decision (FINAL / NOT_FINAL / DEFERRED)  
+- Finality hash  
+- Provenance commitment  
+- Accountability mapping  
+- Required attestations (L20)  
 
 ### Anchoring
-- Timestamp  
-- Causal references  
-- Provenance references  
+- Finality timestamp  
+- Causal ordering reference  
+- State snapshot linkage  
+- Governance signature (if required)  
 
-No unhandled fork object may persist.
+## 35.4 Types of Finality
 
-## 36.4 Structural Fork Prevention Mechanisms
+### 35.4.1 Structural Finality
+Applied to:
+- Identity origins  
+- Object origins  
+- Immutable data formations  
 
-### 36.4.1 Deterministic Identity Layer
-Because identities are verified (L1/L22–L24):
-- No anonymous proposals  
-- No Sybil-induced conflicts  
-- No probabilistic block competition  
+These cannot be undone except through recovery.
 
-### 36.4.2 Deterministic Ordering (L14–L15)
-Every transition is:
-- Time-ordered  
-- Cause-ordered  
-- Context-ordered  
-- Constraint-ordered  
+### 35.4.2 Transition Finality
+A transition becomes final when:
+- All validation and verification criteria are met  
+- Consensus (L34) accept is sealed  
+- Provenance entry is committed  
+- No constraints have been violated  
 
-Identical ordering = no divergent branches.
+### 35.4.3 State Finality
+A new canonical state (L32) becomes immutable once:
+- Transition finality is achieved  
+- No competing transitions exist  
+- Governance does not impose provisional status  
 
-### 36.4.3 Serialized Provenance (L18)
-Provenance enforces:
-- Single-parent lineage where required  
-- DAG structure with no cycles  
-- Immutable history  
+### 35.4.4 Governance Finality
+Governance directives become final when:
+- Proper authority signatures attach  
+- No conflicting governance rules apply  
+- Provenance insertion succeeds  
 
-### 36.4.4 Single-Truth Consensus Engine (L34)
-Consensus is:
-- Not a vote  
-- Not a probability race  
-- Not a competitive process  
+### 35.4.5 Delegation & Permission Finality
+Authority changes become final when:
+- Delegations validated and verified  
+- No higher-order governance rule blocks acceptance  
+- Context is satisfied  
 
-It is rule-based, deterministic, and identity-rooted.
+### 35.4.6 Federated Finality
+Cross-domain truth becomes final when:
+- External proofs pass verification  
+- Domain mapping resolves consistently  
+- No sovereignty conflict exists  
 
-### 36.4.5 Finality Rules (L35)
-Once a transition is final:
-- No alternative path may override  
-- No conflicting transition may be accepted  
-- No ambiguous state may persist  
+## 35.5 Finality Lifecycle
 
-### 36.4.6 Mutability Restrictions (L13)
-State cannot be rewritten; only append is permitted.
+### 35.5.1 Provisional Phase
+Transition is proposed, validated, verified, and evaluated — but not yet canonical.
 
-## 36.5 Fork Prevention Workflow
+### 35.5.2 Consensus Phase (L34)
+If consensus resolves acceptably:
+- Transition is ready for finalization  
 
-### 36.5.1 Pre-Transition Fork Check
-Before any transition executes:
-- Confirm no conflicting transitions are pending  
-- Confirm identical parent state across nodes  
-- Confirm no causal disagreement  
+If consensus defers:
+- Await additional data or external proofs  
 
-### 36.5.2 Validation Conflict Detection (L27)
-Detect:
-- Competing mutations of same object  
-- Invalidation of predecessor state  
-- Simultaneous transitions requiring exclusive rights  
+If consensus rejects:
+- Finality is impossible.
 
-If conflict → BLOCK.
+### 35.5.3 Pre-Finality Safety Check
+System must confirm:
+- No constraint violations  
+- No risk thresholds exceeded  
+- No governance prohibitions  
+- No causal conflicts  
 
-### 36.5.3 Verification Conflict Detection (L28)
-Detect:
-- Mismatched signatures  
-- Divergent hashes  
-- Missing lineage parents  
-- Impossible time markers  
+### 35.5.4 Finalization Phase
+Occurs when:
+- Transition passes all checks  
+- Provenance is updated  
+- State is updated  
+- Consensus acceptance is sealed  
 
-If conflict → REJECT.
+### 35.5.5 Post-Finality Immutability
+Once final:
+- Transition becomes permanent record  
+- History cannot be rewritten  
+- Undo (L16) rewinds *from* finality but does not modify final truth  
+- Recovery (L17) reconstructs finality, not sidesteps it  
 
-### 36.5.4 Governance Conflict Detection (L29)
-Governance resolves:
-- Authority conflict  
-- Domain conflict  
-- Jurisdiction conflict  
+## 35.6 Forbidden Finality
+Finality cannot be granted if:
+- Identity is unverified or compromised  
+- Validation fails  
+- Verification fails  
+- Constraints violated  
+- Governance override applies  
+- Transition introduces causal or temporal inconsistencies  
+- Provenance incomplete  
 
-Governance prevents forks by ruling in one direction only.
+No object or transition may enter canonical truth without satisfying all mandatory conditions.
 
-### 36.5.5 Constraint-Level Fork Prevention (L31)
-If two transitions could produce divergent states:
-- Hard-stop constraint fires  
-- Higher-order constraint blocks both  
-- Requires governance intervention  
+## 35.7 Finality Ordering Rules
 
-### 36.5.6 Provenance Merge Protection
-No merge is allowed between:
-- Divergent state chains  
-- Conflicting histories  
-- Unsigned or unverifiable branches  
+### 35.7.1 Temporal Ordering
+No transition may be finalized before:
+- Valid timestamp  
+- Satisfied time windows  
+- No retroactivity  
 
-Provenance ensures one global DAG, not a tree of alternatives.
+### 35.7.2 Causal Ordering
+Finality must:
+- Respect causal chains  
+- Avoid double-finalization of mutually exclusive branches  
+- Maintain system DAG structure  
 
-## 36.6 Forbidden Fork Conditions
-The system must block:
-- Any two transitions modifying the same state with incompatible deltas  
-- Any pair of transitions sharing identical causal parents but producing conflict  
-- Any governance directive contradicting active policy  
-- Any ADT/MAIAi proposal violating autonomy or safety rules  
-- Any federated truth that contradicts verified local truth  
+### 35.7.3 Governance Ordering
+Governance may:
+- Preempt finality  
+- Require human confirmation  
+- Override or block transitions  
+- Force re-verification  
+- Declare emergency provisional states  
 
-Forks are not resolved — they are *prevented*.
+## 35.8 ADT/MAIAi Finality Rules
+Agents must:
+- Treat final truth as absolute  
+- Never attempt to rewrite or circumvent finality  
+- Always escalate when encountering conflicting states  
+- Use final snapshots for deterministic reasoning  
 
-## 36.7 ADT/MAIAi Fork Prevention Rules
-Agents must never:
-- Generate competing transitions with incompatible effects  
-- Attempt speculative state projection outside constraints  
-- Assume provisional truth is final  
-- Create parallel proposals without disambiguation  
+Agents may not:
+- Declare finality  
+- Modify final objects  
+- Act on provisional truth as if final  
 
-Agents must always:
-- Respect ordering windows  
-- Respect governance boundaries  
-- Seek clarification when ambiguity arises  
-- Produce proofs for every proposal  
+## 35.9 Federated Finality Rules
+Cross-domain finality requires:
+- Bidirectional verification  
+- Proof-of-origin and proof-of-integrity  
+- Attestations of sovereignty  
+- Consistency with local governance  
 
-## 36.8 Federated Fork Prevention
+If conflict persists:
+- Finality is deferred  
+- Escalation procedures apply  
 
-### 36.8.1 Truth Boundary Enforcement
-Domains maintain sovereignty; cross-domain mappings must:
-- Resolve conflicts  
-- Reject incompatible states  
-- Prevent divergent finalities  
-
-### 36.8.2 External Proof Verification
-Federated content must pass:
-- Identity verification  
-- Provenance verification  
-- Causal consistency checks  
-- Integrity proofs  
-
-### 36.8.3 Federated Conflict Resolution
-If conflict cannot be resolved:
-- Fork is prevented by rejecting foreign truth  
-- Governance escalation triggers  
-- Domain preserves its canonical truth  
-
-## 36.9 Observability & Reporting
+## 35.10 Observability & Reporting
 System must expose:
-- Fork risk maps  
-- Transition conflict graphs  
-- Provenance inconsistency detectors  
-- ADT/MAIAi proposal analyzers  
-- Federated conflict dashboards  
+- Finality logs  
+- Finality DAG visualization  
+- Divergence maps  
+- Pending/provisional transitions  
+- Federated finality states  
+- Rejection or deferral evidence  
 
 Auditors must reconstruct:
-- Why no fork occurred  
-- How conflicts were blocked  
-- How deterministic ordering prevailed  
+- Why a transition became final  
+- What rules determined finality  
+- What governance conditions applied  
+- Whether system behaved deterministically  
 
-## 36.10 Interaction With Other Layers
-- **L11** — cryptographic anchors prevent hash-based forks.  
-- **L12** — deterministic evaluation prevents rule drift.  
-- **L13** — restricts historical rewriting.  
-- **L14** — rejects temporal drift forks.  
-- **L15** — rejects causal forks.  
-- **L16** — maintains canonical truth during undo.  
-- **L17** — reconstructs canonical truth during recovery.  
-- **L18** — provenance blocks divergent chains.  
-- **L19** — audits attempted forks.  
-- **L20** — attestations prevent spoofed authority.  
-- **L21** — custody conflicts resolved without branching.  
-- **L22–L24** — permissions, capabilities, and accountability prevent parallel authority.  
-- **L25** — context consistency eliminates divergence.  
-- **L26** — agent constraints prevent speculative forks.  
-- **L27** — validation stops illegal transitions.  
-- **L28** — verification blocks false or conflicting truth.  
-- **L29** — governance resolves disputes.  
-- **L30** — delegation limits prevent rogue branching.  
-- **L31** — constraints prevent unsafe forking states.  
-- **L32** — unified state model prevents divergence.  
-- **L33** — transitions define single-path evolution.  
-- **L34** — deterministic consensus prevents branching.  
-- **L35** — finality enforces immutability.  
+## 35.11 Interaction With Other Layers
+- **L11** — cryptographic binding  
+- **L12** — deterministic outcomes  
+- **L13** — legality of finalized transformations  
+- **L14** — temporal constraints  
+- **L15** — causal constraints  
+- **L16** — undo behavior  
+- **L17** — recovery behavior  
+- **L18** — provenance commitments  
+- **L19** — auditing  
+- **L20** — attestations  
+- **L21** — custody finality  
+- **L22** — permission implications  
+- **L23** — capability implications  
+- **L24** — accountability  
+- **L25** — context-dependent finality  
+- **L26** — constraint ceilings  
+- **L27** — validation  
+- **L28** — verification  
+- **L29** — governance authority  
+- **L30** — delegation  
+- **L31** — global constraints  
+- **L32** — canonical state creation  
+- **L33** — transition inputs  
+- **L34** — consensus gating  
 
-## 36.11 Invariants
-1. FORK_IMPOSSIBLE — canonical truth must never diverge.  
-2. FORK_DETECTABLE — any attempted fork must be immediately identified.  
-3. FORK_BLOCKED — conflicts must be blocked before execution.  
-4. FORK_TRACEABLE — all prevention events must appear in provenance.  
-5. FORK_SAFE — fork prevention must prefer safety over throughput.  
-6. FORK_GOVERNED — governance resolves outstanding conflicts.  
-7. FORK_CONTEXTUAL — fork prevention must include context and constraints.  
+## 35.12 Invariants
+1. FINALITY_IMMUTABLE — final truths cannot be rewritten.  
+2. FINALITY_DETERMINISTIC — same evidence yields same result.  
+3. FINALITY_TRACEABLE — fully captured in provenance.  
+4. FINALITY_AUTHENTIC — based only on verified evidence.  
+5. FINALITY_SAFE — preserves system stability.  
+6. FINALITY_CONTEXTUAL — governed by context and policy windows.  
+7. FINALITY_ORDERED — bound to time, causality, and governance order.  
 
-## 36.12 Informative Guidance
-Fork Prevention is not conflict resolution — it is **conflict elimination**.  
-The substrate assumes that parallel truth is unacceptable under any conditions.  
-Agents should operate conservatively when ordering is ambiguous.  
-Federated systems must reject foreign divergence rather than harmonizing it.  
-Fork prevention is essential to compliance, auditability, and global determinism.
+## 35.13 Informative Guidance
+Finality is the backbone of trust.  
+Without finality, the substrate cannot guarantee truth, safety, or compliance.  
+Finality should be conservative — only transitions fully proven safe may be finalized.  
+Federated finality must prioritize domain sovereignty.  
+ADT/MAIAi must operate with extreme care around final objects.
 
 ---
 Return to Navigation:
