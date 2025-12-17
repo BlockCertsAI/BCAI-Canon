@@ -1,6 +1,6 @@
 <!--
 CANONICAL: TRUE
-LAYER: L34
+LAYER: L33
 AUTO-TOC: ENABLED
 VERSION: 1.0
 PURPOSE: Canon rule file for this Sovereign Substrate layer.
@@ -9,288 +9,282 @@ NOTES:
  - This file defines canonical rules for this substrate layer.
 -->
 
-# L34 — Consensus Model (How the Substrate Reaches Agreement on Canonical Truth)
-Defines how the Sovereign Substrate determines, confirms, and finalizes shared truth — not through mining, staking, or probabilistic voting, but through **authenticated, deterministic, constraint-aligned agreement** built directly into the substrate’s identity, governance, verification, and provenance layers.
+# L33 — Transition Model (How Canonical State Moves, Evolves & Becomes New Truth)
+Defines the complete rules governing how the Sovereign Substrate moves from one canonical state to the next — including requirements, constraints, sequencing, validation, verification, provenance anchoring, governance integration, and agent participation.
 
-The Consensus Model answers the question:  
-**“How does the system agree on what is true?”**
+The Transition Model answers the question:  
+**“How does the system change — safely, lawfully, and deterministically?”**
 
-## 34.0 Purpose
-L34 establishes:
-- How consensus is defined in a Proof-of-Authentication substrate  
-- How actors participate in consensus implicitly through verified actions  
-- How truth is established deterministically rather than probabilistically  
-- How consensus depends on identity, state, provenance, validation, and verification  
-- How consensus determines canonical inclusion or rejection of transitions  
-- How consensus operates in single-domain, multi-domain, and federated environments  
+## 33.0 Purpose
+L33 establishes:
+- How transitions are defined, structured, and represented  
+- How actors initiate and complete transitions  
+- How transitions interact with identity, state, provenance, context, and governance  
+- How ADT/MAIAi may propose or execute transitions  
+- How transitions are validated (L27) and verified (L28)  
+- How transitions maintain safety and ordering  
+- How transitions survive undo (L16) and recovery (L17)  
 
-Consensus in the Sovereign Substrate is **deterministic, identity-bound, rule-driven, and provable**.
+Transitions are the *engine of change* in the Sovereign Substrate.
 
-## 34.1 Scope
-Consensus applies to:
-- All canonical transitions (L33)  
-- All state updates (L32)  
-- Identity and permission/capability changes (L22–L23)  
-- Provenance acceptance (L18)  
-- Governance directives (L29)  
-- Delegation flows (L30)  
-- Context propagation (L25)  
-- ADT/MAIAi agent-generated proposals  
-- Undo (L16) and Recovery (L17)  
-- Cross-domain and federated truth reconciliation  
+## 33.1 Scope
+The Transition Model applies to:
+- Identity transitions  
+- Object and data transitions  
+- State transitions (L32)  
+- Permission, capability, and accountability transitions (L22–L24)  
+- Context transitions (L25)  
+- Custody transitions (L21)  
+- Delegation transitions (L30)  
+- Governance-induced transitions (L29)  
+- ADT/MAIAi agent transitions  
+- Cross-domain and federated transitions  
 
-No canonical truth can exist without consensus.
+No actor or domain may bypass transition rules.
 
-## 34.2 Core Principles
-1. **Identity precedes consensus** — only authenticated identities may participate.  
-2. **Consensus is deterministic** — same events → same result everywhere (L12).  
-3. **Consensus is rule-governed** — not probabilistic, economic, or competitive.  
-4. **Consensus is evidence-based** — verified proofs (L28) determine acceptance.  
-5. **Consensus is constraint-bound** — unsafe transitions cannot be accepted (L31).  
-6. **Consensus is governance-aligned** — governance rules supersede domain rules (L29).  
-7. **Consensus is causal** — event ordering determines validity (L15).  
-8. **Consensus is temporal** — transitions must be time-legitimate (L14).  
-9. **Consensus is non-repudiable** — once accepted, truth cannot be denied (L20).  
+## 33.2 Core Principles
+1. **Transitions must be intentional** — no implicit or silent changes.  
+2. **Transitions must be deterministic** — same inputs produce the same canonical state (L12).  
+3. **Transitions must be authenticated** — identity and signatures are mandatory.  
+4. **Transitions must be legal** — allowed by mutability rules (L13).  
+5. **Transitions must be ordered** — temporal first (L14), causal first (L15).  
+6. **Transitions must be safe** — evaluated against constraints (L26, L31).  
+7. **Transitions must be provable** — via cryptographic evidence (L28).  
+8. **Transitions are final when canonical** — no retroactive revision.  
 
-## 34.3 Consensus Object Model
-Every consensus decision must include:
+## 33.3 Transition Object Model
+Each transition must include:
 
-### Inputs
-- Transition intent and delta  
-- Identity proofs  
-- Permissions/capabilities  
-- Constraint evaluations  
-- Verification artifacts (signatures, hashes, proofs)  
-- Causal and temporal anchors  
-- Governance references  
-- Provenance chain  
+### Actor
+- Initiator identity  
+- Delegation authority if applicable (L30)  
+- Required permissions and capabilities (L22–L23)  
 
-### Outputs
-- Consensus outcome (ACCEPT / REJECT / DEFER)  
-- Evidence bundle supporting the decision  
-- Consensus hash  
-- Canonicalization status  
-- Any required attestations  
-- Escalation triggers (if applicable)  
+### Transition Intent
+- Operation type  
+- Target object or state  
+- Expected outcome  
+- Context dependencies (L25)  
+- Preconditions  
+
+### Transition Mechanics
+- Input (prior) state  
+- Proposed state delta  
+- Required proofs  
+- Constraint evaluation results  
+
+### Cryptographic Binding
+- Transition hash  
+- Actor signature  
+- Optional multi-signature for Critical transitions  
 
 ### Anchoring
-- Consensus timestamp  
-- Causal ordering relative to nearby transitions  
-- Provenance update  
+- Timestamp and temporal ordering  
+- Causal parent reference  
+- Provenance insertion (L18)  
+- Governance references when applicable  
 
-## 34.4 Consensus Phases
-Consensus proceeds through deterministic, rule-governed phases:
+## 33.4 Types of Transitions
 
-### 34.4.1 Proposal Phase
-A transition is proposed by:
-- A human identity  
-- An organizational identity  
-- An ADT/MAIAi  
-- A governance entity  
+### 33.4.1 Creation Transitions
+Establish new objects, identities, or agents:
+- Bind origin data  
+- Generate initial lineage  
+- Create first canonical state  
 
-All proposals must be authenticated.
+### 33.4.2 Mutation Transitions
+Modify existing state:
+- Apply lawful transformations  
+- Preserve historical immutability  
+- Update lineage and hashes  
 
-### 34.4.2 Eligibility Phase
-System verifies:
-- Identity validity  
-- Permission/capability floor  
-- Delegation legitimacy  
-- Governance boundaries  
-- Required context  
+### 33.4.3 Activation / Deactivation
+Toggle state or authority:
+- Activate contexts or domains  
+- Suspend roles, permissions, or agents  
 
-If failed → REJECT (not eligible).
+### 33.4.4 Custody Transitions (L21)
+Transfer control or ownership:
+- Require authenticated handoff  
+- Preserve full chain-of-custody  
 
-### 34.4.3 Validation Phase (L27)
-System checks:
-- Logical correctness  
-- Schema conformity  
-- Mutability legality  
-- Safety rules  
-- Dependency resolution  
+### 33.4.5 Delegation Transitions (L30)
+Grant or revoke delegated authority:
+- Update capability and responsibility chains  
+- Bind delegation provenance  
 
-If failed → REJECT (invalid).
+### 33.4.6 Governance Transitions (L29)
+Apply governance-directed changes:
+- Override rules  
+- Enforce policy or system parameters  
 
-### 34.4.4 Verification Phase (L28)
-System verifies:
+### 33.4.7 Agent Transitions (ADT/MAIAi)
+Adjust agent state or autonomy:
+- Capability ceilings  
+- Constraint layers  
+- Execution modes  
+
+### 33.4.8 Federated Transitions
+Cross-substrate synchronization:
+- Require federated proofs  
+- Record cross-domain provenance markers  
+
+## 33.5 Transition Lifecycle
+
+### 33.5.1 Initiation
+Actor declares intent and attaches required proofs.
+
+### 33.5.2 Pre-Validation (Safety Gate)
+System evaluates:
+- Constraints (L26, L31)  
+- Permissions and capabilities (L22–L23)  
+- Context windows (L25)  
+- Governance boundaries (L29)  
+
+Failure blocks the transition.
+
+### 33.5.3 Validation (L27)
+Structural, logical, and legal correctness.
+
+### 33.5.4 Verification (L28)
+Cryptographic truth checks:
 - Signatures  
-- Hashes  
-- Temporal correctness  
-- Causal correctness  
+- Hash integrity  
+- Temporal and causal alignment  
 - Provenance continuity  
 
-If failed → REJECT (unverifiable).
+### 33.5.5 Execution
+Apply the state delta to produce a provisional new state.
 
-### 34.4.5 Constraint Phase (L31)
-System evaluates:
-- Safety constraints  
-- Risk ceilings  
-- Autonomy limits  
-- Governance-critical constraints  
+### 33.5.6 Canonicalization
+Transition becomes canonical only if:
+- All validations succeed  
+- All verifications succeed  
+- Governance permits  
+- Provenance insertion succeeds  
+- No higher-order constraints are violated  
 
-If violated → BLOCK (requires escalation).
+### 33.5.7 Finalization
+Canonical transition becomes permanent and non-rewriteable.
 
-### 34.4.6 Governance Phase (L29)
-System checks:
-- Whether governance directly influences this transition  
-- Whether governance overrides apply  
-- Whether domain boundaries impose conditions  
+## 33.6 Forbidden Transitions
+The substrate must reject:
+- Unsigned or unauthenticated transitions  
+- Mutability violations (L13)  
+- Retroactive or backdated transitions  
+- Causal loops or impossibilities  
+- Temporal violations (L14)  
+- Broken provenance chains  
+- Authority impersonation  
+- Agent actions exceeding autonomy  
+- Governance-violating delegations  
 
-### 34.4.7 Consensus Finalization Phase
-If all phases succeed:
-- Transition becomes canonical  
-- State updates (L32)  
-- Provenance updates (L18)  
-- Accountability updates (L24)  
+## 33.7 Transition Ordering Rules
 
-If unclear → DEFER (waiting for missing evidence).  
+### 33.7.1 Temporal Ordering (L14)
+Transitions must respect:
+- Validity windows  
+- Expiration rules  
+- Monotonic clocks  
 
-## 34.5 Deterministic Consensus Rules
-Consensus is **not** derived from:
-- Hash difficulty  
-- Economic stake  
-- Lottery randomness  
-- Validator voting  
-- Majority participation  
+### 33.7.2 Causal Ordering (L15)
+Transitions must:
+- Reference valid parents  
+- Preserve DAG structure  
+- Avoid cycles  
 
-Instead, consensus emerges automatically when **all canonical rules agree**.
+### 33.7.3 Cross-Domain Ordering
+Federated transitions must:
+- Provide synchronization proofs  
+- Preserve ordering semantics across domains  
 
-### 34.5.1 Deterministic Input Model
-Every participant must:
-- See identical prior state  
-- Have identical transition inputs  
-- Produce identical validation/verification results  
+## 33.8 Agent (ADT/MAIAi) Transition Rules
 
-### 34.5.2 Deterministic Output Model
-Consensus must yield:
-- Identical canonical truth everywhere  
-- Identical rejection reasons  
-- Identical provenance entries  
+### 33.8.1 Proposal Limits
+Agents may propose transitions only when:
+- Within capability bounds (L23)  
+- Within permission ceilings (L22)  
+- Constraints permit (L26)  
+- Governance allows  
 
-### 34.5.3 Deterministic Conflict Resolution
-Conflicts are resolved by:
-- Causality (L15)  
-- Temporal precedence (L14)  
-- Governance hierarchy (L29)  
-- Constraint severity (L31)  
+### 33.8.2 Execution Limits
+Agents may execute transitions only when:
+- Supervision conditions are met  
+- Risk thresholds are not exceeded  
+- Required attestations are produced  
 
-## 34.6 Consensus for AI/ADT Agents
-AI-involved transitions require additional safeguards:
+### 33.8.3 Escalation
+Agents must escalate rather than guess when:
+- Preconditions are unclear  
+- Constraint ambiguity exists  
+- High-risk transitions are detected  
 
-### Requirements
-Agents must:
-- Provide explanation traces  
-- Prove constraint compliance  
-- Stay within capability ceilings  
-- Provide attestation bundles  
+## 33.9 Transition Behavior in Undo (L16) & Recovery (L17)
 
-### Limitations
-Agents may not:
-- Self-elect to bypass consensus  
-- Declare a transition canonical  
-- Influence governance layers  
-- Rewrite or reorder events  
+### Undo
+- Reverts to the prior canonical state  
+- Preserves lineage  
+- Verifies cryptographic continuity  
 
-### Escalation
-If an agent cannot determine consensus:
-- Escalate to human or governance authority  
+### Recovery
+- Reconstructs verified transition sequences  
+- Eliminates noncanonical forks  
+- Replays only validated transitions  
 
-## 34.7 Federated Consensus (Cross-Domain)
-Federated environments require:
-
-### 34.7.1 Truth Mapping
-State and transitions must be mapped across trust boundaries.
-
-### 34.7.2 Cross-Domain Proof Exchange
-Domains exchange:
-- Identity proofs  
-- Provenance fragments  
-- Attestation bundles  
-- Consistency checks  
-
-### 34.7.3 Federated Conflict Resolution
-Conflicts resolved by:
-- Domain sovereignty  
-- Pre-negotiated trust anchors  
-- External governance agreements  
-
-Federated consensus must still produce a singular canonical truth within each domain.
-
-## 34.8 Consensus Failure Modes
-
-### 34.8.1 Hard Rejection
-When validation, verification, or identity fails.
-
-### 34.8.2 Deadlock
-Two transitions mutually block due to:
-- Causality conflicts  
-- Governance conflicts  
-
-Deadlocks defer until resolved by governance or domain policy.
-
-### 34.8.3 Incomplete Evidence
-Transition remains pending until evidence arrives.
-
-### 34.8.4 Unsafe Transition
-Violates constraints → BLOCKED.
-
-All failures must produce governance-visible evidence.
-
-## 34.9 Observability & Reporting
-System must expose:
-- Consensus logs  
-- Conflict maps  
-- Consensus graphs  
-- Federated truth maps  
-- Rejection explanations  
-- ADT/MAIAi consensus traces  
+## 33.10 Observability & Reporting
+The substrate must expose:
+- Transition logs  
+- Transition lineage graphs  
+- Before/after state diffs  
+- Governance-induced transition views  
+- AI/ADT transition traces  
+- Anomaly and violation reports  
 
 Auditors must reconstruct:
-- Why consensus was achieved  
-- Why transitions were accepted or rejected  
-- How governance influenced outcomes  
-- Whether actors behaved lawfully  
+- Why transitions occurred  
+- How they were validated  
+- Whether governance was followed  
+- Whether actors remained within constraints  
 
-## 34.10 Interaction With Other Layers
-- **L11** — cryptographic primitives supporting consensus.  
-- **L12** — deterministic execution of consensus rules.  
-- **L13** — determines what transitions are legal.  
-- **L14** — temporal constraints on consensus.  
-- **L15** — causal ordering of consensus events.  
-- **L16** — consensus rollback behavior.  
-- **L17** — consensus reconstruction after recovery.  
-- **L18** — provenance inclusion of consensus decisions.  
-- **L19** — audits consensus.  
-- **L20** — attestation requirements.  
-- **L21** — custody transitions requiring consensus.  
-- **L22** — permission-based consensus eligibility.  
-- **L23** — capability-based consensus eligibility.  
-- **L24** — accountability for consensus actions.  
-- **L25** — context evaluation during consensus.  
-- **L26** — agent constraint checks.  
-- **L27** — transition validation.  
-- **L28** — transition verification.  
-- **L29** — governance override and approval.  
-- **L30** — delegation legitimacy.  
-- **L31** — system-wide constraints.  
-- **L32** — state formation after consensus.  
-- **L33** — transition construction leading to consensus.  
+## 33.11 Interaction With Other Layers
+- **L11** — cryptographic primitives  
+- **L12** — deterministic evaluation  
+- **L13** — mutability legality  
+- **L14** — temporal ordering  
+- **L15** — causal ordering  
+- **L16** — undo handling  
+- **L17** — recovery handling  
+- **L18** — provenance anchoring  
+- **L19** — auditing  
+- **L20** — attestations  
+- **L21** — custody transitions  
+- **L22** — permissions  
+- **L23** — capabilities  
+- **L24** — accountability  
+- **L25** — context propagation  
+- **L26** — agent constraints  
+- **L27** — validation  
+- **L28** — verification  
+- **L29** — governance  
+- **L30** — delegation  
+- **L31** — constraints  
+- **L32** — state creation  
 
-## 34.11 Invariants
-1. CONSENSUS_DETERMINISTIC — consensus must produce identical results everywhere.  
-2. CONSENSUS_AUTHENTIC — only authenticated actors may create transitions.  
-3. CONSENSUS_RULE_GOVERNED — consensus follows rules, not voting or competition.  
-4. CONSENSUS_SAFE — unsafe transitions must never be accepted.  
-5. CONSENSUS_TRACEABLE — all consensus decisions must be provenanced.  
-6. CONSENSUS_FINAL — once accepted, transitions become immutable history.  
-7. CONSENSUS_CONTEXTUAL — must consider environmental and policy context.  
+## 33.12 Invariants
+1. TRANSITION_AUTHENTIC — signed, verified, traceable.  
+2. TRANSITION_ORDERED — temporal and causal compliance.  
+3. TRANSITION_SAFE — all constraints satisfied.  
+4. TRANSITION_PROVENANCED — enters canonical lineage.  
+5. TRANSITION_FINAL — non-rewriteable once canonical.  
+6. TRANSITION_CONTEXTUAL — evaluated within context.  
+7. TRANSITION_DETERMINISTIC — identical input yields identical outcome.  
 
-## 34.12 Informative Guidance
-Consensus should be viewed not as a *competition*, but as **a truth-engine** powered by identity, rules, safety, and evidence.  
-Cross-domain consensus should be conservative and privacy-preserving.  
-AI/ADT consensus requires enhanced transparency.  
-Consensus drift or instability is a critical governance event.  
-Federated consensus must minimize trust assumptions.
-Return to Navigation:
+## 33.13 Informative Guidance
+Treat transitions as atomic, verifiable units of change.  
+AI/ADT transitions require heightened scrutiny.  
+Federated transitions must avoid state drift.  
+Transition storms should trigger risk analysis.  
+Canonicalization should remain conservative and safety-first.
 
 ---
 Return to Navigation:
