@@ -53,87 +53,42 @@ It restores the **present state** using authenticated past anchors.
    Recovery builds forward from valid anchors; it never overwrites history.
 
 3. **Minimal Divergence**  
-   The recovery model MUST favor the smallest valid, authenticated state difference relative to the last known-good canonical baseline.
+   Recovery MUST select the smallest valid, authenticated delta from the last known-good canonical baseline.
 
 4. **Deterministic Restoration**  
    Restored state MUST be reproducible across all sovereign nodes.
 
 5. **CSR-Defined Recovery Trust Model**  
-   Governance defines trusted authorities and recovery roles.
+   Governance defines trusted authorities, anchors, and escalation paths.
 
 ---
 
 ## 17.3 Categories of Recovery
 
-### 17.3.1 Local Recovery  
-Used when a single node or cluster experiences:
+### **17.3.1 Local Recovery**
+Used when a single node or cluster experiences localized failure.
 
-- Disk corruption  
-- Data loss  
-- State drift  
+### **17.3.2 Distributed Partition Recovery**
+Used when multiple sovereign partitions diverge.
 
-Node MUST restore by:
+### **17.3.3 Catastrophic Recovery**
+Used when large-scale infrastructure or cluster integrity is lost.
 
-1. Validating local anchors  
-2. Fetching missing canonical events  
-3. Replaying authenticated event sequences (L15 + L16)  
-4. Rebuilding present state deterministically  
-
-### 17.3.2 Distributed Partition Recovery  
-Activated when partitions disagree or diverge.
-
-Steps:
-
-1. Establish a **Canonical Majority Anchor** using:
-   - Anchor weight  
-   - CSR trust policy  
-   - Event hash continuity  
-
-2. Reconcile:
-   - Reapply events missing in each partition  
-   - Invalidate forks lacking authenticated proof  
-
-3. Enforce strict temporal and causal order (L14–L15).
-
-### 17.3.3 Catastrophic Recovery  
-Invoked when:
-
-- Regional infrastructure fails  
-- BAINCA cluster is lost  
-- A large-scale data center corruption occurs  
-
-The system MUST:
-
-1. Use global CSR root anchors  
-2. Rebuild event index  
-3. Reapply all canonical events  
-4. Restore ADT, MAIAi, and Architect state from authenticated event flow  
-5. Regenerate sovereignty boundaries and keys  
-
-This MUST result in the same canonical state on all restored nodes.
+All categories MUST converge to the same canonical result.
 
 ---
 
 ## 17.4 Anchors in Recovery
 
-Recovery MUST use only authenticated, validated anchors:
+Recovery MAY use only authenticated anchors:
 
-- **Genesis Root Anchor**  
-  Immutable first-block trust boundary.
+- Genesis Root Anchor  
+- CSR Root Anchors  
+- Architect Baseline Anchors  
+- ADT Continuity Anchors  
+- BAINCA Sovereign Anchors  
 
-- **CSR Root Anchors**  
-  Trusted governance control points.
-
-- **Architect Baseline Anchors**  
-  System-wide integrity checkpoints.
-
-- **ADT Continuity Anchors**  
-  Capturing active agentic workflows.
-
-- **BAINCA Sovereign Anchors**  
-  Proofs of cluster identity and workload authenticity.
-
-Anchors MUST satisfy L11, L14, and L15 before use.
+Anchors MUST satisfy L11, L14, and L15.
 
 ---
 
@@ -141,171 +96,92 @@ Anchors MUST satisfy L11, L14, and L15 before use.
 
 Recovery MAY be triggered by:
 
-1. **Integrity Violations**  
-   - Hash mismatches  
-   - Invalid signatures  
-   - Broken causal links  
+- Integrity violations  
+- Temporal inconsistencies  
+- Mutability violations  
+- Operational failures  
+- Security compromise  
 
-2. **Temporal Breaks**  
-   - Impossible ordering  
-   - Drift outside allowable windows  
-
-3. **Mutability or State Violations**  
-   - Illegal updates  
-   - Contradictory state entries  
-
-4. **Operational Failures**  
-   - Hardware loss  
-   - Network partition  
-   - ADT or MAIAi context corruption  
-
-5. **Security Events**  
-   - Key compromise  
-   - Credential revocation  
-   - Malicious tampering  
-
-Triggers MUST be logged and evaluated by Architect.
+Triggers MUST be logged, signed, and evaluated by Architect.
 
 ---
 
 ## 17.6 Recovery Algorithm (Normative)
 
-A recovery attempt is valid if all steps are completed:
+A recovery attempt is valid only if:
 
-### **Step 1 — Detection**
-- Identify divergence, corruption, or inconsistency  
-- Generate a Recovery Event referencing fault evidence  
-
-### **Step 2 — Anchor Validation**
-- Verify all candidate anchors  
-- Reject anchors lacking L11–L15 compliance  
-
-### **Step 3 — Canonical Path Selection**
-Choose recovery path using:
-
-- Highest-weight authenticated anchor  
-- CSR trust policy  
-- Continuity with previous canonical chain  
-
-### **Step 4 — Reconstruction**
-- Reapply authenticated events from anchors forward  
-- Recompute state deterministically  
-- Apply compensations for invalid events (L16)  
-
-### **Step 5 — Reconciliation**
-- Resolve partition differences  
-- Mark invalid chains as **NONCANONICAL**  
-- Publish reconciliation evidence  
-
-### **Step 6 — Reintegration**
-- Bring restored node or partition back online  
-- Resync with the Sovereign Substrate  
-- Verify full chain of custody  
+1. Divergence is detected and recorded  
+2. Anchors are validated  
+3. Canonical path is selected  
+4. Events are replayed deterministically  
+5. Invalid chains are isolated  
+6. Node or partition is reintegrated  
 
 ---
 
 ## 17.7 Failure Modes & Escalation
 
-If recovery fails:
+- **Non-critical failure** → automatic retry  
+- **Critical failure** → CSR escalation  
+- **Irrecoverable state** → governed emergency reconstruction  
 
-### 17.7.1 Non-Critical Failure
-System MAY retry automatically.
-
-### 17.7.2 Critical Failure
-Architect MUST escalate to:
-
-- CSR oversight  
-- Multi-anchor review  
-- Potential regional or global recovery  
-
-### 17.7.3 Irrecoverable State
-If no valid anchors remain:
-
-- System MUST halt the affected region  
-- CSR MUST provide emergency governance directive  
-- Manual reconstruction MAY occur using out-of-band verified data  
-
-Irrecoverability MUST be extremely rare by design.
+Irrecoverability MUST be rare by design.
 
 ---
 
 ## 17.8 Observability & Reporting
 
-Recovery MUST generate:
+Recovery MUST expose:
 
-- Recovery Event records  
-- Anchor validation logs  
-- Divergence maps  
-- Reconstruction timelines  
+- Trigger cause  
+- Anchor selection  
+- Reconstruction steps  
 - Before/after state hashes  
-- Cross-partition reconciliation paths  
+- Partition reconciliation results  
 
-Auditors MUST be able to verify:
-
-- Why recovery was triggered  
-- How conflict was resolved  
-- What anchors were used  
-- What the final canonical result is  
+Full auditability is mandatory.
 
 ---
 
 ## 17.9 Interaction With Other Layers
 
-- **L11 — Proof Primitives**  
-  Validates signatures, hashes, and identity proofs during recovery.
+- **L11 Proof Primitives**  
+- **L12 Idempotence**  
+- **L13 Mutability Constraints**  
+- **L14 Temporal Rules**  
+- **L15 Causality Chain**  
+- **L16 Reversibility**
 
-- **L12 — Idempotence**  
-  Ensures recovery replay produces consistent results.
-
-- **L13 — Mutability Constraints**  
-  Determines which objects can be reconstructed vs. compensated.
-
-- **L14 — Temporal Rules**  
-  Enforces time-consistent restoration.
-
-- **L15 — Causality Chain**  
-  Ensures restored state maintains valid cause–effect links.
-
-- **L16 — Reversibility**  
-  Provides mechanisms for compensating invalid segments during reconstruction.
-
-L17 builds on all preceding layers and MUST NOT weaken any.
+L17 MUST strengthen, not weaken, prior guarantees.
 
 ---
 
 ## 17.10 Invariants
 
-L17 MUST maintain:
-
 1. **ANCHOR_AUTHENTICITY**  
-   Only authenticated anchors may drive recovery.
-
 2. **CONSISTENT_RECONSTRUCTION**  
-   All nodes MUST reach the same restored state.
-
 3. **HISTORY_IMMUTABILITY**  
-   No recovery action rewrites or deletes past events.
-
 4. **NONCANONICAL_FORK_ISOLATION**  
-   Invalid chains MUST be isolated and must not rejoin the canonical path.
-
-5. **SELF-HEALING_CONTINUITY**  
-   The Substrate MUST autonomously restore operational integrity.
+5. **SELF_HEALING_CONTINUITY**
 
 ---
 
-## 17.11 Informative Guidance
+## 17.11 Real-World Capability Enabled by the Recovery Model
 
-- Recovery SHOULD be automatic for non-critical drift.  
-- Security-driven recovery SHOULD be conservative and require more anchors.  
-- Architect SHOULD expose operator-friendly visual recovery tools.  
-- Partition reconciliation MUST prioritize authenticated continuity over completeness.  
-- Recovery MUST assume adversarial conditions where corruption may be intentional.
+The Recovery Model enables **infrastructure-grade resilience with legal-grade integrity**.
+
+It allows:
+- Governments to recover national digital infrastructure after cyberattack or disaster without losing trust continuity.
+- Financial systems to restore global settlement platforms after outages without reconciliation disputes.
+- Healthcare and identity systems to recover patient or citizen state without risking data corruption or replay.
+- Enterprises to achieve true disaster recovery without backups becoming sources of inconsistency or fraud.
+- Distributed sovereign clouds to self-heal across regions while maintaining a single source of truth.
+
+Recovery becomes **provable restoration**, not guesswork.
 
 ---
 
----
-Return to Navigation:
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
