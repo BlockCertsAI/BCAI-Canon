@@ -1,112 +1,70 @@
-# NFTCERTin — Authenticated NFT Credential Execution Layer
+# NFTCERTin — Authenticated Credential & Asset Execution Layer
 
-## Canonical Classification
-**Layer Type:** Execution  
-**Depends On:**  
-- Genesis Identity (KYC at root)  
-- Proof of Authentication (PoA)  
-- DomainCERTin (sovereign domain anchoring)
-
-NFTCERTin does **not** define new safety invariants.  
-It operates entirely **within Law**, executing credential logic that is only possible because identity, authorization, and state validity are already guaranteed upstream.
-
----
+## Canon Classification
+- **Layer Type:** Execution
+- **Sovereignty Impact:** None
+- **Law Interaction:** Must satisfy all existing Law and state validity constraints
+- **Change Tolerance:** May evolve without redefining valid state space
 
 ## Definition
 
-**NFTCERTin** is the authenticated NFT execution layer of BlockCertsAI.
+NFTCERTin is the execution-layer mechanism that issues, manages, and enforces
+**identity-anchored, verifiable NFT credentials** on the authenticated internet.
 
-It transforms NFTs from speculative, bearer-based assets into **identity-anchored, programmable credentials** tied to real people, real entities, and real rights — issued only on a chain where identity is verified at the root.
+NFTCERTin transforms NFTs from speculative collectibles into **authenticated certificates**
+representing real assets, rights, records, and permissions.
 
-NFTCERTin NFTs are not trust substitutes.  
-They are **trust expressions**.
+## Core Properties
 
----
+- NFTCERTin operates **only after identity verification** via Proof of Authentication (PoA).
+- NFTCERTs are always bound to:
+  - A verified identity
+  - A verified issuing authority
+  - A canonical state reference
 
-## What NFTCERTin Does (Execution Semantics)
+NFTCERTin does **not** define new state validity rules.
+It executes within the existing sovereign boundary.
 
-NFTCERTin executes credential logic for NFTs that already satisfy all canonical Law requirements.
+## What NFTCERTin Executes
 
-### 1. Identity-Anchored Minting
-- Every NFTCERT is minted **only after KYC** via Proof of Authentication.
-- No anonymous or bearer minting.
-- Identity binding is enforced **before execution**, not retroactively.
+- Minting authenticated NFTs only for verified identities
+- Binding NFTs to real-world rights and assets:
+  - Property titles
+  - Licenses
+  - Credentials
+  - Tickets
+  - Contracts
+  - Consents
+  - Training records
+  - Warranties
+- Enforcing programmable access rights:
+  - Portal access
+  - Data access
+  - Signing authority
+  - Event participation
+  - Service eligibility
 
-### 2. Real-World Asset & Rights Representation
-NFTCERTin executes NFTs representing:
-- Property titles
-- Licenses and permits
-- Contracts and consents
-- Event tickets
-- Training and certification records
-- Warranties and attestations
+## What NFTCERTin Does NOT Do
 
-These NFTs represent **verifiable rights**, not speculative claims.
+- Does not alter safety invariants
+- Does not redefine valid states
+- Does not bypass authorization Law
+- Does not grant execution authority outside canonical constraints
 
-### 3. Programmable Access Control
-NFTCERTin executes logic that allows NFTs to:
-- Grant or deny portal access
-- Unlock data or records
-- Authorize document signing
-- Permit event participation
-- Gate enterprise or healthcare systems
+## Execution Semantics
 
-All access decisions are evaluated **during execution**, using authenticated identity as input.
-No passwords.
-No shared secrets.
-No heuristics.
+NFTCERTin executes **policy-level logic** such as:
 
----
+- Conditional access based on NFT possession
+- Revocation or expiration handling
+- Rights delegation within allowed bounds
+- Interoperability with external systems via authenticated gateways
 
-## What NFTCERTin Is Not
+All execution outcomes are validated against Law **before state mutation**.
 
-- Not a new Law layer  
-- Not a governance mechanism  
-- Not a bearer-asset system  
-- Not a speculative marketplace primitive  
+## Canonical Purpose
 
-NFTCERTin **cannot**:
-- Override authorization Law
-- Redefine ownership validity
-- Permit anonymous control
-- Create new valid state classes
+NFTCERTin provides the **credential and asset execution layer** for Web4,
+where trust derives from authenticated identity rather than platforms or speculation.
 
----
-
-## Why NFTCERTin Exists
-
-Web2 trust depends on platforms.  
-Web3 trust depends on code.  
-**Web4 trust depends on identity.**
-
-NFTCERTin is the credential execution layer that makes identity-based trust programmable at scale.
-
-Because ownership is authenticated at the source:
-- Impersonation is eliminated
-- Forgery is impossible
-- Spoofing is prevented
-- Unauthorized access is rejected deterministically
-
----
-
-## Canonical Role Summary
-
-| Aspect | Classification |
-|------|----------------|
-| Identity verification | Upstream (Law) |
-| State validity | Upstream (Law) |
-| Authorization | Upstream (Law) |
-| Credential behavior | **Execution (NFTCERTin)** |
-| Access logic | **Execution (NFTCERTin)** |
-| Asset semantics | **Execution (NFTCERTin)** |
-
----
-
-## Canonical Statement
-
-> NFTCERTin is the execution layer for authenticated, programmable credentials.  
-> It expresses trust — it does not create it.
-
-Law makes NFTCERTin possible.  
-NFTCERTin makes Law useful.
-
+NFTCERTin is **execution**, not constitution.
