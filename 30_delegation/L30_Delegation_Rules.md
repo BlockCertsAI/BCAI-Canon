@@ -276,4 +276,3 @@ Return to Navigation:
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
-
