@@ -1,15 +1,15 @@
 <!--
 CANONICAL: TRUE
-LAYER: L9
+LAYER: L09
 AUTO-TOC: ENABLED
 VERSION: 1.0
-PURPOSE: Canon rule file for this Sovereign Substrate layer.
+PURPOSE: Canon rule file for the Canonical Event Model governing authenticated state change.
 NOTES:
  - Do not remove this header.
- - This file defines canonical rules for this substrate layer.
+ - This file defines canonical event formation, validation, and sealing rules.
 -->
 
-## L09 Canonical Event Model
+## L09 — Canonical Event Model
 
 ### Definition
 The L09 Layer defines the **canonical event model** governing authenticated state changes, sealed transitions, invariant validation, and deterministic recovery across all Sovereign Substrate layers.
@@ -17,20 +17,20 @@ The L09 Layer defines the **canonical event model** governing authenticated stat
 L09 answers the question:  
 **“What is an event, how is it formed, how does it mutate state, and how does the substrate preserve correctness across time, failures, and domains?”**
 
-Events represent the substrate’s smallest unit of **authenticated, validated, and causally ordered truth.**
+Events represent the substrate’s smallest unit of **authenticated, validated, causally ordered truth**.
 
 ---
 
 ## Core Principles of the Event Model
 
 ### **1. Events Are Authenticated**
-Every event must:
+Every event MUST:
 - originate from a verified identity (L01)  
 - be carried by ADT (L06)  
-- include authority proofs (L21–22)  
+- include authority proofs (L21–L22)  
 - include delegation context (L30)  
 
-There are no anonymous events and no implicit events.
+There are no anonymous or implicit events.
 
 ---
 
@@ -41,7 +41,7 @@ Given identical conditions, every node MUST compute the same:
 - lineage position  
 - sealing result  
 
-Events cannot depend on nondeterministic inputs.
+Events MUST NOT depend on nondeterministic inputs.
 
 ---
 
@@ -50,72 +50,72 @@ An event either:
 - fully applies, or  
 - does not apply at all  
 
-Events cannot partially mutate state.
+Partial state mutation is forbidden.
 
 ---
 
 ### **4. Events Are Forward-Only**
 Once an event is sealed (L51), it cannot be reversed, mutated, or reinterpreted.  
-History is append-only.
+History is strictly append-only.
 
 ---
 
 ### **5. Events Are Causally Ordered**
-Every event must reference:
-- its parent transition  
+Every event MUST reference:
+- its parent state  
 - its lineage index (L37)  
 - its domain context  
 - its anchoring identity  
 
-No event can violate causal continuity.
+No event may violate causal continuity.
 
 ---
 
 ## Anatomy of a Canonical Event
 
-Every event MUST contain:
+Every canonical event MUST contain the following components:
 
 ### **1. Identity Header**
 - genesis identity reference (L01)  
 - ADT signature (L06)  
-- authority role & scope (L21–22)  
+- authority role and scope (L21–L22)  
 - delegation chain (L30)
 
 ---
 
 ### **2. Proof Bundle**
-Cryptographic proofs for:
-- identity  
-- authority  
-- domain invariants (L28)  
-- constraint satisfaction (L31)  
-- semantic context (L03 MAIAi)  
+Cryptographic proofs covering:
+- identity authenticity  
+- authority validity  
+- invariant satisfaction (L28)  
+- constraint compliance (L31)  
+- semantic binding (L03 MAIAi)  
 - routing lineage (L08)
 
 ---
 
 ### **3. Transition Payload**
-The proposed change:
+The proposed change, including:
 - domain mutation  
 - state delta  
 - semantic meaning binding  
 - safety classification (L50)  
 
-Payloads cannot contain raw SVS data.
+Payloads MUST NOT contain raw SVS data.
 
 ---
 
 ### **4. Execution Metadata**
-- timestamp  
+- canonical timestamp  
 - domain identifiers  
 - routing provenance  
-- Architect’s deterministic evaluation results (L04)  
-- sealed-state references  
+- deterministic execution references (L05)  
+- resulting state references  
 
 ---
 
 ### **5. Sealing Vector**
-When ready for sealing (L51), event includes:
+When eligible for sealing (L51), the event includes:
 - hash commitments  
 - causal proofs  
 - domain signing requirements  
@@ -125,45 +125,44 @@ When ready for sealing (L51), event includes:
 
 ## Event Lifecycle
 
-The lifecycle is strict and MUST follow the sequence below:
+The event lifecycle MUST follow this strict sequence:
 
 ### **1. Intent Origination**
-Human-origin intent validated by L48.
+Human-origin intent is validated (L48).
 
 ### **2. ADT Submission**
-Event is packaged into a transition envelope.
+ADT packages intent into a transition envelope.
 
 ### **3. MAIAi Semantic Verification**
-Meaning is confirmed; ambiguity is rejected.
+Semantic correctness is validated; ambiguity is rejected.
 
 ### **4. Constraint Enforcement**
-L31 constraints must be fully satisfied.
+All L31 constraints are evaluated.
 
 ### **5. Architect Evaluation**
-Deterministic check of:
+The Architect (L04) deterministically evaluates:
 - validity  
-- authority  
-- invariants  
-- safety  
-- state impact  
+- authority alignment  
+- invariant compatibility  
+- safety eligibility  
 
-### **6. State Mutation**
-If valid, the Architect applies the mutation to create a new provisional state.
+### **6. Deterministic Execution**
+The Execution Layer (L05) applies the state mutation identically across all nodes.
 
 ### **7. Sealing**
-Event is sealed according to L51 requirements, becoming immutable truth.
+The event is sealed (L51), becoming immutable truth.
 
 ### **8. Routing Propagation**
-L08 distributes the sealed event to all nodes.
+The Routing Layer (L08) distributes the sealed event globally.
 
 ### **9. Recovery Support**
-Events are used for deterministic recovery (L38).
+Events serve as anchors for deterministic recovery (L38).
 
 ---
 
 ## Event Categories
 
-The substrate recognizes several canonical event types:
+The substrate recognizes the following canonical event types:
 
 ### **1. Identity Events**
 - identity creation  
@@ -173,30 +172,29 @@ The substrate recognizes several canonical event types:
 ### **2. Authority Events**
 - role acquisition  
 - delegation changes  
-- revocation of permissions  
+- permission revocation  
 
 ### **3. Domain Events**
-- domain operations  
-- domain-specific mutations  
-- invariant updates  
+- domain-specific operations  
+- invariant-governed mutations  
 
 ### **4. System Events**
 - sealing events  
 - recovery checkpoints  
-- constraint updates  
+- constraint or invariant updates  
 
 ### **5. Inter-Domain Events**
 - cross-domain workflows  
 - shared invariants  
 - multi-domain sealing anchors  
 
-Each category MUST obey the same canonical rules.
+All categories MUST obey identical canonical rules.
 
 ---
 
 ## Failure Handling and Event Rejection
 
-Events MUST be rejected if they contain:
+Events MUST be rejected if they include:
 - invalid identity or authority  
 - broken lineage references  
 - malformed proofs  
@@ -204,21 +202,21 @@ Events MUST be rejected if they contain:
 - invariant violations  
 - safety hazards  
 - nondeterministic components  
-- missing delegation info  
+- missing delegation context  
 - references to private SVS content  
 
 Rejected events MUST NOT:
 - mutate state  
-- alter lineage  
+- advance lineage  
 - be partially applied  
 
-They simply fail.
+They fail atomically.
 
 ---
 
 ## Event Invariants
 
-The following MUST always hold true:
+The following MUST always hold:
 
 - every event is authenticated  
 - every event is provable  
@@ -234,40 +232,39 @@ Events are the indivisible units of substrate truth.
 
 ---
 
+## Real-World Capability Enabled by the Canonical Event Model
+
+The Canonical Event Model enables **legal-grade, audit-ready digital operations**.
+
+It allows:
+- Governments, enterprises, and platforms to rely on individual actions  
+  as provable units of responsibility, attribution, and intent.
+- Forensic reconstruction of “who did what, when, and under what authority”  
+  without trusting logs, operators, or institutions.
+- Elimination of silent state changes, background automation, and implicit actions  
+  that plague legacy systems.
+- Safe cross-domain coordination  
+  where each action is independently verifiable yet globally consistent.
+
+Events turn digital activity into **verifiable civic and economic actions**,  
+not opaque software side effects.
+
+---
+
 ## Event Model Relationship to Other Layers
 
-### **L01 Identity**
-Event origin must be traceable to a human root identity.
-
-### **L02 SVS**
-Events may reference encrypted proofs but never SVS contents.
-
-### **L03 MAIAi**
-Ensures semantic correctness of event meaning.
-
-### **L04 Architect**
-Evaluates, approves, or rejects events deterministically.
-
-### **L06 ADT**
-Originates user-driven event submissions.
-
-### **L07 Canonical State**
-Events generate new canonical states.
-
-### **L08 Routing**
-Propagates events to all nodes.
-
-### **L37 Lineage Model**
-Events extend lineage, forming the substrate’s causal chain.
-
-### **L38 Recovery**
-Events serve as recovery anchors.
-
-### **L50 Safety**
-Unsafe events are immediately rejected.
-
-### **L51 Sealing**
-Events are sealed into immutable truth.
+- **L01 — Identity:** Event origin traces to a human root identity.  
+- **L02 — SVS:** Events reference proofs, never private data.  
+- **L03 — MAIAi:** Semantic correctness validation.  
+- **L04 — Architect:** Deterministic event evaluation.  
+- **L05 — Execution:** State mutation application.  
+- **L06 — ADT:** Event origination vehicle.  
+- **L07 — Canonical State:** Events produce new canonical states.  
+- **L08 — Routing:** Event propagation.  
+- **L37 — Lineage:** Causal chain extension.  
+- **L38 — Recovery:** Recovery anchors.  
+- **L50 — Safety:** Safety enforcement.  
+- **L51 — Sealing:** Event immutability.
 
 ---
 
@@ -280,14 +277,13 @@ Events are sealed into immutable truth.
 - safe cross-domain operations  
 - robust recovery under failure  
 - complete auditability and attribution  
-- elimination of unintended or unauthorized actions  
+- elimination of unauthorized actions  
 
 Events become the **atomic, authenticated units of truth** from which the entire substrate derives consistency.
 
 ---
 
----
-Return to Navigation:
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
