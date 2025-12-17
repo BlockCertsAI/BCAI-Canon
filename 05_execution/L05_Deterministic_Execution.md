@@ -1,6 +1,6 @@
 <!--
 CANONICAL: TRUE
-LAYER: L5
+LAYER: L05
 AUTO-TOC: ENABLED
 VERSION: 1.0
 PURPOSE: Canon rule file for deterministic execution across the Sovereign Substrate.
@@ -9,7 +9,7 @@ NOTES:
   - This file defines canonical execution semantics for this substrate layer.
 -->
 
-# L5 — Deterministic Execution (The Execution Layer)
+# L05 — Deterministic Execution (Execution Layer)
 
 ---
 
@@ -20,8 +20,8 @@ Define the mandatory rules for **deterministic, authenticated, rule-consistent e
 The Execution Layer guarantees that:
 
 - The same authenticated inputs and constraints  
-- Always produce the same observable outputs and state transitions,  
-- Regardless of underlying hardware, ordering, or concurrency.
+- Always produce the same observable outputs and state transitions  
+- Regardless of underlying hardware, ordering, or concurrency  
 
 Deterministic execution is what makes the Substrate **replayable, auditable, and provable**.
 
@@ -40,13 +40,13 @@ All operations MUST execute in a way that:
 
 - Is fully attributable to identity, intent, and constraints  
 - Does not depend on hidden local state or non-deterministic sources  
-- Can be reconstructed from the Canon and sealed history alone.
+- Can be reconstructed from the Canon and sealed history alone  
 
 ---
 
 ## Core Properties  
 
-### 1. Input–Output Determinism  
+### **1. Input–Output Determinism**  
 
 For any given:
 
@@ -67,20 +67,20 @@ Non-deterministic behavior is forbidden.
 
 ---
 
-### 2. Order-Preserved Execution  
+### **2. Order-Preserved Execution**  
 
 Execution MUST respect canonical ordering guarantees:
 
 - Transitions are applied in a well-defined sequence  
 - Causal dependencies are honored  
-- No operation may “overtake” a prior authenticated transition that it depends on  
+- No operation may overtake a dependent authenticated transition  
 - Concurrency MUST NOT change observable results  
 
 Reordering that changes outcome is prohibited.
 
 ---
 
-### 3. Constraint-Bounded Behavior  
+### **3. Constraint-Bounded Behavior**  
 
 Execution MUST remain fully bounded by:
 
@@ -90,7 +90,7 @@ Execution MUST remain fully bounded by:
 - Conflict and consistency rules  
 - Sealing and persistence guarantees  
 
-Execution MAY NOT:
+Execution MUST NOT:
 
 - Bypass constraints  
 - Ignore failed checks  
@@ -100,7 +100,7 @@ If a constraint fails, execution MUST halt deterministically.
 
 ---
 
-### 4. Side-Effect Discipline  
+### **4. Side-Effect Discipline**  
 
 All side effects MUST be:
 
@@ -109,7 +109,7 @@ All side effects MUST be:
 - Attributable to a specific transition  
 - Included in sealing and audit records  
 
-Execution MAY NOT:
+Execution MUST NOT:
 
 - Produce hidden side effects  
 - Mutate state outside declared scope  
@@ -119,13 +119,13 @@ If a side effect cannot be represented in canonical form, it MUST NOT occur.
 
 ---
 
-### 5. Replayability  
+### **5. Replayability**  
 
 Given:
 
 - The sealed canonical history  
 - The Canon rule set  
-- The same configuration and inputs  
+- Identical configuration and inputs  
 
 the Execution Layer MUST allow:
 
@@ -133,28 +133,25 @@ the Execution Layer MUST allow:
 - Re-derivation of resulting states  
 - Verification that live execution matches canonical behavior  
 
-Replay MUST either:
-
-- Reproduce identical results, or  
-- Reveal deviation as a provable execution fault.
+Replay MUST either reproduce identical results or reveal a provable execution fault.
 
 ---
 
-### 6. Failure Semantics  
+### **6. Failure Semantics**  
 
 Execution failures MUST be:
 
 - Deterministic  
-- Explicitly categorized (constraint failure, safety violation, resource limit, etc.)  
+- Explicitly categorized  
 - Non-corrupting (no partial state commit)  
 - Fully logged and attributable  
 
-No operation may partially succeed.  
-If execution fails, the canonical state MUST remain as if the operation never occurred.
+Partial success is forbidden.  
+On failure, the canonical state MUST remain unchanged.
 
 ---
 
-### 7. Environment Independence  
+### **7. Environment Independence**  
 
 Execution MUST NOT depend on:
 
@@ -163,7 +160,7 @@ Execution MUST NOT depend on:
 - Hardware-specific behavior  
 - Non-canonical configuration  
 
-Any environment-dependent behavior MUST be normalized into canonical inputs before execution.
+All environment-dependent behavior MUST be normalized into canonical inputs before execution.
 
 ---
 
@@ -171,44 +168,56 @@ Any environment-dependent behavior MUST be normalized into canonical inputs befo
 
 Deterministic Execution is enforced by:
 
-- The **Architect Layer (L4)**, which defines the constraints and enforcement model  
-- The **Execution Engine**, which applies rules strictly and predictably  
-- The **CSR Layer**, which routes transitions into the correct execution context  
-- **MAIAi / ADTs**, which MUST adhere to deterministic pathways when acting as execution initiators  
+- **The Architect Layer (L04)**, which provides execution plans under canonical constraints  
+- **The Execution Engine**, which applies rules strictly and predictably  
+- **The CSR Layer**, which routes transitions into the correct execution context  
+- **ADT (L06) and MAIAi (L03)**, which MUST adhere to deterministic pathways when initiating execution  
 
 No component may introduce non-determinism into canonical execution.
 
 ---
 
-## Why It Matters  
+## Real-World Capability Enabled by Deterministic Execution
 
-Without deterministic execution:
+Deterministic Execution enables **audit-grade, regulator-safe automation** in real-world systems.
 
-- Canonical history could not be trusted  
-- Different nodes could disagree on valid state  
-- Audits and replays would be unreliable  
-- Malicious or faulty environments could distort outcomes  
+Specifically, it allows:
 
-Deterministic execution is what makes the Sovereign Substrate **provable, auditable, and sovereign** rather than probabilistic or opaque.
+- Independent verification that regulated actions  
+  (identity issuance, credentialing, payments, governance decisions)  
+  were executed exactly as specified.
+
+- Forensic replay of historical events  
+  to prove correctness, detect faults, or resolve disputes  
+  without relying on trust in operators or infrastructure.
+
+- Distributed execution across heterogeneous environments  
+  while maintaining a single, authoritative view of valid state.
+
+- Elimination of rollback, reconciliation, and manual correction processes  
+  by preventing partial or ambiguous outcomes.
+
+Execution becomes **provable infrastructure**, not best-effort computation.
 
 ---
 
 ## Result  
 
-Only operations that can be executed:
+Only operations that are:
 
-- Deterministically  
+- Deterministic  
 - Constraint-bounded  
-- Replayably  
-- And environment-independent  
+- Replayable  
+- Environment-independent  
 
-are permitted to affect canonical state.
+may affect canonical state.
 
-Execution is not “best effort.”  
+Execution is not best effort.  
 Execution is **precise, repeatable, and provably correct** under the Canon.
 
 ---
-Return to Navigation:
+
+## Return to Navigation
 - [Root Specification](../CANON_ROOT.md)
 - [Machine-Readable Master Index](../CANON_MASTER_INDEX.md)
 - [Human Navigation Map](../CANON_NAV.md)
