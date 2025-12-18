@@ -9,31 +9,31 @@ No layer content may be inferred without fetching the referenced file.
 ## Canon Layers
 
 L01 — Identity  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L01_Identity.md
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/01_identity/L01_Identity.md
 
 L02 — Secure Virtual Space (SVS)  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L02_SVS.md
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/02_vaults/L02_Vaults.md
 
-L03 — Canon Layer 03  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L03.md
+L03 — maiai 
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/03_maiai/L03_MAIAi.md
 
-L04 — Canon Layer 04  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L04.md
+L04 — architect
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/04_architect/L04_Architect.md
 
-L05 — Canon Layer 05  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L05.md
+L05 — execution  
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/05_execution/L05_Deterministic_Execution.md
 
 L06 — Canon Layer 06  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L06.md
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/10_primitives/L10_Proof_Primitives.md
 
 L07 — Canon Layer 07  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L07.md
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/11_idempotence/L11_Idempotence_Rules.md
 
 L08 — Canon Layer 08  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L08.md
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/08_l8/L08_Interlinking.md
 
 L09 — Canon Layer 09  
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L09.md
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/09_events/L09_Event_Model.md
 
 L10 — Canon Layer 10  
 https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/layers/L10.md
