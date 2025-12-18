@@ -1,35 +1,24 @@
 <!--
 CANONICAL: TRUE
-LAYER: L1
-AUTO-TOC: ENABLED
-VERSION: 1.0
-PURPOSE: Canon rule file for this Sovereign Substrate layer.
-NOTES:
- - Do not remove this header.
- - This file defines canonical rules for this substrate layer.
--->
-
-<!--
-CANONICAL: TRUE
 LAYER: L01
 AUTO-TOC: ENABLED
-VERSION: 1.0
+VERSION: 1.1
 PURPOSE: Canon rule file for the Sovereign Substrate’s Identity Layer.
 NOTES:
 - Do not remove this header.
 - This file defines canonical rules governing identity establishment,
-  identity-bound state transitions, identity invariants, and identity
-  integrity constraints within the Sovereign Substrate.
+  identity-bound state transitions, identity invariants, identity integrity,
+  and explicit exclusion of credential-based identity models.
 -->
 
 # L01 — Identity Layer (Genesis Identity)
 
-The Identity Layer establishes the substrate’s root identity model.
+The Identity Layer establishes the Sovereign Substrate’s root identity model.
 All sovereign, organizational, delegated, or machine identities derive
 their existence, authority, and provability from the rules defined here.
 
 Identity is the first canonical requirement of the Sovereign Substrate.
-Every authenticated entity participating in the substrate must originate
+Every authenticated entity participating in the substrate MUST originate
 from a provable, cryptographically bound identity established at L01.
 
 Identity is not an application-level concept.
@@ -57,7 +46,7 @@ Once established:
 - Identity cannot be deleted.
 - Identity cannot be anonymized.
 - Identity cannot be overwritten.
-- Identity MAY evolve through canonical mutation rules (see §4).
+- Identity MAY evolve only through canonical mutation rules (see §5).
 
 The substrate MUST reject any identity request that cannot be validated
 against real-world verification systems or structured verification sources.
@@ -78,22 +67,57 @@ These invariants form the root of all authenticated operations at higher layers.
 
 ---
 
-## 3. Identity-Bound Operations
+## 3. Explicit Exclusion of Credential-Based Identity Models
+
+The Sovereign Substrate does NOT implement identity through credentials.
+
+The following models are explicitly excluded at the canonical level:
+
+- Issuer-controlled credentials
+- Portable credential artifacts
+- Presentation-based access using static or semi-static proofs
+- Credential possession as a substitute for authenticated execution
+- Identity verification through third-party credential validation
+
+Identity within the Sovereign Substrate is NOT:
+
+- A credential
+- A token
+- A certificate
+- A document
+- An issuer-dependent artifact
+
+No action, access, or authority MAY be granted through credential
+presentation alone.
+
+All authority derives exclusively from:
+
+- A canonical identity established at genesis
+- Cryptographic proof bound to that identity
+- Deterministic validation enforced before execution
+- Canonical state transitions sealed through CSR-L01
+
+Any system, process, or integration that attempts to introduce
+credential-based identity semantics MUST be rejected as non-canonical.
+
+---
+
+## 4. Identity-Bound Operations
 
 All canonical events MUST bind to an identity in one of the following roles:
 
-### 3.1 Actor
+### 4.1 Actor  
 The entity responsible for initiating a canonical event.
 
-### 3.2 Subject
+### 4.2 Subject  
 The entity whose state is affected by the canonical event.
 
-### 3.3 Steward
+### 4.3 Steward  
 An entity authorized to maintain or manage identity-bound resources.
 
-### 3.4 Delegated Actor
+### 4.4 Delegated Actor  
 A downstream identity operating under limited authority granted through
-canonical delegation (§5).
+canonical delegation (§6).
 
 Every event MUST include:
 
@@ -106,22 +130,22 @@ Events lacking these MUST be rejected at validation time.
 
 ---
 
-## 4. Identity Mutation Rules (Controlled State Changes)
+## 5. Identity Mutation Rules (Controlled State Changes)
 
-Identity may evolve through mutation events, but only under strict rules:
+Identity MAY evolve through mutation events, but only under strict rules.
 
 Mutation events MUST:
 
 - Reference the identity’s root hash.
 - Pass CSR-L01 validation.
 - Maintain all invariants defined in §2.
-- Preserve provable lineage and chain of custody metadata.
+- Preserve provable lineage and chain-of-custody metadata.
 - Be replayable and deterministic.
 
 Permitted mutations include:
 
-- Updating verified attributes (e.g., name change, organizational role).
-- Adding authentication factors (keys, hardware proofs, biometrics).
+- Updating verified attributes.
+- Adding authentication factors.
 - Revoking compromised authentication factors.
 - Extending identity trust scopes.
 
@@ -136,7 +160,7 @@ Any mutation request violating these rules MUST be rejected.
 
 ---
 
-## 5. Delegated Identity Rules (DAOs, Agents, Processes)
+## 6. Delegated Identity Rules
 
 Delegated identity allows an identity to authorize another identity to act
 within a constrained scope.
@@ -155,45 +179,13 @@ Delegation MUST NOT:
 - Modify identity provenance.
 - Circumvent authentication requirements.
 
-Examples of valid delegated identities:
-
-- A machine agent acting on behalf of a user.
-- An organizational role acting within a defined scope.
-- A process identity executing scheduled tasks.
-
 All delegations MUST be revocable through canonical mutation.
-
----
-
-## 6. Cross-Substrate Identity Embedding
-
-Identity MUST be portable across Sovereign Substrate instances through:
-
-- Canonical identity export frames.
-- Identity embedding proofs.
-- Cross-substrate CSR reference linkage.
-
-Cross-substrate identity MUST preserve:
-
-- Identity invariants (§2)
-- Genesis provenance
-- Delegation constraints
-- CSR lineage integrity
-
-Identity MUST NOT be duplicated across substrates.
-A derived identity MUST reference its upstream canonical origin.
 
 ---
 
 ## 7. Temporal Identity Rules
 
 Identity exists within canonical time.
-
-Time-bounded constraints include:
-
-- Delegation expiration
-- Key rotation windows
-- Identity attribute validity periods
 
 All identity temporal proofs MUST be:
 
@@ -205,14 +197,12 @@ All identity temporal proofs MUST be:
 Temporal mutations MUST be rejected if they:
 
 - Conflict with prior sealed timeframes
-- Attempt to retroactively alter identity activity
-- Introduce ambiguity into identity lineage
+- Attempt retroactive alteration
+- Introduce ambiguity into lineage
 
 ---
 
 ## 8. Identity Sealing Rules (CSR-L01)
-
-CSR-L01 defines the sealing requirements for all identity operations.
 
 A valid CSR-L01 seal MUST:
 
@@ -220,15 +210,7 @@ A valid CSR-L01 seal MUST:
 - Include the identity root hash
 - Bind the event to canonical time
 - Include the actor’s cryptographic signature
-- Include the validation signature of the identity steward (if applicable)
 - Produce a unique canonical event hash
-
-A CSR-L01 seal MUST be generated for:
-
-- Identity creation
-- Identity mutation
-- Delegation creation or revocation
-- Key additions or revocations
 
 Identity operations lacking a valid CSR-L01 MUST be rejected.
 
@@ -244,59 +226,14 @@ All identity validation MUST:
 - Terminate deterministically
 - Fail deterministically when invariants are violated
 
-Validation MUST reject:
-
-- Ambiguous identities
-- Duplicate SIKs
-- Incomplete lineage records
-- Invalid CSR-L01 seals
-- Non-deterministic mutation requests
-
 ---
 
 ## Result
 
-Identity established at L01 serves as the foundation for all sovereign,
-organizational, and system identities throughout the Sovereign Substrate.
+Identity at L01 is a **canonical execution primitive**, not a credential.
+It is precise, enforceable, non-transferable, and provably correct.
 
-Only identity operations that are:
-
-- Deterministic  
-- Constraint-bounded  
-- Replayable  
-- Environment-independent  
-
-ARE permitted to affect canonical state at L01.
-
-Identity is not “best effort.”
-Identity is **precise, enforceable, and provably correct**, forming the
-foundation upon which all authenticated execution depends.
-
----
-
-## Real-World Capability Closure (Non-Normative)
-
-The Identity Layer enables real-world systems to eliminate fraud,
-impersonation, and ambiguity at the root of digital interaction.
-
-When enforced as defined in L01, this layer makes the following
-capabilities possible **by construction**, not by policy:
-
-- One-time, lifetime identity verification without repeated KYC cycles
-- Elimination of fake accounts, bots, and Sybil attacks at the substrate level
-- Cryptographically provable attribution for every action, message, or transaction
-- Delegated machine agents (AI, automation, devices) acting with bounded authority
-- Portable identity usable across governments, enterprises, healthcare, finance, and voting systems
-- Audit-grade identity trails suitable for regulators without exposing private data
-- Secure replacement of passwords, usernames, and centralized SSO systems
-- Identity-safe AI execution where every model action is attributable and reversible
-
-In real-world terms, L01 allows societies and institutions to
-**trust who is acting without trusting the platform they are acting on**.
-
-This layer transforms identity from a revocable service
-into a permanent, user-owned, cryptographically enforced foundation
-for the authenticated internet.
+All authenticated execution within the Sovereign Substrate depends on this layer.
 
 ---
 
