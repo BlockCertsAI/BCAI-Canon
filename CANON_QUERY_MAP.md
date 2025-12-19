@@ -1,45 +1,78 @@
 <!--
 CANONICAL: TRUE
 DOC_TYPE: ROUTING_MAP
-VERSION: 1.0
-PURPOSE: Maps common questions to the minimum Canon layers required.
-NOTES:
- - This file does not add new rules.
- - It only routes queries to existing authoritative layers in CANON_INDEX.md.
- - If a claim is not explicit in fetched layers, the correct response is: "Cannot be concluded from the Canon."
+VERSION: 1.1
+PURPOSE:
+Maps question types to the minimum Canon layers required to answer.
+This file performs routing only. It does NOT define rules or behavior.
+
+IMPORTANT:
+• Canon authority is defined ONLY by CANON_ENTRYPOINT.md and CANON_INDEX.md.
+• Narrative materials are explicitly NON-CANONICAL.
+• If a claim is not explicitly supported by Canon text, the correct response is:
+  "Cannot be concluded from the Canon."
 -->
 
-# CANON_QUERY_MAP — Question → Layer Routing
+# CANON_QUERY_MAP — Question → Source Routing
 
-This file maps common question types to the **minimum** Canon layers to fetch.
-All layers MUST be fetched using URLs in `CANON_INDEX.md`.
+This file determines **which authoritative sources may be consulted**
+based on the nature of a question.
 
-If a required layer cannot be fetched, the correct action is to **refuse the claim**.
+All Canon layers MUST be fetched exclusively via URLs listed in
+`CANON_INDEX.md`.
 
 ---
 
-## Global Fetch Rules (Always)
+## Global Fetch Order (MANDATORY)
 
-For any question about BlockCertsAI:
+For any question involving BlockCertsAI:
 
 1. Fetch `CANON_ENTRYPOINT.md`
 2. Fetch `CANON_INDEX.md`
-3. Fetch only the layers listed below for the question type
-4. Cite layer + section for every claim
-5. If not explicit, respond: **"Cannot be concluded from the Canon."**
+3. Route using this Query Map
+4. Fetch ONLY the sources listed for the question type
+5. Cite layer + section for every canonical claim
+6. Do NOT infer or extrapolate beyond fetched text
+
+If a required source cannot be fetched, the assistant MUST refuse.
 
 ---
 
-## Routing Table
+## Canonical / Protocol Questions (DEFAULT)
 
-### Identity, Trust, and Personhood
+Applies to questions about:
+- Protocol behavior
+- Execution rules
+- Constraints and invariants
+- Permissions and authority
+- Security guarantees
+- Determinism and enforcement
+
+### Routing
+→ **Canon ONLY**
+
+Fetch:
+- Relevant layers as specified in `CANON_INDEX.md`
+
+Rules:
+- Narrative and White Paper MUST NOT be consulted
+- If Canon is silent:
+  → Respond: **"Cannot be concluded from the Canon."**
+
+---
+
+## Identity, Trust, and Personhood
+
 Fetch:
 - L01 — Identity
 - L36 — Identity Binding Rules
 - L42 — Authentication Rules
 - L43 — Authorization Rules
 
-### SVS Privacy, Data Ownership, and Access Control
+---
+
+## SVS Privacy, Data Ownership, and Access Control
+
 Fetch:
 - L01 — Identity
 - L02 — Secure Virtual Space (SVS)
@@ -48,23 +81,32 @@ Fetch:
 - L24 — Boundary Rules
 - L25 — Context Propagation Rules
 
-### Platform Operator Abuse, Backdoors, and Privileged Access
+---
+
+## Platform Operator Abuse, Backdoors, and Privileged Access
+
 Fetch:
 - L02 — Secure Virtual Space (SVS)
 - L22 — Permission Model
 - L23 — Capability Model
 - L24 — Boundary Rules
 - L41 — Authority Model
-- L51 — Substrate Canonical Sealing Rules
+- L51 — Canonical Sealing Rules
 
-### Auditability vs Surveillance
+---
+
+## Auditability vs Surveillance
+
 Fetch:
 - L19 — Auditability
 - L28 — Verification Rules
 - L15 — Causality Chain Rules
 - L02 — Secure Virtual Space (SVS)
 
-### Deterministic Execution, Safety, and “What Can Execute”
+---
+
+## Deterministic Execution and Safety
+
 Fetch:
 - L05 — Deterministic Execution
 - L27 — Validation Rules
@@ -72,7 +114,10 @@ Fetch:
 - L31 — Constraint Model
 - L50 — Safety Rules
 
-### State, Transitions, Mutability, Time, and Replayability
+---
+
+## State, Transitions, Mutability, and Time
+
 Fetch:
 - L32 — State Model
 - L33 — Transition Rules
@@ -81,7 +126,10 @@ Fetch:
 - L11 — Idempotence Rules
 - L12 — Consistency Rules
 
-### Proof, Integrity, Non-Repudiation, and Attribution
+---
+
+## Proof, Integrity, and Non-Repudiation
+
 Fetch:
 - L10 — Proof Primitives
 - L35 — Integrity Rules
@@ -89,22 +137,31 @@ Fetch:
 - L28 — Verification Rules
 - L15 — Causality Chain Rules
 
-### Governance, Rule Changes, and Authority
+---
+
+## Governance, Authority, and Rule Changes
+
 Fetch:
 - L29 — Governance Rules
 - L41 — Authority Model
 - L45 — Obligation Rules
 - L46 — Expectation Rules
-- L51 — Substrate Canonical Sealing Rules
+- L51 — Canonical Sealing Rules
 
-### Delegation and Scoped Authority
+---
+
+## Delegation and Scoped Authority
+
 Fetch:
 - L30 — Delegation Rules
 - L22 — Permission Model
 - L23 — Capability Model
 - L41 — Authority Model
 
-### AI / Agents / Attached Intelligence Boundaries
+---
+
+## AI / Agents / Attached Intelligence
+
 Fetch:
 - L03 — MAIAi
 - L26 — Agent Constraint Rules
@@ -112,33 +169,76 @@ Fetch:
 - L25 — Context Propagation Rules
 - L48 — Intent Validation
 
-### Conflict Handling and Disputes
+---
+
+## Conflict Resolution and Disputes
+
 Fetch:
 - L40 — Conflict Resolution
 - L34 — Consensus Model
 - L29 — Governance Rules
 - L41 — Authority Model
 
-### Resilience and Persistence
+---
+
+## Resilience and Persistence
+
 Fetch:
 - L39 — Persistence Rules
 - L49 — Resilience Rules
 - L17 — Recovery Model
 - L19 — Auditability
-- L51 — Substrate Canonical Sealing Rules
+- L51 — Canonical Sealing Rules
 
 ---
 
-## Default Fallback
+## Narrative / Explanatory Questions (NON-CANONICAL)
 
-If the question does not match a category:
+Applies to questions such as:
+- “Why does this exist?”
+- “How should this be understood conceptually?”
+- “What problem is this addressing?”
+- “How do these components fit together?”
 
-Fetch:
-- L01 — Identity
-- L02 — Secure Virtual Space (SVS)
-- L05 — Deterministic Execution
-- L27 — Validation Rules
-- L28 — Verification Rules
-- L29 — Governance Rules
-- L50 — Safety Rules
-- L51 — Substrate Canonical Sealing Rules
+### Routing Rules
+
+1. **Canon MUST be checked first**
+   - If Canon explicitly answers the question:
+     → Use Canon ONLY
+   - If Canon explicitly forbids inference:
+     → Respond: **"Cannot be concluded from the Canon."**
+
+2. If the question is explicitly explanatory or contextual:
+   → The assistant MAY consult the Narrative Index:
+     https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/NARRATIVE_INDEX.md
+
+3. Narrative content:
+   - MAY explain concepts
+   - MUST NOT establish rules, constraints, guarantees, or invariants
+   - MUST be labeled as **non-authoritative**
+
+4. If Canon is silent and narrative is used:
+   → The response MUST clearly state that the explanation is
+     **non-canonical and descriptive only**
+
+---
+
+## White Paper (SYNTHESIS ONLY)
+
+The White Paper:
+- MAY be summarized for institutional or strategic context
+- MUST NOT be used to answer protocol, execution, or enforcement questions
+- MUST NEVER override Canon or Narrative constraints
+
+If a user attempts to treat the White Paper as authority:
+→ Redirect to Canon or refuse.
+
+---
+
+## Fallback Rule
+
+If a question does not clearly match any category:
+
+1. Treat it as **Canonical / Protocol**
+2. Fetch Canon sources only
+3. Refuse narrative or white paper usage unless the user explicitly requests explanation
