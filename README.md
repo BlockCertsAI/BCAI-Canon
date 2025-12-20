@@ -3,7 +3,7 @@
 
 The last blockchain humanity will ever need.
 
-Twenty years in the making.  
+Ten years in the making.  
 One substrate.  
 The end of fraud at the protocol layer.
 
@@ -61,14 +61,15 @@ BCAI eliminates this dependency by enforcing trust **before execution**, not aft
 Identity is not an application feature.  
 It is a **first-block requirement**.
 
-Every participant is verified at inception, creating a single source of truth **without surveillance or data exposure**.
+Every participant is verified at inception, creating a single source of truth  
+**without surveillance or centralized data exposure**.
 
 Trust starts at the root — not at the edge.
 
 ---
 
 ### Proof of Authentication (PoA)  
-PoA replaces mining, staking, and gas fees.
+PoA replaces mining, staking, and gas fees, resulting in a near zero-carbon footprint.
 
 - No Proof of Work  
 - No Proof of Stake  
@@ -101,7 +102,8 @@ BCAI unifies fragmented Web3 and legacy systems without bridges.
 ### MAIAi — Authenticated Intelligence  
 MAIAi is **protocol-bound intelligence** embedded into the substrate.
 
-It executes only verified, authorized, policy-compliant actions — enforcing compliance **by design**, not by audit.
+It executes only verified, authorized, policy-compliant actions — enforcing compliance  
+**by design**, not by audit.
 
 ---
 
@@ -141,11 +143,70 @@ The private, AI-powered gateway to the authenticated internet.
 
 ---
 
+## Regulatory Compliance (By Design)
+
+BlockCertsAI does not bolt compliance onto applications.
+
+Compliance is enforced **at the protocol layer**, beginning at genesis.
+
+- Identity verification is mandatory at network entry  
+- Authenticated execution produces non-repudiable, attributable events  
+- Data remains user-owned and permissioned within encrypted Secure Virtual Spaces  
+- Enforcement occurs prior to execution, not through post-hoc monitoring  
+
+This architecture enables jurisdiction-specific compliance to be enforced  
+**deterministically**, without centralized custody or after-the-fact remediation.
+
+---
+
+## Project Milestones
+
+The following milestones document verifiable technical and operational progress
+of the BlockCertsAI platform.
+
+### 2015 — Secure Virtual Space (SVS) Patent Granted (US)
+- U.S. patent granted covering Secure Virtual Space (SVS), defining an
+  identity-bound, encrypted, user-controlled data environment.
+
+### 2017 — Alpha Mainnet Live
+- First alpha mainnet deployed and operating.
+
+### 2018 — SVS Patent Granted (Canada)
+- International patent granted in Canada for Secure Virtual Space (SVS).
+
+### April 2019 — Full Protocol Activation
+- Full protocol activated with BCERT and INK minted.
+- Cross-chain verification implemented on BCBC and Ethereum.
+- Genesis-level identity-bound execution enforced.
+
+### May 2025 — Ten-Year Anniversary
+- Ten years of continuous research, development, and internal platform evolution.
+
+### Sustained Internal Validation
+- Platform validated internally over multiple years through continuous operation.
+- Large volumes of authenticated execution events and identity-bound state
+  transitions exercised prior to public availability.
+
+### Developer Access — Q1 2026 (Planned)
+- Planned controlled developer access to authenticated APIs and tooling.
+- Access subject to onboarding, identity verification, and project alignment.
+
+### Platform Public Availability — December 20, 2025 (Planned)
+- Planned public platform availability.
+- Final timing subject to validation and deployment readiness.
+
+### Bootstrap Development
+- Designed, built, and validated through long-term bootstrap development
+  without external venture funding.
+
+---
+
 ## The Shift
 
 Steam → Electricity → Internet → Blockchain → **Protocol-Enforced Trust**
 
-BCAI represents the transition from **institutional trust** to **mathematically enforced coordination**.
+BCAI represents the transition from **institutional trust** to  
+**mathematically enforced coordination**.
 
 This is not Web3.  
 This is the substrate beneath it.
