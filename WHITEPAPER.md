@@ -76,22 +76,32 @@ It is a **protocol invariant**.
 
 ## 4. Proof of Authentication (PoA)
 
-BlockCertsAI replaces Proof of Work and Proof of Stake with **Proof of Authentication (PoA)**.
+BlockCertsAI replaces Proof of Work and Proof of Stake with **Proof of Authentication (PoA)** — an execution model where actions are permitted **only after identity, authorization, and policy requirements are satisfied**.
 
-PoA requires that every action be:
+PoA does not rely on:
+- mining
+- staking
+- validators
+- block races
+- probabilistic consensus
 
-- authenticated  
-- attributable  
-- authorized  
-- deterministic  
+Instead, execution is **identity-gated and deterministic**.
 
-There is no mining.  
-There is no staking.  
-There are no gas fees.
+Every action must be:
+- authenticated to a verified identity
+- authorized by explicit permissions
+- compliant with protocol-enforced policy
+- validated **before** state transition occurs
 
-Execution is permitted only when identity, permissions, and policy constraints are satisfied **prior to state transition**.
+If these conditions are not met, execution does not occur.
 
-This produces finality by construction, not probability.
+Because Proof of Authentication enforces identity, authorization, and policy **prior to execution**, BlockCertsAI eliminates the need for competitive consensus, speculative validation, or redundant computation. Compute is consumed only when an authenticated, authorized action is permitted to execute. As a result, the network performs no block races, no duplicate work, and no probabilistic finality, producing a **near zero-carbon execution model by construction**.
+
+Finality is not achieved by agreement.
+It is achieved by enforcement.
+
+Execution is attributable, deterministic, and final — without gas fees, mining, or staking incentives.
+
 
 ---
 
