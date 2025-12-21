@@ -104,19 +104,6 @@ Scope: Alignment with regulatory frameworks (interpretive).
 
 ---
 
-## 7. White Paper (Synthesis — Non-Canonical)
-
-• **BlockCertsAI White Paper**  
-File: `BlockcertsAI_WhitePaper_11:30:25.docx`  
-Scope: High-level synthesis and narrative overview.
-
-IMPORTANT:
-• The White Paper is explanatory only.
-• It MUST NOT be treated as protocol authority.
-• It exists to aid understanding, not enforcement.
-
----
-
 ## Canonical Authority Reminder
 
 For all protocol behavior, invariants, permissions, execution rules, and guarantees:
