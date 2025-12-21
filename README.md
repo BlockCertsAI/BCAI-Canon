@@ -169,7 +169,7 @@ of the BlockCertsAI platform.
   identity-bound, encrypted, user-controlled data environment.
 
 ### 2016 — Digital Dozen Proof of Concept**  
-Demonstrated that any existing software workflow can be mirrored, enforced, and executed within the BlockCertsAI substrate — proving that full software stacks can operate on-chain under authenticated, protocol-enforced execution.
+- Demonstrated that any existing software workflow can be mirrored, enforced, and executed within the BlockCertsAI substrate — proving that full software stacks can operate on-chain under authenticated, protocol-enforced execution.
 
 ### 2017 — Alpha Mainnet Live
 - First alpha mainnet deployed and operating.
