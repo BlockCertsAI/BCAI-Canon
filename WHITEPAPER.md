@@ -408,16 +408,24 @@ BCERT used for execution is recycled back into circulation, maintaining a fixed 
 
 ---
 
-**INK**, the metered execution unit of the BlockCertsAI substrate.  
-INK represents authenticated computation and resource usage, enabling deterministic, predictable execution costs without gas fees or bidding mechanisms.
+## 18. INK — Metered Execution
 
-Ownership of BCERT aligns incentives toward:
-- correct behavior  
-- long-term participation  
-- protocol integrity  
+**INK** represents metered execution within the BlockCertsAI substrate.
 
-BCERT does not grant power.  
-It grants **accountability**.
+Rather than gas fees or bidding mechanisms, INK:
+- measures authenticated computation
+- prices execution deterministically
+- eliminates volatility from transaction costs
+
+Execution costs are:
+- predictable
+- transparent
+- proportional to actual use
+
+This enables:
+- enterprise-grade planning
+- consumer-scale affordability
+- sustainable infrastructure economics
 
 ---
 
