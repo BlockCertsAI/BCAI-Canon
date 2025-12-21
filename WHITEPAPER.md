@@ -102,9 +102,6 @@ It is achieved by enforcement.
 
 Execution is attributable, deterministic, and final — without gas fees, mining, or staking incentives.
 
-
----
-
 ---
 
 ## 5. Secure Virtual Spaces (SVS)
@@ -226,11 +223,6 @@ It constrains them.
 Only applications that respect identity, permissions, and policy are allowed to operate.
 
 This creates an environment where trust is not negotiated — it is guaranteed.
-
----
-
-
----
 
 ---
 
