@@ -232,6 +232,8 @@ This creates an environment where trust is not negotiated — it is guaranteed.
 
 ---
 
+---
+
 ## 10. MAIAi — Authenticated Intelligence
 
 Artificial intelligence cannot be trusted if it is not accountable.
@@ -267,7 +269,105 @@ The ADT:
 - automates onboarding
 - mirrors legacy systems
 - coordinates workflows
-- enforces permis
+- enforces permissions
+- executes authorized actions on behalf of its principal
+
+It enables **incremental adoption**.
+
+Legacy systems do not need to be rewritten.
+They are mirrored, constrained, and progressively migrated into the authenticated substrate.
+
+The ADT is not:
+- a profile
+- an avatar
+- a chatbot
+
+It is an **enforcement-capable operational identity**.
+
+---
+
+## 12. Execution Without Trust Assumptions
+
+In BlockCertsAI, execution does not rely on trust.
+
+It relies on verification.
+
+Before any operation occurs:
+- identity is validated
+- permissions are verified
+- policy constraints are enforced
+- execution invariants are checked
+
+If any requirement fails, execution is denied.
+
+There are no privileged actors.
+There are no backdoors.
+There are no exceptions.
+
+Trust is not assumed — it is unnecessary.
+
+---
+
+## 13. Governance as Enforcement
+
+Traditional governance relies on:
+- committees
+- voting
+- interpretation
+- discretionary enforcement
+
+BlockCertsAI replaces governance by opinion with **governance by execution rules**.
+
+Governance logic is:
+- codified
+- identity-bound
+- enforceable
+- deterministic
+
+Rules are applied uniformly.
+Violations are prevented automatically.
+
+Governance does not react.  
+It constrains.
+
+---
+
+## 14. Self-Healing Systems
+
+Because invalid execution is prevented, BlockCertsAI systems are inherently resilient.
+
+When failures occur:
+- state is authenticated
+- causality is preserved
+- recovery is deterministic
+
+There is no ambiguity about:
+- what happened
+- who acted
+- which rule applied
+
+This enables **self-healing systems** that restore valid state without downtime, arbitration, or manual intervention.
+
+---
+
+## 15. Accountability by Construction
+
+Every action in BlockCertsAI produces a verifiable record:
+
+- bound to identity
+- bound to authorization
+- bound to outcome
+
+There is no plausible deniability.
+There is no attribution gap.
+
+Accountability is not enforced socially or legally after the fact.
+It is enforced **technically**, at the moment of execution.
+
+This is the foundation of scalable, trustless coordination.
+
+---
+
 
 ---
 
