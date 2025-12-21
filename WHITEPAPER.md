@@ -335,6 +335,7 @@ external trust dependencies.
 BAINCA enables BlockCertsAI to function as **infrastructure**, not a platform —
 where execution, data, and control remain sovereign and verifiable.
 
+---
 
 ## 14. Execution Without Trust Assumptions
 
@@ -444,6 +445,8 @@ This model replaces:
 with **on-demand, protocol-enforced utility consumption**, aligning cost
 directly with verified use rather than speculation or platform lock-in.
 
+---
+
 ## 19. From Tokens to Proof
 
 Most blockchain economies are built around speculation.
@@ -513,7 +516,7 @@ This enables:
 
 ---
 
-## 20. Regulatory Compliance by Design
+## 22. Regulatory Compliance by Design
 
 BlockCertsAI does not bolt compliance onto applications.
 
@@ -553,7 +556,7 @@ user sovereignty and protocol stability.
 
 ---
 
-## 21. FusionSTX — Authenticated Capital Formation
+## 23. FusionSTX — Authenticated Capital Formation
 
 **FusionSTX** is an applied financial layer built on the BlockCertsAI substrate.
 
@@ -584,7 +587,7 @@ or real-world legal alignment.
 
 ---
 
-## 22. Staking and Liquidity (Authenticated Participation)
+## 24. Staking and Liquidity (Authenticated Participation)
 
 Staking and liquidity within BlockCertsAI are **identity-bound and policy-constrained**.
 
@@ -611,7 +614,7 @@ not financial abstractions layered on top of it.
 
 ---
 
-## 23. DomainCERTin and NFTCERTin (Authenticated Assets and Domains)
+## 25. DomainCERTin and NFTCERTin (Authenticated Assets and Domains)
 
 BlockCertsAI extends protocol-enforced trust to domains and digital assets
 through **DomainCERTin** and **NFTCERTin**.
@@ -641,7 +644,7 @@ They are **direct applications of the same substrate rules** governing identity,
 authorization, and execution across BlockCertsAI.
 
 
-## 22. The Proof Economy
+## 26. The Proof Economy
 
 BlockCertsAI enables what can be described as a **Proof Economy**.
 
@@ -660,7 +663,7 @@ It depends on proof.
 
 ---
 
-## 23. Incentives Without Extraction
+## 27. Incentives Without Extraction
 
 Because data is user-owned and execution is authenticated:
 
@@ -677,7 +680,7 @@ This produces economic systems that scale **without exploitation**.
 
 ---
 
-## 24. Beyond Web3
+## 28. Beyond Web3
 
 BlockCertsAI is often grouped with Web3 technologies, but this classification is incomplete.
 
@@ -703,7 +706,7 @@ It is the substrate beneath it.
 
 ---
 
-## 25. High-Stakes Coordination
+## 29. High-Stakes Coordination
 
 BlockCertsAI is designed for environments where failure is unacceptable:
 
@@ -727,7 +730,7 @@ Without relying on institutional trust or centralized authority.
 
 ---
 
-## 26. The Role of Institutions
+## 30. The Role of Institutions
 
 BlockCertsAI does not eliminate institutions.
 
@@ -746,7 +749,7 @@ Oversight becomes verification.
 
 ---
 
-## 27. Migration, Not Replacement
+## 31. Migration, Not Replacement
 
 BlockCertsAI is not designed to replace existing systems overnight.
 
@@ -769,7 +772,7 @@ Continuity is preserved.
 
 ---
 
-## 28. The End of After-the-Fact Security
+## 32. The End of After-the-Fact Security
 
 Most digital security systems exist to respond to failure.
 
@@ -795,7 +798,7 @@ It is made **uneconomic and impossible to perform**.
 
 ---
 
-## 29. A New Baseline
+## 33. A New Baseline
 
 The internet was built without identity.
 Blockchains were built without enforcement.
@@ -812,7 +815,7 @@ Once these properties exist, they are difficult to abandon.
 
 ---
 
-## 30. Conclusion
+## 34. Conclusion
 
 BlockCertsAI is not a product.
 It is not a platform.
@@ -835,7 +838,7 @@ It is an implementation.
 
 ---
 
-## 31. Final Note
+## 35. Final Note
 
 The BlockCertsAI Canon defines the binding rules of this system.
 
