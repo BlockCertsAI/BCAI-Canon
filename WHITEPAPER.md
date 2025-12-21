@@ -105,6 +105,8 @@ Execution is attributable, deterministic, and final — without gas fees, mining
 
 ---
 
+---
+
 ## 5. Secure Virtual Spaces (SVS)
 
 Data sovereignty is meaningless without enforcement.
@@ -184,7 +186,49 @@ This inversion — enforcement before execution — is the core reason BlockCert
 
 ## 8. Deterministic State Transitions
 
-Because identity, permissions, and policy are eva
+Because identity, permissions, and policy are evaluated prior to execution, state transitions within BlockCertsAI are:
+
+- deterministic  
+- attributable  
+- non-repudiable  
+
+There are no probabilistic outcomes.  
+There is no ambiguous finality.
+
+Each state change represents a verified, authorized, and auditable event bound to a real identity.
+
+This enables:
+
+- accountable coordination  
+- provable compliance  
+- trusted automation  
+
+Without relying on institutions, intermediaries, or manual oversight.
+
+---
+
+## 9. From Platforms to Substrate
+
+Traditional platforms centralize control and externalize risk.
+
+BlockCertsAI replaces platforms with a **substrate**.
+
+In this model:
+
+- Applications become interchangeable  
+- Control resides with users  
+- Enforcement resides with the protocol  
+- Trust is taken for granted  
+
+The substrate does not compete with applications.  
+It constrains them.
+
+Only applications that respect identity, permissions, and policy are allowed to operate.
+
+This creates an environment where trust is not negotiated — it is guaranteed.
+
+---
+
 
 ---
 
