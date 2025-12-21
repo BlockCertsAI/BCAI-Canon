@@ -386,24 +386,32 @@ Economic value follows verified action, not narrative momentum.
 
 ## 17. BCERT — Proof-Bearing Utility
 
-**BCERT** is not a speculative asset.
+BCERT is not a speculative asset.
 
 It is a **proof-bearing utility** that represents:
-- authenticated access
-- verified participation
-- attributable contribution
+
+- authenticated access  
+- verified participation  
+- attributable contribution  
+
+BCERT has a **fixed total supply of 2.1 billion units**, defined at the protocol level.
 
 BCERT is required to:
-- access the authenticated substrate
-- initiate protocol-enforced operations
-- participate in economic activity bound to identity
+- access the authenticated substrate  
+- initiate protocol-enforced operations  
+- participate in economic activity bound to verified identity  
+
+BCERT is not consumed directly for execution.
+
+Instead, BCERT is exchanged for **INK**, the metered execution unit of the BlockCertsAI substrate.  
+INK represents authenticated computation and resource usage, enabling deterministic, predictable execution costs without gas fees or bidding mechanisms.
 
 Ownership of BCERT aligns incentives toward:
-- correct behavior
-- long-term participation
-- protocol integrity
+- correct behavior  
+- long-term participation  
+- protocol integrity  
 
-BCERT does not grant power.
+BCERT does not grant power.  
 It grants **accountability**.
 
 ---
