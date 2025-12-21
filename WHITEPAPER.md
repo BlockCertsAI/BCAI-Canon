@@ -513,6 +513,134 @@ This enables:
 
 ---
 
+## 20. Regulatory Compliance by Design
+
+BlockCertsAI does not bolt compliance onto applications.
+
+Compliance is enforced **at the protocol layer**, beginning at genesis.
+
+Because identity is verified at network entry and all execution is authenticated,
+BlockCertsAI produces **non-repudiable, attributable, and auditable events by
+construction**.
+
+This architecture enables lawful interoperability across jurisdictions without
+centralized custody, post-hoc monitoring, or discretionary enforcement.
+
+### Compliance Foundations
+
+BlockCertsAI aligns with global regulatory frameworks through protocol enforcement:
+
+- **United States frameworks**, including the Bank Secrecy Act (BSA),
+  USA PATRIOT Act, FinCEN AML/CTF requirements, and OFAC sanctions screening.
+- **International standards**, including FATF AML/CFT principles and OECD CRS.
+- **Data privacy regimes**, including GDPR and CCPA, enforced through user-owned
+  Secure Virtual Spaces and consent-based consent controls.
+- **Cryptographic and identity standards**, including NIST (FIPS 140-3,
+  NIST 800-63) and eIDAS-aligned digital signature assurance.
+
+### Regulatory Adaptation Without Forking
+
+BlockCertsAI adapts to evolving legal requirements **without protocol forks**.
+
+Regulatory logic is implemented as **signed, versioned policy modules** executed
+by MAIAi and enforced through Trust Autonomous Organizations (TAOs).
+
+These modules can be audited, sandboxed, updated, and deployed dynamically
+without altering deterministic execution or chain integrity.
+
+Regulators may operate observer nodes for lawful visibility while preserving
+user sovereignty and protocol stability.
+
+---
+
+## 21. FusionSTX — Authenticated Capital Formation
+
+**FusionSTX** is an applied financial layer built on the BlockCertsAI substrate.
+
+It demonstrates how protocol-enforced identity, authentication, and execution
+enable **compliant capital formation** without reliance on custodial intermediaries
+or speculative trust models.
+
+FusionSTX unifies:
+- tokenized equity
+- real-world assets
+- operational and financial data
+- authenticated smart contracts
+
+into a single, jurisdiction-aware execution environment.
+
+Through Proof of Authentication, FusionSTX enables:
+- compliant tokenization of securities, contracts, and commodities
+- cross-market interoperability between traditional and digital assets
+- deterministic enforcement of jurisdictional and regulatory constraints
+- authenticated participation across partner exchanges and enterprises
+
+BCERT provides authenticated access to FusionSTX, while execution and liquidity
+are metered through INK under protocol enforcement.
+
+FusionSTX illustrates how BlockCertsAI extends from infrastructure into
+**authenticated finance**, without compromising accountability, compliance,
+or real-world legal alignment.
+
+---
+
+## 22. Staking and Liquidity (Authenticated Participation)
+
+Staking and liquidity within BlockCertsAI are **identity-bound and policy-constrained**.
+
+Unlike anonymous or permissionless liquidity systems, participation in staking
+pools and liquidity mechanisms requires verified identity and authenticated
+authorization.
+
+This ensures:
+- accountability of participants
+- prevention of anonymous capital concentration
+- alignment of yield with verifiable contribution
+- compliance with jurisdictional constraints
+
+Liquidity within the BlockCertsAI ecosystem supports:
+- authenticated execution demand
+- regulated capital formation
+- sustainable infrastructure operation
+
+Yield is derived from **real, authenticated utility consumption**, not speculative
+activity or opaque incentive structures.
+
+Staking and liquidity are therefore expressions of protocol-enforced trust,
+not financial abstractions layered on top of it.
+
+---
+
+## 23. DomainCERTin and NFTCERTin (Authenticated Assets and Domains)
+
+BlockCertsAI extends protocol-enforced trust to domains and digital assets
+through **DomainCERTin** and **NFTCERTin**.
+
+### DomainCERTin
+
+DomainCERTin provides **authenticated domain identity and execution assurance**.
+
+It enables verified ownership, provenance, and interaction at the domain level,
+establishing trust anchors for web presence, commerce, communication, and
+machine-to-machine interaction.
+
+Domains become identity-bound and non-repudiable, rather than merely registered.
+
+### NFTCERTin
+
+NFTCERTin enables **authenticated non-fungible assets** where authorship,
+ownership, transfer, and execution are bound to verified identity.
+
+This model aligns tokenized assets with institutional requirements for
+accountability, provenance, and compliance — a distinction increasingly
+emphasized by global financial leaders in discussions of asset tokenization.
+
+DomainCERTin and NFTCERTin are not separate platforms.
+
+They are **direct applications of the same substrate rules** governing identity,
+authorization, and execution across BlockCertsAI.
+
+
 ## 22. The Proof Economy
 
 BlockCertsAI enables what can be described as a **Proof Economy**.
