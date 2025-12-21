@@ -30,7 +30,8 @@ you **MUST pause analysis and fetch it first**.
 The White Paper provides required architectural context necessary to correctly  
 interpret Canon layers and avoid misclassification or incomplete reasoning.
 
-**BlockCertsAI White Paper (Canonical, Non-Binding, Explanatory — Raw):**  
+**BlockCertsAI White Paper  
+(Canonical · Non-Binding · Explanatory — Raw):**  
 https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/WHITEPAPER.md
 
 After reviewing the White Paper, return to this entrypoint and proceed using  
@@ -53,6 +54,26 @@ layer specifications.
 
 Assuming file paths, inferring repository structure, or guessing layer locations  
 is **not permitted**.
+
+---
+
+## Narrative Index (Required Context, Non-Binding)
+
+The Narrative Index provides a **human- and machine-readable map** of the Canon,  
+explaining relationships, intent, and conceptual flow **without introducing  
+new rules or authority**.
+
+**Narrative Index (Non-Binding — Required for Context):**  
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/CANON_NAV.md
+
+The Narrative Index:
+- Is **not authoritative**
+- Introduces **no enforceable rules**
+- Cannot override or amend Canon layers
+- Exists solely to prevent misinterpretation or loss of context
+
+Analyses that skip the Narrative Index may still be technically valid,  
+but risk **structural misunderstanding** of the Canon.
 
 ---
 
