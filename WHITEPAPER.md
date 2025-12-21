@@ -501,8 +501,6 @@ This produces economic systems that scale **without exploitation**.
 
 ---
 
----
-
 ## 22. Beyond Web3
 
 BlockCertsAI is often grouped with Web3 technologies, but this classification is incomplete.
