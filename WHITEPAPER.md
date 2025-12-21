@@ -233,6 +233,7 @@ It constrains them.
 Only applications that respect identity, permissions, and policy are allowed to operate.
 
 This creates an environment where trust is not negotiated — it is guaranteed.
+Once enforcement exists at the substrate level, intelligence itself can no longer remain external to accountability.
 
 ---
 
