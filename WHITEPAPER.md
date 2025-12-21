@@ -846,3 +846,14 @@ This white paper is explanatory.
 
 When interpretation conflicts with enforcement,  
 **the Canon prevails**.
+
+---
+
+### Return to Canon Authority
+
+This White Paper is explanatory and non-binding.
+
+To evaluate, interpret, or answer questions about BlockCertsAI,
+return to the Canon entrypoint:
+
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/main/CANON_ENTRYPOINT.md
