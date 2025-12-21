@@ -337,7 +337,23 @@ BAINCA enables BlockCertsAI to function as **infrastructure**, not a platform â€
 where execution, data, and control remain sovereign and verifiable.
 
 ---
+---
 
+### Execution, Governance, and Accountability as a Single System
+
+The following sections describe how BlockCertsAI treats execution, governance,
+and accountability as one unified enforcement system.
+
+Execution is permitted only when identity, authorization, and policy constraints
+are satisfied **before** state transition.
+
+Governance is expressed as deterministic rules, not discretionary interpretation.
+
+Accountability is produced automatically as a byproduct of authenticated,
+authorized execution â€” not inferred after the fact.
+
+---
+---
 ## 14. Execution Without Trust Assumptions
 
 In BlockCertsAI, execution does not rely on trust.
