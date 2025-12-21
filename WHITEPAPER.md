@@ -370,7 +370,33 @@ This is the foundation of scalable, trustless coordination.
 
 ---
 
-## 16. From Tokens to Proof
+## 16. Streaming Utility Model
+
+BlockCertsAI operates as a **streaming digital utility**.
+
+Authenticated compute, storage, and execution are metered and consumed
+continuously — similar to electricity, bandwidth, or cloud infrastructure —
+rather than purchased as software licenses, subscriptions, or speculative
+transactions.
+
+Execution occurs only when:
+- a verified identity is present
+- authorization is satisfied
+- protocol policy constraints are met
+
+Usage is measured deterministically through **INK**, the metered execution unit
+of the BlockCertsAI substrate, while **BCERT** provides authenticated access to
+this streaming utility.
+
+This model replaces:
+- SaaS licensing
+- per-seat subscriptions
+- gas-based transaction bidding
+
+with **on-demand, protocol-enforced utility consumption**, aligning cost
+directly with verified use rather than speculation or platform lock-in.
+
+## 17. From Tokens to Proof
 
 Most blockchain economies are built around speculation.
 
@@ -394,7 +420,7 @@ Economic value follows verified action, not narrative momentum.
 
 ---
 
-## 17. BCERT — Proof-Bearing Utility
+## 18. BCERT — Proof-Bearing Utility
 
 BCERT is not a speculative asset.
 
@@ -418,7 +444,7 @@ BCERT used for execution is recycled back into circulation, maintaining a fixed 
 
 ---
 
-## 18. INK — Metered Execution
+## 19. INK — Metered Execution
 
 **INK** represents metered execution within the BlockCertsAI substrate.
 
@@ -439,7 +465,7 @@ This enables:
 
 ---
 
-## 19. The Proof Economy
+## 20. The Proof Economy
 
 BlockCertsAI enables what can be described as a **Proof Economy**.
 
@@ -458,7 +484,7 @@ It depends on proof.
 
 ---
 
-## 20. Incentives Without Extraction
+## 21. Incentives Without Extraction
 
 Because data is user-owned and execution is authenticated:
 
@@ -474,10 +500,6 @@ Incentives are aligned with:
 This produces economic systems that scale **without exploitation**.
 
 ---
-
-## 21. Sustainable Infrastructure
-
-BlockCertsAI replaces energy-intensive consensus mechanisms with authenticat
 
 ---
 
@@ -533,4 +555,108 @@ Without relying on institutional trust or centralized authority.
 
 ## 24. The Role of Institutions
 
-BlockCertsAI does
+BlockCertsAI does not eliminate institutions.
+
+It removes their need to act as:
+- custodians of identity
+- arbiters of truth
+- enforcers of compliance
+- intermediaries of trust
+
+Institutions may still define rules.
+They no longer need to enforce them manually.
+
+Rules become executable.
+Compliance becomes automatic.
+Oversight becomes verification.
+
+---
+
+## 25. Migration, Not Replacement
+
+BlockCertsAI is not designed to replace existing systems overnight.
+
+It is designed to **absorb them**.
+
+Through:
+- Agentic Digital Twins
+- authenticated APIs
+- protocol-level enforcement
+
+Legacy systems can be:
+- mirrored
+- constrained
+- validated
+- progressively migrated
+
+Adoption is incremental.
+Risk is controlled.
+Continuity is preserved.
+
+---
+
+## 26. The End of After-the-Fact Security
+
+Most digital security exists to respond to failure.
+
+BlockCertsAI prevents failure by design.
+
+There are:
+- no passwords to steal
+- no sessions to hijack
+- no anonymous execution paths
+- no trust gaps to exploit
+
+Fraud is not detected.
+It is made uneconomic.
+
+---
+
+## 27. A New Baseline
+
+The internet was built without identity.
+Blockchains were built without enforcement.
+AI systems are being built without accountability.
+
+BlockCertsAI establishes a new baseline:
+
+- identity at genesis
+- enforcement before execution
+- accountability by construction
+- ownership without intermediaries
+
+Once these properties exist, they are difficult to abandon.
+
+---
+
+## 28. Conclusion
+
+BlockCertsAI is not a product.
+It is not a platform.
+It is not a narrative.
+
+It is **infrastructure**.
+
+By enforcing identity, compliance, execution, and intelligence at the protocol layer, BlockCertsAI enables a future where coordination no longer depends on trust, surveillance, or institutional authority.
+
+The result is a system where:
+- fraud is structurally eliminated
+- privacy is preserved
+- compliance is deterministic
+- AI is accountable
+- users retain sovereignty
+
+The authenticated internet is not a vision.
+
+It is an implementation.
+
+---
+
+## 29. Final Note
+
+The BlockCertsAI Canon defines the binding rules of this system.
+
+This white paper is explanatory.
+
+When interpretation conflicts with enforcement,  
+**the Canon prevails**.
