@@ -439,27 +439,6 @@ This enables:
 
 ---
 
-## 18. INK — Metered Execution
-
-**INK** represents metered execution within the BlockCertsAI substrate.
-
-Rather than gas fees or bidding mechanisms, INK:
-- measures authenticated computation
-- prices execution deterministically
-- eliminates volatility from transaction costs
-
-Execution costs are:
-- predictable
-- transparent
-- proportional to actual use
-
-This enables:
-- enterprise-grade planning
-- consumer-scale affordability
-- sustainable infrastructure economics
-
----
-
 ## 19. The Proof Economy
 
 BlockCertsAI enables what can be described as a **Proof Economy**.
