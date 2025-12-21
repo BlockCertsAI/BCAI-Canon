@@ -360,9 +360,6 @@ This is the foundation of scalable, trustless coordination.
 
 ---
 
-
----
-
 ## 16. From Tokens to Proof
 
 Most blockchain economies are built around speculation.
