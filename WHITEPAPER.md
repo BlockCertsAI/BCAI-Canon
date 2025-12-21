@@ -1,4 +1,7 @@
 # BlockCertsAI  
+CANONICAL: TRUE
+BINDING: NO
+ROLE: EXPLANATORY
 ## Protocol-Enforced Trust for the Authenticated Internet
 
 ### Abstract
