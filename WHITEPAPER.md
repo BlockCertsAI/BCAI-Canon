@@ -353,7 +353,7 @@ Accountability is produced automatically as a byproduct of authenticated,
 authorized execution — not inferred after the fact.
 
 ---
----
+
 ## 14. Execution Without Trust Assumptions
 
 In BlockCertsAI, execution does not rely on trust.
