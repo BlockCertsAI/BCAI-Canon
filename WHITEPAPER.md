@@ -406,8 +406,6 @@ BCERT is not consumed directly for execution.
 Instead, BCERT is exchanged for INK, the metered execution unit of the BlockCertsAI substrate.
 BCERT used for execution is recycled back into circulation, maintaining a fixed supply while enabling continuous access to authenticated compute.
 
-INK represents authenticated computation and resource usage, enabling deterministic, predictable execution costs without gas fees or bidding mechanisms.
-
 ---
 
 **INK**, the metered execution unit of the BlockCertsAI substrate.  
