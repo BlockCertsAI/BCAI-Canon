@@ -204,6 +204,19 @@ of the BlockCertsAI platform.
 
 ---
 
+## Operational Evidence
+
+A live BlockCertsAI explorer is available for limited inspection.
+
+- Displays sample authenticated execution records and cryptographic hashes
+- Visibility is intentionally constrained by identity and privacy rules
+- Provided to demonstrate active substrate operation, not full public transparency
+
+Explorer:
+https://searchexplorer.blockcerts.io/
+
+---
+
 ## The Shift
 
 Steam → Electricity → Internet → Blockchain → **Protocol-Enforced Trust**
