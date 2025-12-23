@@ -89,6 +89,14 @@ Scope: User-controlled access to authenticated utility.
 
 ---
 
+## 5A. Ecosystem Positioning & Category Comparison
+
+### Structural Comparison
+• **BTC – ETH – BlockCertsAI (BCAI): Structural Comparison**  
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/btc_eth_bcai_comparison.md
+
+---
+
 ## 6. Economics & Capital Formation
 
 ### Liquidity
