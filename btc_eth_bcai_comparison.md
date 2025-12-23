@@ -58,16 +58,6 @@ They are designed to solve **different classes of problems under different const
 | Autonomous Action Safety | N/A | External controls | Protocol-enforced |
 | Failure Mode in Real World | Breaks compliance | Requires intermediaries | Enforces rules structurally |
 
----
-
-## Notes
-
-- This comparison focuses on **architectural intent and constraints**, not
-  performance benchmarks, market metrics, or token price.
-- Absence of a feature reflects **design choice**, not technical deficiency.
-- These platforms are optimized for **different trust environments** and
-  should be evaluated accordingly.
-
   ---
 
   ### D. Expandability Model (Correct Framing)
@@ -79,3 +69,12 @@ They are designed to solve **different classes of problems under different const
 | **How Expansion Occurs** | Hard forks or off-chain systems | New contracts, rollups, or independent chains | New capabilities executed inside a fixed authenticated substrate |
 | **Structural Constraint** | Security preserved by limiting scope | Security diluted by composability fragmentation | Security preserved by identity-bound execution |
 
+---
+
+## Notes
+
+- This comparison focuses on **architectural intent and constraints**, not
+  performance benchmarks, market metrics, or token price.
+- Absence of a feature reflects **design choice**, not technical deficiency.
+- These platforms are optimized for **different trust environments** and
+  should be evaluated accordingly.
