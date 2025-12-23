@@ -80,7 +80,7 @@ They are designed to solve **different classes of problems under different const
 | **Expandability Limit** | Fixed by monetary design | Limited by chain & L2 fragmentation | Limited by single-chain architecture | Limited to parachain model | Limited to subnet model | Expands with each new authenticated workflow |
 | **What the Token Can Never Be** | General-purpose utility | Universal identity or compliance primitive | Cross-domain trust primitive | Identity-bound execution unit | Universal trust substrate | Purely speculative asset |
 | **Dependency on Chain Design** | Absolute | Absolute | Absolute | Absolute | Absolute | None (utility derives from protocol enforcement) |
-| **Liquidity / Staking Role** | Secures monetary settlement | Secures chain execution and gas market | Secures high-throughput chain operation | Secures inter-chain coordination | Secures subnet-specific execution | Provides access to authenticated capital and execution markets |
+| **Liquidity / Staking Role** | Secures monetary settlement | Secures chain execution and gas market | Secures high-throughput chain operation | Secures inter-chain coordination | Secures subnet-specific execution | Provides access to authenticated capital and execution markets (non-custodial) |
 
 ---
 
