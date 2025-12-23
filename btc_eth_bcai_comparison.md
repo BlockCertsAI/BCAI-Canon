@@ -19,7 +19,7 @@ They are designed to solve **different classes of problems under different const
 | Who Can Execute | Anyone | Anyone | Only authenticated, authorized actors |
 | Can Protocol Refuse Execution | No | No (contract rules only) | Yes (pre-execution enforcement) |
 | Ownership of Core Assets | Network-shared | Network-shared | User-owned (identity, data, execution) |
-| Control Surface | Social consensus | Foundation + social consensus | Canon-governed, authenticated governance |
+| Control Surface | Social consensus | Foundation + social consensus | Canon-governed, authenticated governance (rule-bound) |
 | Upgrade Mechanism | Social fork | Social + foundation-led | Canon ratification |
 | Resistance to Capture | Medium | Medium | High (spec-bound, identity-anchored) |
 | User Portability Without Permission | Funds only | Funds only | Identity, data, permissions, and operations |
@@ -34,7 +34,7 @@ They are designed to solve **different classes of problems under different const
 | Regulatory Posture | External / adversarial | External / bolted-on | Native / by-design |
 | Identity & KYC Capability | Impossible by design | External only | Enforced at protocol layer |
 | Compliance Enforcement Point | After execution | Application layer | Before execution |
-| Auditability | Public but unactionable | Partial, contract-scoped | Deterministic, identity-bound |
+| Auditability | Public but unactionable | Partial, contract-scoped | Deterministic, identity-bound, enforceable |
 | Non-Repudiation | None | Contract-limited | Protocol-enforced |
 | Legal Accountability Model | Economic only | Contract-scoped | Identity-bound actors |
 | Jurisdictional Compatibility | Limited | Limited / indirect | Compatible by design |
@@ -78,7 +78,7 @@ They are designed to solve **different classes of problems under different const
 | **Primary Purpose** | Monetary settlement | Gas & smart contract execution | High-throughput app execution | Inter-chain coordination | Subnet execution | Access to authenticated utility |
 | **Token Scope** | Money only | Chain-specific computation | Chain-specific computation | Relay-chain governance & staking | Subnet-specific computation | Platform-wide utility across domains |
 | **Expandability Limit** | Fixed by monetary design | Limited by chain & L2 fragmentation | Limited by single-chain architecture | Limited to parachain model | Limited to subnet model | Expands with each new authenticated workflow |
-| **What the Token Can Never Be** | General-purpose utility | Universal identity or compliance primitive | Cross-domain trust primitive | Identity-bound execution unit | Universal trust substrate | Speculative-only asset |
+| **What the Token Can Never Be** | General-purpose utility | Universal identity or compliance primitive | Cross-domain trust primitive | Identity-bound execution unit | Universal trust substrate | Purely speculative asset |
 | **Dependency on Chain Design** | Absolute | Absolute | Absolute | Absolute | Absolute | None (utility derives from protocol enforcement) |
 | **Liquidity / Staking Role** | Secures monetary settlement | Secures chain execution and gas market | Secures high-throughput chain operation | Secures inter-chain coordination | Secures subnet-specific execution | Provides access to authenticated capital and execution markets |
 
