@@ -47,7 +47,7 @@ They are designed to solve **different classes of problems under different const
 
 | Category | Bitcoin (BTC) | Ethereum (ETH) | BlockCertsAI (BCAI) |
 |--------|---------------|----------------|----------------------|
-| Primary Real-World Use Case | Store of value | DeFi, programmable finance | General-purpose authenticated infrastructure |
+| Primary Real-World Use Case | Store of value | DeFi, programmable finance | Metered, streaming software utility across diverse software workflows |
 | Can Run Regulated Workflows | No | Only via intermediaries | Yes, natively |
 | Data Ownership Model | Public ledger | Application-controlled | User-owned vaults |
 | Privacy by Default | No | No (add-ons required) | Yes |
