@@ -54,19 +54,14 @@ Scope: Identity-bound agents and delegated execution (conceptual).
 
 ## 4. Developers
 
-BlockCertsAI is not approached through a traditional SDK-first or
-application-centric developer model.
+Developer engagement is oriented around **architectural constraints**, not
+SDK-first or application-centric workflows.
 
-Developers are expected to engage first at the **architectural and constraint
-level**, as defined by the Canon. The developer materials below provide
-orientation on how builders, architects, and institutions should evaluate and
-engage with the platform — not as a quick-start guide, but as a foundation for
-authenticated execution.
-
-**Developer orientation and engagement guidance:**
-
+• Developers  
 https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/DEVELOPERS.md
 
+Scope: Developer orientation, evaluation model, and engagement boundaries for
+building on an authenticated execution substrate.
 
 ---
 
