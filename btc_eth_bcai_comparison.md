@@ -57,7 +57,6 @@ They are designed to solve **different classes of problems under different const
 | AI / Agent Execution Capability | None | Off-chain / advisory | Native, authenticated, enforceable |
 | Autonomous Action Safety | N/A | External controls | Protocol-enforced |
 | Failure Mode in Real World | Breaks compliance | Requires intermediaries | Enforces rules structurally |
-| Expandability Model | Protocol changes or external layers | New contracts and Layer-2 systems | Additive software workflows within a fixed authenticated substrate |
 
 ---
 
@@ -68,3 +67,15 @@ They are designed to solve **different classes of problems under different const
 - Absence of a feature reflects **design choice**, not technical deficiency.
 - These platforms are optimized for **different trust environments** and
   should be evaluated accordingly.
+
+  ---
+
+  ### D. Expandability Model (Correct Framing)
+
+| Dimension | Bitcoin (BTC) | Ethereum (ETH) | BlockCertsAI (BCAI) |
+|---------|---------------|----------------|---------------------|
+| **Expandability Model** | Fixed-function monetary protocol | Fragmented via Layer-2s, sidechains, and app-specific silos | Lateral scaling through additive software workflows |
+| **What Can Expand** | Monetary policy and settlement only | Application logic, fragmented across chains | Any authenticated software workflow |
+| **How Expansion Occurs** | Hard forks or off-chain systems | New contracts, rollups, or independent chains | New capabilities executed inside a fixed authenticated substrate |
+| **Structural Constraint** | Security preserved by limiting scope | Security diluted by composability fragmentation | Security preserved by identity-bound execution |
+
