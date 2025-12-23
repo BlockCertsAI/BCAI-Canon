@@ -52,7 +52,25 @@ Scope: Identity-bound agents and delegated execution (conceptual).
 
 ---
 
-## 4. Infrastructure & Platform Components
+## 4. Developers
+
+BlockCertsAI is not approached through a traditional SDK-first or
+application-centric developer model.
+
+Developers are expected to engage first at the **architectural and constraint
+level**, as defined by the Canon. The developer materials below provide
+orientation on how builders, architects, and institutions should evaluate and
+engage with the platform — not as a quick-start guide, but as a foundation for
+authenticated execution.
+
+**Developer orientation and engagement guidance:**
+
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/DEVELOPERS.md
+
+
+---
+
+## 5. Infrastructure & Platform Components
 
 ### Network & Interface
 • **ORBITi**  
@@ -76,7 +94,7 @@ Scope: User-controlled access to authenticated utility.
 
 ---
 
-## 5. Economics & Capital Formation
+## 6. Economics & Capital Formation
 
 ### Liquidity
 • **Liquidity Pools**  
@@ -95,7 +113,7 @@ Scope: Capital formation narrative.
 
 ---
 
-## 6. Regulatory & External Alignment
+## 7. Regulatory & External Alignment
 
 ### Regulatory Bridge
 • **GENIUS Act Bridge**  
