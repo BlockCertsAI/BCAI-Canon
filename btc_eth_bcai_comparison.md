@@ -22,8 +22,8 @@ They are designed to solve **different classes of problems under different const
 | Control Surface | Social consensus | Foundation + social consensus | Canon-governed, authenticated governance |
 | Upgrade Mechanism | Social fork | Social + foundation-led | Canon ratification |
 | Resistance to Capture | Medium | Medium | High (spec-bound, identity-anchored) |
-| User Exit Without Permission | Financial only | Financial only | Identity, data, and operational continuity |
-| Corporate / Foundation Gatekeeping | Low | Medium | None (rule-based, not discretionary) |
+| User Portability Without Permission | Funds only | Funds only | Identity, data, permissions, and operations |
+| Corporate / Foundation Gatekeeping | Low | Medium | None (user-owned, rule-enforced) |
 
 ---
 
