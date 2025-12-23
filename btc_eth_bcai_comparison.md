@@ -57,6 +57,7 @@ They are designed to solve **different classes of problems under different const
 | AI / Agent Execution Capability | None | Off-chain / advisory | Native, authenticated, enforceable |
 | Autonomous Action Safety | N/A | External controls | Protocol-enforced |
 | Failure Mode in Real World | Breaks compliance | Requires intermediaries | Enforces rules structurally |
+| Expandability Model | Protocol changes or external layers | New contracts and Layer-2 systems | Additive software workflows within a fixed authenticated substrate |
 
 ---
 
