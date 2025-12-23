@@ -71,6 +71,18 @@ They are designed to solve **different classes of problems under different const
 
 ---
 
+### E. Token Utility Scope (Structural Comparison)
+
+| Dimension | BTC | ETH | SOL | DOT | AVAX | BCERT |
+|---------|-----|-----|-----|-----|------|-------|
+| **Primary Purpose** | Monetary settlement | Gas & smart contract execution | High-throughput app execution | Inter-chain coordination | Subnet execution | Access to authenticated utility |
+| **Token Scope** | Money only | Chain-specific computation | Chain-specific computation | Relay-chain governance & staking | Subnet-specific computation | Platform-wide utility across domains |
+| **Expandability Limit** | Fixed by monetary design | Limited by chain & L2 fragmentation | Limited by single-chain architecture | Limited to parachain model | Limited to subnet model | Expands with each new authenticated workflow |
+| **What the Token Can Never Be** | General-purpose utility | Universal identity or compliance primitive | Cross-domain trust primitive | Identity-bound execution unit | Universal trust substrate | Speculative-only asset |
+| **Dependency on Chain Design** | Absolute | Absolute | Absolute | Absolute | Absolute | None (utility derives from protocol enforcement) |
+
+---
+
 ## Notes
 
 - This comparison focuses on **architectural intent and constraints**, not
