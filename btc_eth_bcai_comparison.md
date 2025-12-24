@@ -107,6 +107,30 @@ This chart reframes the comparison model itself. BlockCertsAI is not optimized
 to compete on chain throughput metrics, but to enable **deterministic,
 identity-bound execution of real-world software systems**.
 
+---
+
+### G. Environmental Impact (Architectural Consequences)
+
+This chart describes environmental impact as a **direct consequence of system
+architecture**, not as an external optimization or policy goal.
+
+| Dimension | Bitcoin (BTC) | Ethereum (ETH) | BlockCertsAI (BCAI) |
+|---------|----------------|----------------|---------------------|
+| Security Driver | Computational work | Staked capital | Verified identity + policy |
+| Energy Dependency | Mandatory and continuous | Reduced but persistent | Minimal by design |
+| Source of Energy Cost | Proof-of-Work mining | Validator infrastructure | Execution only when authorized |
+| Idle Energy Consumption | High | Medium | Near-zero |
+| Scaling Effect | Energy use rises with network activity | Energy use rises with complexity | Energy scales only with real utility |
+| Waste Factor | Deliberate (security-through-work) | Structural overhead | Eliminated via pre-execution gating |
+| Enforcement Overhead | Post-execution | Post-execution | Pre-execution |
+| Environmental Tradeoff | Security vs energy | Capital vs energy | Identity vs energy |
+
+**Note:**  
+Environmental impact is not an optimization target of BlockCertsAI. It is a
+structural consequence of eliminating anonymous execution, speculative
+computation, and post-hoc enforcement through protocol-level identity
+verification and policy-bound execution.
+
 ## Notes
 
 - This comparison focuses on **architectural intent and constraints**, not
