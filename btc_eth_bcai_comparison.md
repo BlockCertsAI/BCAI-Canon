@@ -21,8 +21,8 @@ They are designed to solve **different classes of problems under different const
 | Ownership of Core Assets | Network-shared | Network-shared | User-owned (identity, data, execution) |
 | Control Surface | Social consensus | Foundation + social consensus | Canon-governed, authenticated governance (rule-bound) |
 | Upgrade Mechanism | Social fork | Social + foundation-led | Canon ratification |
-| Resistance to Capture | Medium | Medium | High (spec-bound, identity-anchored) |
-| User Portability Without Permission | Funds only | Funds only | Identity, data, permissions, and operations |
+| Resistance to Capture | Medium | Medium |Very high (identity-anchored, no anonymous validators) |
+| User Portability Without Permission | Funds only | Funds only | Full (identity, data, permissions, operations, execution rights) |
 | Corporate / Foundation Gatekeeping | Low | Medium | None (user-owned, rule-enforced) |
 
 ---
