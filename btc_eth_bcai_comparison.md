@@ -13,7 +13,7 @@ They are designed to solve **different classes of problems under different const
 
 | Category | Bitcoin (BTC) | Ethereum (ETH) | BlockCertsAI (BCAI) |
 |--------|---------------|----------------|----------------------|
-| Primary Design Objective | Sound money | Programmable settlement | Authenticated execution infrastructure |
+| Primary Design Objective | Sound money | Programmable settlement | Only verified humans/entities (pre-enforced)|
 | Trust Model | Probabilistic, economic incentives | Game-theoretic, validator incentives | Deterministic, identity-enforced |
 | Identity Model | Pseudonymous | Pseudonymous | Native, protocol-enforced |
 | Who Can Execute | Anyone | Anyone | Only authenticated, authorized actors |
