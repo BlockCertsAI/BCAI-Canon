@@ -31,15 +31,15 @@ They are designed to solve **different classes of problems under different const
 
 | Category | Bitcoin (BTC) | Ethereum (ETH) | BlockCertsAI (BCAI) |
 |--------|---------------|----------------|----------------------|
-| Regulatory Posture | External / adversarial | External / bolted-on | Native / by-design |
-| Identity & KYC Capability | Impossible by design | External only | Enforced at protocol layer |
-| Compliance Enforcement Point | After execution | Application layer | Before execution |
-| Auditability | Public but unactionable | Partial, contract-scoped | Deterministic, identity-bound, enforceable |
-| Non-Repudiation | None | Contract-limited | Protocol-enforced |
-| Legal Accountability Model | Economic only | Contract-scoped | Identity-bound actors |
-| Jurisdictional Compatibility | Limited | Limited / indirect | Compatible by design |
-| Regulated Entity Usability | No | Limited / experimental | Yes, natively |
-| Requires Trusted Intermediaries | Yes | Yes | No |
+| Regulatory Posture | External / adversarial | External / bolted-on |Protocol-native compliance (built-in) |
+| Identity & KYC Capability | Impossible by design | External only | Mandatory, genesis-bound verification |
+| Compliance Enforcement Point | After execution | Application layer |Pre-execution (autonomous & deterministic) |
+| Auditability | Public but unactionable | Partial, contract-scoped | Fully deterministic & identity-anchored (enforceable on-chain)|
+| Non-Repudiation | None | Contract-limited | Absolute (identity-bound, zero-knowledge attestable) |
+| Legal Accountability Model | Economic only | Contract-scoped | Direct legal accountability (verified real-world entities) |
+| Jurisdictional Compatibility | Limited | Limited / indirect |Fully compatible (native support for jurisdictional rules) |
+| Regulated Entity Usability | No | Limited / experimental | Yes, protocol-native (no wrappers needed) |
+| Requires Trusted Intermediaries | Yes | Yes | None (fully decentralized yet compliant) |
 
 ---
 
