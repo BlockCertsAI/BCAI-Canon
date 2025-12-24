@@ -131,6 +131,29 @@ structural consequence of eliminating anonymous execution, speculative
 computation, and post-hoc enforcement through protocol-level identity
 verification and policy-bound execution.
 
+---
+
+### H. Token Supply Model (Structural Comparison)
+
+This chart compares token supply models based on **what the supply is designed
+to represent**, not price or valuation.
+
+| Dimension | Bitcoin (BTC) | Ethereum (ETH) | BlockCertsAI (BCERT / INK) |
+|---------|----------------|----------------|----------------------------|
+| Supply Quantity | 21 million (fixed) | Variable (no fixed cap) | 2.1B BCERT + INK (fixed, recyclable) |
+| Supply Intent | Digital scarcity (money) | Execution fuel (gas) | Utility access and metered execution |
+| Consumption Model | Non-recyclable | Burned / issued dynamically | Recycled after utility consumption |
+| What “Use” Means | Transfer / hold | Pay for computation | Access authenticated execution |
+| Relationship to Activity | Indirect | Direct but chain-bound | Direct and workflow-bound |
+| Scarcity Driver | Artificial cap | Policy + demand | Real utility demand |
+
+**Note:**  
+BCERT and INK are not designed as monetary assets. Their fixed but recyclable
+supply reflects a **utility access model**, where tokens circulate to enable
+authenticated execution rather than being permanently consumed or hoarded.
+
+---
+
 ## Notes
 
 - This comparison focuses on **architectural intent and constraints**, not
