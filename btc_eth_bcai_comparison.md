@@ -84,6 +84,29 @@ They are designed to solve **different classes of problems under different const
 
 ---
 
+### F. Structural Comparison: Chain-Centric Models vs Authenticated Execution
+
+This chart explains **why traditional blockchain comparison metrics**
+(TPS, block time, supply) **do not fully apply** to BlockCertsAI.
+
+| Dimension | Bitcoin / Ethereum (Chain Model) | BlockCertsAI (BCAI) |
+|---------|----------------------------------|---------------------|
+| Core Assumption | Value transfer and contract execution | Authenticated software execution |
+| Fundamental Unit | Transactions | Authenticated actions |
+| Who May Execute | Any key-holder | Verified, authorized identities only |
+| Identity Model | Pseudonymous | Native, protocol-enforced |
+| Compliance Model | External / after-the-fact | Pre-execution enforcement |
+| Governance Surface | Social consensus / foundations | Canon-governed, authenticated governance |
+| What Scales | Blocks, contracts, rollups | Software workflows |
+| Role of the Token | Secures the chain | Grants access to authenticated utility and capital |
+| Why TPS Matters | Congestion and fee pressure | Largely irrelevant to execution safety |
+| Failure Mode | Regulation breaks usability | Rules are enforced structurally |
+
+**Note:**  
+This chart reframes the comparison model itself. BlockCertsAI is not optimized
+to compete on chain throughput metrics, but to enable **deterministic,
+identity-bound execution of real-world software systems**.
+
 ## Notes
 
 - This comparison focuses on **architectural intent and constraints**, not
