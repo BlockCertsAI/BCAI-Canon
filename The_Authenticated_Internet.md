@@ -33,13 +33,13 @@ At enterprise, government, and national scale, this enables freedom from Big Tec
 
 ## Protocol Boundary — From Assumed Trust to Enforced Trust
 
-### Layered Trust Model (Mental Model)
+### Layered Trust Model 
 
 | Web2 Internet — Assumed Trust | Web3 Internet — Economic Trust | Authenticated Internet — Enforced Trust |
 |-----------------------------|-------------------------------|-----------------------------------------|
 | **🧑 User**  <br> Anyone can pretend to be anyone | **🧑 Wallet Holder**  <br> Pseudonymous | **🧑 Verified Identity**  <br> One real actor |
 | **🏢 Platforms / SaaS**  <br> “Trust us” | **⛓️ Smart Contracts**  <br> Code enforces logic, not identity | **🧠 Protocol Enforcement**  <br> Identity • Permission • Policy • Execution rules |
-| **🛠️ Patches**  <br> Passwords • Logins • Captchas  <br> Compliance teams • Audits • Cybersecurity tools | **💰 Incentives**  <br> Staking • Slashing • Gas fees • Validators | **🏠 User-Owned Vault (Secure Virtual Space)**  <br> Data • Assets • AI agents • Software |
+| **🛠️ Patches**  <br> Passwords • Logins • Captchas  <br> Compliance teams • Audits • Cybersecurity tools | **💰 Incentives**  <br> Staking • Slashing • Gas fees • Validators | **🏠 User-Owned Vault – Secure Virtual Space**  <br> Data • Assets • AI agents • Software |
 | *Trust is assumed, then patched after failure.* | *Trust is enforced economically, not socially.* | *Trust is enforced **before** action occurs.* |
 
 ---
