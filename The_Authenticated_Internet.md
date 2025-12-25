@@ -20,6 +20,8 @@ This is not an incremental improvement.
 ---
 
 > **Category Shift Notice**
+> **Definition:**  
+The Authenticated Internet is a protocol-defined execution substrate in which identity, ownership, permission, and policy enforcement are mandatory preconditions for action, rather than emergent properties managed after execution.
 >  
 > The Authenticated Internet is not an evolution of Web2 or Web3.
 > It replaces the underlying assumption that trust can be inferred, managed, or repaired after execution.
