@@ -17,6 +17,7 @@ When these frictions are removed at the protocol layer, it unlocks capabilities 
 This is not an incremental improvement.  
 **It is a phase change.**
 ---
+
 *Why this is a phase change, not an upgrade:*
 
 *Some changes do not compete with what came before — they replace the assumptions underneath.*
@@ -38,6 +39,7 @@ This is not an incremental improvement.
 
 *This is why the Authenticated Internet does not coexist with today’s internet at scale.*  
 *It supersedes it — not because it is better, but because systems built on assumed trust cannot compete with systems built on enforced truth.*
+
 ---
 
 When you enter the Authenticated Internet, you stop proving who you are, over and over again.  
