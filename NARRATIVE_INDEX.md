@@ -20,7 +20,15 @@ protocol rules, guarantees, or invariants**.
 
 ---
 
-## 1. System Risk & Framing
+### 1. Foundational Framing
+• **The Authenticated Internet**  
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/The_Authenticated_Internet.md  
+Scope: Explains the phase shift from assumed trust to protocol-enforced trust, and why identity, ownership, and permission must exist at the internet layer.
+
+
+---
+
+## 2. System Risk & Framing
 
 ### High-Stakes Context
 • **High-Stakes Environments**  
@@ -29,7 +37,7 @@ Scope: Why authenticated infrastructure is mandatory in critical systems.
 
 ---
 
-## 2. Fraud, Trust, and Economic Model
+## 3. Fraud, Trust, and Economic Model
 
 ### Fraud Elimination
 • **Why Fraud Becomes Impossible**  
@@ -43,7 +51,7 @@ Scope: Economic consequences of authenticated execution.
 
 ---
 
-## 3. Identity & Agency
+## 4. Identity & Agency
 
 ### Agentic Systems
 • **Agentic Digital Twin (ADT)**  
@@ -52,7 +60,7 @@ Scope: Identity-bound agents and delegated execution (conceptual).
 
 ---
 
-## 4. Developers
+## 5. Developers
 
 Developer engagement is oriented around **architectural constraints**, not
 SDK-first or application-centric workflows.
@@ -65,7 +73,7 @@ building on an authenticated execution substrate.
 
 ---
 
-## 5. Infrastructure & Platform Components
+## 6. Infrastructure & Platform Components
 
 ### Network & Interface
 • **ORBITi**  
@@ -89,7 +97,7 @@ Scope: User-controlled access to authenticated utility.
 
 ---
 
-## 5A. Ecosystem Positioning & Category Comparison
+## 6A. Ecosystem Positioning & Category Comparison
 
 ### Structural Comparison
 • **BTC – ETH – BlockCertsAI (BCAI): Structural Comparison**  
@@ -97,7 +105,7 @@ https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/btc_et
 
 ---
 
-## 6. Economics & Capital Formation
+## 7. Economics & Capital Formation
 
 ### Liquidity
 • **Liquidity Pools**  
@@ -116,7 +124,7 @@ Scope: Capital formation narrative.
 
 ---
 
-## 7. Regulatory & External Alignment
+## 8. Regulatory & External Alignment
 
 ### Regulatory Bridge
 • **GENIUS Act Bridge**  
