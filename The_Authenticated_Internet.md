@@ -14,9 +14,10 @@ When these frictions are removed at the protocol layer, it unlocks capabilities 
 • Capital formation without extractive intermediaries  
 • Software that enforces rules instead of “trusting users”  
 
+---
+
 This is not an incremental improvement.  
 **It is a phase change.**
----
 
 *Why this is a phase change, not an upgrade:*
 
