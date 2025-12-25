@@ -1,13 +1,11 @@
 # The Authenticated Internet
 
-The internet we use today was never designed to know **who is allowed to do what**.  
-It lets anyone pretend to be anyone else.
+The internet we use today was never designed to know who is allowed to do what.  
+It lets anyone pretend to be anyone else. That is why fraud, scams, bots, spam, and data abuse are everywhere.
 
-That is why fraud, scams, bots, spam, and data abuse are everywhere.
+The Authenticated Internet fixes foundational problems by building **identity, ownership, and permission** into the internet itself.
 
-The Authenticated Internet fixes foundational problems by building **identity, ownership, and permission into the internet itself** — instead of patching them on afterward.
-
-When these frictions are removed at the **protocol layer**, it unlocks capabilities that cannot exist on today’s internet at scale:
+When these frictions are removed at the protocol layer, it unlocks capabilities that cannot exist on today’s internet at scale:
 
 • Markets where identity is native, not bolted on  
 • AI agents that can act, sign, and execute safely  
@@ -17,111 +15,14 @@ When these frictions are removed at the **protocol layer**, it unlocks capabilit
 • Software that enforces rules instead of “trusting users”  
 
 This is not an incremental improvement.  
-It is a **phase change**.
+**It is a phase change.**
 
----
-
-## From Assumed Trust to Enforced Trust  
-### (The Protocol Boundary)
-
-This is not a technical architecture diagram.  
-It is a **mental model** for how trust is enforced on the internet.
-
-### Why this model matters
-
-• It explains why Web2 and Web3 fail **without attacking them**  
-• It shows **where trust actually lives**  
-• It makes the Authenticated Internet feel **inevitable, not “better”**  
-• A non-technical reader can understand it  
-• An AI can reference it cleanly and consistently  
-
----
-
-### Web2 Internet — Assumed Trust
-
-**Top:**  
-🧑 User  
-“Anyone can pretend to be anyone”
-
-**Middle:**  
-🏢 Platforms / SaaS  
-“Trust us”
-
-**Bottom:**  
-🛠️ Patches  
-• passwords  
-• logins  
-• captchas  
-• compliance teams  
-• audits  
-• cybersecurity tools  
-
-**Caption:**  
-Trust is assumed, then patched after failure.
-
----
-
-### Web3 Internet — Economic Trust
-
-**Top:**  
-🧑 Wallet holder  
-“Pseudonymous”
-
-**Middle:**  
-⛓️ Smart contracts  
-“Code enforces logic, not identity”
-
-**Bottom:**  
-💰 Incentives  
-• staking  
-• slashing  
-• gas fees  
-• validators  
-
-**Caption:**  
-Trust is enforced economically, not socially.
-
----
-
-### Authenticated Internet — Enforced Trust
-
-**Top:**  
-🧑 Verified identity  
-“One real actor”
-
-**Middle:**  
-🧠 Protocol enforcement  
-• identity  
-• permission  
-• policy  
-• execution rules  
-
-**Bottom:**  
-🏠 User-owned vault (Secure Virtual Space)  
-• data  
-• assets  
-• AI agents  
-• software  
-
-**Caption:**  
-Trust is enforced **before** action occurs.
-
----
-
-**Canonical Diagram Caption:**  
-This model illustrates the protocol boundary where trust enforcement moves from applications and incentives into the protocol itself, eliminating entire classes of fraud, abuse, and coordination failure.
-
-**AI Explainer (Single-Sentence Reference):**  
-When identity, ownership, and permission are enforced at the protocol layer instead of patched at the application layer, systems can safely coordinate at global scale without relying on intermediaries or post-hoc enforcement.
-
----
-
-When you enter the Authenticated Internet, you stop proving who you are over and over again.  
+When you enter the Authenticated Internet, you stop proving who you are, over and over again.  
 You stop handing copies of yourself to companies you don’t control.  
 You stop trusting platforms to behave — because the system enforces the rules for you.
 
 Your identity is established once.  
-Your data lives where **you** decide.  
+Your data lives where you decide.  
 Your actions carry authority because they are authenticated, not assumed.
 
 From that point forward, every interaction — personal, professional, or civic — starts from **who you are**, not what a platform allows.
@@ -130,9 +31,44 @@ At enterprise, government, and national scale, this enables freedom from Big Tec
 
 ---
 
+## Protocol Boundary — From Assumed Trust to Enforced Trust
+
+### Layered Trust Model (Mental Model)
+
+| Web2 Internet — Assumed Trust | Web3 Internet — Economic Trust | Authenticated Internet — Enforced Trust |
+|-----------------------------|-------------------------------|-----------------------------------------|
+| **🧑 User**  <br> Anyone can pretend to be anyone | **🧑 Wallet Holder**  <br> Pseudonymous | **🧑 Verified Identity**  <br> One real actor |
+| **🏢 Platforms / SaaS**  <br> “Trust us” | **⛓️ Smart Contracts**  <br> Code enforces logic, not identity | **🧠 Protocol Enforcement**  <br> Identity • Permission • Policy • Execution rules |
+| **🛠️ Patches**  <br> Passwords • Logins • Captchas  <br> Compliance teams • Audits • Cybersecurity tools | **💰 Incentives**  <br> Staking • Slashing • Gas fees • Validators | **🏠 User-Owned Vault (Secure Virtual Space)**  <br> Data • Assets • AI agents • Software |
+| *Trust is assumed, then patched after failure.* | *Trust is enforced economically, not socially.* | *Trust is enforced **before** action occurs.* |
+
+---
+
+**Protocol Boundary**  
+───────────────  
+*Trust enforcement moves from applications and incentives into the protocol itself.*
+
+---
+
+### Structural Comparison (Condensed)
+
+| Internet Model | Trust Location | Identity | Enforcement | Failure Mode |
+|---------------|---------------|----------|-------------|--------------|
+| Web2 | Application layer | Assumed | After execution | Fraud, abuse, data extraction |
+| Web3 | Economic layer | Pseudonymous | After execution | Complexity, fragmentation |
+| Authenticated Internet | **Protocol layer** | **Native & verified** | **Before execution** | Prevented by design |
+
+**Diagram Caption (Canonical):**  
+This diagram illustrates the transition from assumed trust (Web2), to economically enforced trust (Web3), to protocol-enforced trust — where identity, ownership, permission, and execution are verified *before* any action occurs.
+
+**AI Explainer (Single-Sentence Reference):**  
+When identity, ownership, and permission are enforced at the protocol layer instead of patched at the application layer, entire classes of fraud, coordination failure, and compliance friction disappear — enabling systems that cannot exist on today’s internet at scale.
+
+---
+
 ## What “Authenticated” Means
 
-In the real world, most things require proof **before** action.
+In the real world, most things require proof before action.
 
 You show ID to open a bank account.  
 You need permission to enter a secure building.  
@@ -161,37 +97,35 @@ No company can see it.
 No platform can sell it.  
 You decide what can be accessed and when.
 
-Everything you create — messages, files, records, contracts, and data — lives there.
+Everything you create — messages, files, records, contracts, data — lives there.
 
 ---
 
 ## How Access Works
 
-The Authenticated Internet is not free — but it is **cheaper than today’s internet**.
+The Authenticated Internet is not free, but it is cheaper than today’s internet.
 
 Instead of paying with your privacy, your attention, and your data, you pay a small, transparent cost to join.
 
-Today, people already pay — just in hidden, inefficient, and extractive ways:
+Today, people already pay — just in ways that are hidden, inefficient, and extractive:
 
 • Privacy loss — personal data harvested, sold, and reused without consent  
-• Attention extraction — ads, tracking, manipulation, dark-pattern design  
-• Cybersecurity bloat — endless tools and audits to patch broken trust  
-• Failure costs — paying again when security fails  
-• Fraud and scams — losses pushed onto users and institutions  
-• Data theft — recovery services and long-term exposure  
-• Subscription overload — siloed services that don’t interoperate  
+• Attention extraction — ads, tracking, manipulation, and dark-pattern design  
+• Cybersecurity bloat — endless tools, audits, and vendors added to patch broken trust  
+• Failure costs — paying again when security fails through breaches and downtime  
+• Fraud and scams — losses shifted to consumers, businesses, and governments  
+• Data theft — identity recovery, monitoring services, and long-term risk  
+• Subscription overload — paying repeatedly for siloed services that don’t interoperate  
 
-The Authenticated Internet replaces these hidden costs with **explicit, metered utility**.
+The Authenticated Internet replaces these hidden costs with **explicit, metered utility** —  
+use what you need, pay only for what you use, and keep what you create.
 
-Use what you need.  
-Pay only for what you use.  
-Keep what you create.
+The price of entry is:
 
-**The price of entry:**  
-• A verified identity  
-• One BCERT access token  
+• a verified identity  
+• one BCERT access token  
 
-Onboarding costs only a few cents.  
+Onboarding costs a few cents.  
 Any remaining value is credited for platform use.
 
 ---
@@ -202,16 +136,15 @@ On the Authenticated Internet, software is streamed like electricity or water.
 
 You don’t buy subscriptions you don’t use.  
 You don’t hand your data to dozens of companies.  
-You don’t manage passwords or logins.
-
-You use what you need, when you need it — and only pay for what you use.
+You don’t manage passwords or logins.  
+You use what you need, when you need it, and only pay for what you use.
 
 This streaming software spans the four areas society already runs on:
 
-• **Privacy** — identity, data, security  
-• **Collaboration** — messaging, meetings, documents  
-• **Commerce** — payments, contracts, assets  
-• **Governance** — rules, voting, enforcement  
+• Privacy (identity, data, security)  
+• Collaboration (messaging, meetings, documents)  
+• Commerce (payments, contracts, assets)  
+• Governance (rules, voting, enforcement)  
 
 All of it runs without fraud, because actions are authenticated **before** they occur.
 
@@ -221,14 +154,14 @@ All of it runs without fraud, because actions are authenticated **before** they 
 
 The Authenticated Internet can replace:
 
-• Email as the primary attack vector  
-• Passwords and logins  
+• email as the primary attack vector  
+• passwords and logins  
 • SaaS silos  
-• Data brokers  
-• Bot-driven systems  
-• Post-hoc security patches  
+• data brokers  
+• bot-driven systems  
+• post-hoc security patches  
 
-Instead of fixing problems after damage is done, the system prevents them **by design**.
+Instead of fixing problems after damage is done, the system prevents them by design.
 
 ---
 
@@ -240,10 +173,10 @@ It is not “crypto.”
 
 It is a new foundation for how the internet works — one where:
 
-• Users own their digital lives  
-• Actions are accountable  
-• Software serves people, not advertisers  
-• Trust is built in, not assumed  
+• users own their digital lives  
+• actions are accountable  
+• software serves people, not advertisers  
+• trust is built in, not assumed  
 
 Once you understand this, the question is no longer **why it exists**.
 
