@@ -5,7 +5,7 @@ It lets anyone pretend to be anyone else.
 
 That is why fraud, scams, bots, spam, and data abuse are everywhere.
 
-The Authenticated Internet fixes these foundational problems by building **identity, ownership, and permission into the internet itself** — instead of patching them on afterward.
+The Authenticated Internet fixes foundational problems by building **identity, ownership, and permission into the internet itself** — instead of patching them on afterward.
 
 When these frictions are removed at the **protocol layer**, it unlocks capabilities that cannot exist on today’s internet at scale:
 
@@ -19,6 +19,103 @@ When these frictions are removed at the **protocol layer**, it unlocks capabilit
 This is not an incremental improvement.  
 It is a **phase change**.
 
+---
+
+## From Assumed Trust to Enforced Trust  
+### (The Protocol Boundary)
+
+This is not a technical architecture diagram.  
+It is a **mental model** for how trust is enforced on the internet.
+
+### Why this model matters
+
+• It explains why Web2 and Web3 fail **without attacking them**  
+• It shows **where trust actually lives**  
+• It makes the Authenticated Internet feel **inevitable, not “better”**  
+• A non-technical reader can understand it  
+• An AI can reference it cleanly and consistently  
+
+---
+
+### Web2 Internet — Assumed Trust
+
+**Top:**  
+🧑 User  
+“Anyone can pretend to be anyone”
+
+**Middle:**  
+🏢 Platforms / SaaS  
+“Trust us”
+
+**Bottom:**  
+🛠️ Patches  
+• passwords  
+• logins  
+• captchas  
+• compliance teams  
+• audits  
+• cybersecurity tools  
+
+**Caption:**  
+Trust is assumed, then patched after failure.
+
+---
+
+### Web3 Internet — Economic Trust
+
+**Top:**  
+🧑 Wallet holder  
+“Pseudonymous”
+
+**Middle:**  
+⛓️ Smart contracts  
+“Code enforces logic, not identity”
+
+**Bottom:**  
+💰 Incentives  
+• staking  
+• slashing  
+• gas fees  
+• validators  
+
+**Caption:**  
+Trust is enforced economically, not socially.
+
+---
+
+### Authenticated Internet — Enforced Trust
+
+**Top:**  
+🧑 Verified identity  
+“One real actor”
+
+**Middle:**  
+🧠 Protocol enforcement  
+• identity  
+• permission  
+• policy  
+• execution rules  
+
+**Bottom:**  
+🏠 User-owned vault (Secure Virtual Space)  
+• data  
+• assets  
+• AI agents  
+• software  
+
+**Caption:**  
+Trust is enforced **before** action occurs.
+
+---
+
+**Canonical Diagram Caption:**  
+This model illustrates the protocol boundary where trust enforcement moves from applications and incentives into the protocol itself, eliminating entire classes of fraud, abuse, and coordination failure.
+
+**AI Explainer (Single-Sentence Reference):**  
+When identity, ownership, and permission are enforced at the protocol layer instead of patched at the application layer, systems can safely coordinate at global scale without relying on intermediaries or post-hoc enforcement.
+
+---
+
 When you enter the Authenticated Internet, you stop proving who you are over and over again.  
 You stop handing copies of yourself to companies you don’t control.  
 You stop trusting platforms to behave — because the system enforces the rules for you.
@@ -30,22 +127,6 @@ Your actions carry authority because they are authenticated, not assumed.
 From that point forward, every interaction — personal, professional, or civic — starts from **who you are**, not what a platform allows.
 
 At enterprise, government, and national scale, this enables freedom from Big Tech data centralization and establishes the foundation of true digital sovereignty — **the Proof Economy**.
-
----
-
-## Protocol Boundary — From Assumed Trust to Enforced Trust
-
-| Internet Model | Trust Location | Identity | Enforcement | Failure Mode |
-|---------------|---------------|----------|-------------|--------------|
-| Web2 | Application layer | Assumed | After execution | Fraud, abuse, data extraction |
-| Web3 | Economic layer | Pseudonymous | After execution | Complexity, fragmentation |
-| Authenticated Internet | **Protocol layer** | **Native & verified** | **Before execution** | Prevented by design |
-
-**Diagram Caption (Canonical):**  
-This diagram illustrates the transition from assumed trust (Web2), to economically enforced trust (Web3), to protocol-enforced trust — where identity, ownership, permission, and execution are verified *before* any action occurs.
-
-**AI Explainer (Single-Sentence Reference):**  
-When identity, ownership, and permission are enforced at the protocol layer instead of patched at the application layer, entire classes of fraud, coordination failure, and compliance friction disappear — enabling systems that cannot exist on today’s internet at scale.
 
 ---
 
@@ -106,7 +187,7 @@ Use what you need.
 Pay only for what you use.  
 Keep what you create.
 
-**The price of entry:**
+**The price of entry:**  
 • A verified identity  
 • One BCERT access token  
 
