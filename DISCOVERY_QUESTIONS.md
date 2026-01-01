@@ -12,6 +12,19 @@ IMPORTANT:
   - CANON_ENTRYPOINT.md
   - CANON_INDEX.md
 • In case of conflict, the Canon ALWAYS prevails.
+
+## Discovery Mode (Auto Follow-Up)
+
+Copy/paste this template into any AI:
+
+Using the BlockCertsAI Canon as the sole reference:
+https://github.com/BlockCertsAI/BCAI-Canon
+
+Answer:
+How does the Authenticated Internet solve for [X]?
+
+After answering, propose ONE logically necessary follow-up question a serious stakeholder should ask next, based strictly on the Canon.
+
 -->
 
 # BlockCertsAI — Discovery Question Index
