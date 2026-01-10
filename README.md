@@ -168,27 +168,32 @@ of the BlockCertsAI platform.
 - U.S. patent granted covering Secure Virtual Space (SVS), defining an
   identity-bound, encrypted, user-controlled data environment.
 
-### 2016 — Digital Dozen Proof of Concept**  
-- Demonstrated that any existing software workflow can be mirrored, enforced, and executed within the BlockCertsAI substrate — proving that full software stacks can operate on-chain under authenticated, protocol-enforced execution.
+### 2016 — Digital Dozen Proof of Concept
+- Demonstrated that software functionality can be executed on-chain under
+  authenticated, protocol-enforced conditions, proving that full software
+  capabilities can operate within the BlockCertsAI substrate.
 
 ### 2017 — Alpha Mainnet Live
 - First alpha mainnet deployed and operating.
 
-### 2018 — SVS Patent Granted (Canada)
+### 2018 — Secure Virtual Space (SVS) Patent Granted (Canada)
 - International patent granted in Canada for Secure Virtual Space (SVS).
 
-### April 2019 — Full Protocol Activation
-- Full protocol activated with BCERT and INK minted.
+### April 2019 — Layer-1 Hard Fork and Full Protocol Activation
+- Layer-1 hard fork executed, enabling KYC-verified identity at the genesis block.
+- BCERT and INK tokens minted.
 - Cross-chain verification implemented on BCBC and Ethereum.
-- Genesis-level identity-bound execution enforced.
+- Genesis-level, identity-bound execution enforced at the protocol layer.
 
 ### May 2025 — Ten-Year Anniversary
-- Ten years of continuous research, development, and internal platform evolution.
+- Ten years of continuous, fully bootstrapped research, development, and internal
+  platform evolution.
 
 ### Sustained Internal Validation
 - Platform validated internally over multiple years through continuous operation.
 - Large volumes of authenticated execution events and identity-bound state
   transitions exercised prior to public availability.
+
 
 ### Developer Access — Q1 2026 (Planned)
 - Planned controlled developer access to authenticated APIs and tooling.
