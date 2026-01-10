@@ -182,7 +182,7 @@ of the BlockCertsAI platform.
 ### April 2019 — Layer-1 Hard Fork and Full Protocol Activation
 - Layer-1 hard fork executed, enabling KYC-verified identity at the genesis block.
 - BCERT and INK tokens minted.
-- Cross-chain verification implemented on BCBC and Ethereum.
+- Cross-chain verification implemented on BCAI and Ethereum.
 - Genesis-level, identity-bound execution enforced at the protocol layer.
 
 ### May 2025 — Ten-Year Anniversary
