@@ -227,6 +227,16 @@ It becomes a **responsible actor**.
 
 ---
 
+## 10.5 The Architect — Orchestration Under Constraint
+
+BlockCertsAI includes **the Architect** as an orchestration layer operating within the same protocol constraints as all other actors.
+
+The Architect coordinates execution across authenticated identities, permissions, policy modules, and system state. It does not bypass enforcement. It operates only through authorized, verifiable actions.
+
+This orchestration layer enables coordinated recovery and continuity behaviors under protocol rules, supporting resilient operation without discretionary human intervention.
+
+---
+
 ## 11. Agentic Digital Twin (ADT)
 
 The **Agentic Digital Twin (ADT)** exists to remove the primary adoption barrier: **migration risk**.
