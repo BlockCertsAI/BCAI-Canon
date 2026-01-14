@@ -68,6 +68,7 @@ irreversible cutovers
 This requirement — replacement before validation — has been the primary factor preventing blockchain systems from advancing beyond experimental deployments, isolated pilots, and speculative financial activity.
 
 As a result, blockchain adoption in the real economy has remained constrained not by lack of interest, but by architectures that demand irreversible change before trust, reliability, and compliance can be demonstrated.
+
 ---
 
 ## 3. Genesis-Block Identity
