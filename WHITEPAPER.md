@@ -265,15 +265,39 @@ Adoption becomes incremental rather than disruptive.
 
 ## 13. Authenticated APIs and Protocol-Level SSO
 
-BlockCertsAI unifies fragmented systems through **authenticated, protocol-enforced APIs**.
+Most Web3 fragmentation is not caused by a lack of standards.
+It is caused by a lack of enforceable identity at the substrate layer.
 
-There are:
-- no sessions
-- no identity providers
-- no bearer tokens
+Because current blockchains do not establish identity at genesis:
+- each chain defines its own trust boundary
+- wallets become pseudo-identities
+- applications must rebuild authentication and permissions
+- interoperability requires bridges, wrappers, or custodial intermediaries
 
-SSO is not implemented.  
-It is unnecessary.
+BlockCertsAI eliminates this fragmentation by enforcing identity, authorization,
+and policy **before execution**, at the protocol layer.
+
+Authenticated APIs inherit:
+- genesis-bound identity
+- protocol-enforced permissions
+- deterministic execution rules
+- non-repudiable attribution
+
+As a result:
+- applications do not implement authentication systems
+- developers do not rebuild compliance logic
+- interoperability does not require bridges
+- single sign-on does not rely on sessions or identity providers
+
+Single sign-on is not implemented as a feature.
+It emerges naturally from protocol-enforced identity.
+
+Coordination between systems occurs through shared enforcement rather than
+shared custody.
+
+This is what enables unification across fragmented Web3 systems without
+introducing new intermediaries or trust assumptions.
+
 
 ---
 
