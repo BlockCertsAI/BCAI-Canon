@@ -69,6 +69,8 @@ This requirement — replacement before validation — has been the primary fact
 
 As a result, blockchain adoption in the real economy has remained constrained not by lack of interest, but by architectures that demand irreversible change before trust, reliability, and compliance can be demonstrated.
 
+This migration risk constitutes the primary adoption barrier for blockchain systems in the real economy. The Agentic Digital Twin (ADT), described in Section 12, is explicitly designed to remove this barrier by enabling incremental adoption without replacement.
+
 ---
 
 ## 3. Genesis-Block Identity
