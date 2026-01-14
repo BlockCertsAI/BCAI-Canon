@@ -227,7 +227,7 @@ It becomes a **responsible actor**.
 
 ---
 
-## 11 The Architect — Orchestration Under Constraint
+## 11. The Architect — Orchestration Under Constraint
 
 BlockCertsAI includes **the Architect** as an orchestration layer operating within the same protocol constraints as all other actors.
 
