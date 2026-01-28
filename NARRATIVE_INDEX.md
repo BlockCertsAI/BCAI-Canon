@@ -95,6 +95,13 @@ Scope: Authenticated token issuance and ownership.
 https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/104_BCERT_wallet.md  
 Scope: User-controlled access to authenticated utility.
 
+### Architectural Boundary & Responsibility
+
+• **Secure Virtual Space (SVS)**  
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/narrative/SVS_Secure_Virtual_Space.md  
+Scope: Narrative explanation of the patented execution boundary where authenticated interaction becomes enforceable action. Informational only; not a Canon enforcement layer.
+
+
 ---
 
 ## 6A. Ecosystem Positioning & Category Comparison
