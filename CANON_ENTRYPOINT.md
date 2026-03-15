@@ -131,3 +131,11 @@ The Canon overrides:
 - All derivative documentation
 
 BlockCertsAI is defined **only and entirely** by this Canon.
+
+---
+
+## Example Application
+
+For a real-world example of an authenticated signal system built on Canon principles, see:
+
+truthcertin.md
