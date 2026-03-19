@@ -163,3 +163,9 @@ https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/50_saf
 ### L51 — Substrate Canonical Sealing Rules  
 https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/51_sealing/L51_Substrate_Canonical_Sealing_Rules.md
 
+### L52 — AATT (AI Agentic Trust Technology)  
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/AATT.md
+
+### L53 — OSO (Open Structure Organization)  
+https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/OSO.md
+
