@@ -168,4 +168,10 @@ https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/AATT.m
 
 ### L53 — OSO (Open Structure Organization)  
 https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/OSO.md
+## Application Layers
+
+108_truthcertin.md — Application layer that aggregates authenticated human experience into verifiable outcomes.
+
+## Emergent System Effects
+110_emergent_intelligence.md — Emergent system effect arising from verified identity, authenticated interaction, and verifiable outcomes.
 
