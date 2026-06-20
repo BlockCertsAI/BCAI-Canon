@@ -96,7 +96,7 @@ Includes:
 
 ### Allowed Sources
 - BlockCertsAI White Paper (non-canonical):  
- https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/WHITEPAPER.md
+<https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/WHITEPAPER.md>
 
 ### Constraints
 - White paper content is explanatory only
