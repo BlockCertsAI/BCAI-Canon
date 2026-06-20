@@ -192,14 +192,6 @@ of the BlockCertsAI platform.
 - Large volumes of authenticated execution events and identity-bound state
   transitions exercised prior to public availability.
 
-### Developer Access — [STATUS TBD]
-- Controlled developer access to authenticated APIs and tooling.
-- Access subject to onboarding, identity verification, and project alignment.
-
-### Platform Public Availability — [STATUS TBD]
-- Public platform availability.
-- Final timing subject to validation and deployment readiness.
-
 ### Bootstrap Development
 - Designed, built, and validated through long-term bootstrap development
   without external venture funding.
