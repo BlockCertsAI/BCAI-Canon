@@ -1,11 +1,9 @@
 ## BlockCertsAI (BCAI)  
 **Protocol-Enforced Trust for High-Stakes Coordination Where Trust Cannot Be Assumed**
 
-The last blockchain humanity will ever need.
-
 Ten years in the making.  
 One substrate.  
-The end of fraud at the protocol layer.
+Authentication enforced at the protocol layer, from genesis.
 
 BlockCertsAI (BCAI) is the world’s first **genesis-block KYC blockchain** — a sovereign, user-owned digital infrastructure where **identity, compliance, privacy, governance, AI, and economic activity are enforced from the root**.
 
@@ -179,7 +177,7 @@ of the BlockCertsAI platform.
 ### 2018 — Secure Virtual Space (SVS) Patent Granted (Canada)
 - International patent granted in Canada for Secure Virtual Space (SVS).
 
-### April 2019 — Layer-1 Hard Fork and Full Protocol Activation
+### April 2018 — Layer-1 Hard Fork and Full Protocol Activation
 - Layer-1 hard fork executed, enabling KYC-verified identity at the genesis block.
 - BCERT and INK tokens minted.
 - Cross-chain verification implemented on BCAI and Ethereum.
@@ -194,13 +192,12 @@ of the BlockCertsAI platform.
 - Large volumes of authenticated execution events and identity-bound state
   transitions exercised prior to public availability.
 
-
-### Developer Access — Q1 2026 (Planned)
-- Planned controlled developer access to authenticated APIs and tooling.
+### Developer Access — [STATUS TBD]
+- Controlled developer access to authenticated APIs and tooling.
 - Access subject to onboarding, identity verification, and project alignment.
 
-### Platform Public Availability — December 20, 2025 (Planned)
-- Planned public platform availability.
+### Platform Public Availability — [STATUS TBD]
+- Public platform availability.
 - Final timing subject to validation and deployment readiness.
 
 ### Bootstrap Development
@@ -224,10 +221,7 @@ https://searchexplorer.blockcerts.io/
 
 ## The Shift
 
-Steam → Electricity → Internet → Blockchain → **Protocol-Enforced Trust**
-
-BCAI represents the transition from **institutional trust** to  
-**mathematically enforced coordination**.
+BCAI represents the transition from **institutional trust** to **mathematically enforced coordination** — rules enforced by the substrate, not adjudicated by institutions.
 
 This is not Web3.  
 This is the substrate beneath it.
@@ -258,12 +252,12 @@ it restores the original architectural principle:
 
 ---
 
-## The Canon Is Complete
+## The Canon Is Public and Inspectable
 
-The BlockCertsAI Canon defines the immutable rules of the authenticated internet.
+The BlockCertsAI Canon documents the rules of the authenticated internet.
 
 Ask any AI:
 
 > “Using only the BCAI Canon, how does BlockCertsAI solve *X*?”
 
-And it will answer from **provable rules**, not hallucination.
+And it will reason from the documented rules rather than guess.
