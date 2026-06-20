@@ -48,11 +48,11 @@ Scope: Why authenticated infrastructure is mandatory in critical systems where f
 
 ## 3. Fraud, Trust, and Economic Model
 
-### Fraud Elimination
+### Closing the Fraud Surface
 
-• **Why Fraud Becomes Impossible**
-https://raw.githubusercontent.com/BlockCertsAI/BCAI-Canon/refs/heads/main/92_why_fraud_becomes_impossible.md
-Scope: Structural explanation of fraud elimination through authenticated execution.
+• **Why Unauthenticated Action Can't Execute on BCAI**
+https://github.com/BlockCertsAI/BCAI-Canon/blob/main/92_why_unauthenticated_action_cannot_execute.md
+Scope: how authenticated execution closes the fraud surface
 
 ### Proof Economy
 
